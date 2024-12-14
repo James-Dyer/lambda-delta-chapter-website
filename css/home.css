@@ -145,6 +145,7 @@ address {
     align-items: flex-end;
     padding: 20px;
     gap: 20px;
+    
 }
 
 #about-us div {
@@ -168,17 +169,17 @@ address {
 }
 
 #recruitment-video {
-    margin-top: 20px;
-    padding: 0 10px; /* Add horizontal padding for spacing on the sides */
-    width: 100%; /* Ensure the container spans the full width of the screen */
-    box-sizing: border-box; /* Ensures padding is included in the width */
-    text-align: center; /* Center any text in the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding for spacing */
 }
 
 video {
-    width: calc(100% - 20px); /* Subtract padding to match the container's spacing */
+    width: calc(80% - 20px); /* Subtract padding to match the container's spacing */
     max-width: 100%; /* Prevent the video from exceeding the container */
     height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ccc;
 }
 
 /* Footer */
