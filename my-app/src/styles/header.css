@@ -70,17 +70,12 @@ nav ul a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Address and Instagram Styling */
+/* Instagram Styling */
 .info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 5px;
-}
-
-address {
-    font-style: normal;
-    font-size: 0.8rem; /* Smaller text size */
 }
 
 .info a {
@@ -91,7 +86,7 @@ address {
 }
 
 .info a:hover {
-    color: #1da1f2; /* Lighter Instagram color on hover */
+    color: #61b9ef; /* Lighter Instagram color on hover */
 }
 
 /* Responsive Design */

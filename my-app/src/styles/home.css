@@ -10,6 +10,8 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
+    color: #333333; /* Off-black text */
+    background-color: #f9f9f9; /* Uniform background for the entire page */
 }
 
 /* Main Content */
@@ -40,6 +42,13 @@ body {
     flex: 2; /* Allow the text container to take up more space */
 }
 
+.important-quote {
+    margin-top: 10px;         /* Adds space above the quote */
+    font-size: 1.1rem;        /* Slightly larger font size */
+    color: #222222b6;           /* A darker shade of off-black */
+    font-family: 'Playfair Display', serif;
+  }
+
 /* Recruitment Video Section */
 #recruitment-video {
     display: flex;
@@ -66,4 +75,48 @@ video {
     #expect-more-logo {
         text-align: center;
     }
+}
+
+/* Featured News Section */
+#featured-news {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* This now matches the body's background color */
+    text-align: center;
+}
+  
+#featured-news h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+  
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+  
+.news-item {
+    background: #fff;
+    padding: 15px;
+    width: 280px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+  
+.news-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+  
+.news-item h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+  
+/* Optional hover effect */
+.news-item:hover {
+    transform: translateY(-5px);
 }
