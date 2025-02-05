@@ -22,7 +22,7 @@ const Donation = () => {
             <button className="donate-button">Donate Now</button>
           </div>
           <div className="donation-image">
-            <img src="/images/chapter-donation.jpg" alt="Lambda Delta Chapter" />
+            <img src="/images/chapter-donation.jpg" alt="Donate - Lambda Delta Chapter" />
           </div>
         </section>
 
@@ -31,14 +31,14 @@ const Donation = () => {
           <div className="donation-content">
             <h1>Donate to the Huntsman Cancer Institute</h1>
             <p>
-              In partnership with the Huntsman Cancer Institute, we support groundbreaking research
-              and exceptional patient care. Your donation directly contributes to cancer research,
-              innovative treatments, and improved patient outcomes.
+            We are proud to partner with the Huntsman Cancer Institute in the fight against cancer. 
+            Please join us in supporting their groundbreaking work by donating today. 
+            Your contribution fuels cutting-edge research, innovative treatments, and improved outcomes for patients.
             </p>
             <button className="donate-button">Donate Now</button>
           </div>
           <div className="donation-image">
-            <img src="/images/partner-donation.jpg" alt="Huntsman Cancer Institute" />
+            <img src="/images/partner-donation.jpg" alt="Donate - Huntsman Cancer Institute" />
           </div>
         </section>
       </main>
