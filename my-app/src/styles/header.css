@@ -9,7 +9,7 @@ header, nav, ul {
 header {
     background-color: #003366;
     color: white;
-    padding: 15px 20px;
+    padding: 10px 20px; /* Adjusted for a slimmer header */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -30,7 +30,7 @@ nav {
 
 /* Logo Styling */
 #navbar-logo img {
-    height: 70px; /* Adjust as needed */
+    height: 50px; /* Reduced logo height to better match a thinner header */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space around the image */
 }
@@ -47,11 +47,10 @@ nav ul {
     display: flex;
     gap: 20px;
     list-style: none;
-    margin: 0;
+    margin: 0;           /* Removed auto centering */
     padding: 0;
-    justify-content: center;
+    justify-content: flex-start; /* Align links to the left */
     align-items: center;
-    margin: 0 auto; /* Center the links in the available space */
 }
 
 /* Navigation Buttons Styling */
@@ -59,16 +58,16 @@ nav ul a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 1.4rem; /* Increase font size for better readability */
-    padding: 12px 20px; /* Increase padding for a larger button appearance */
-    border-radius: 6px; /* Optional: Add rounded corners for a modern look */
+    font-size: 1.1rem; /* Slightly smaller font size */
+    padding: 8px 15px; /* Reduced padding for a sleeker appearance */
+    border-radius: 4px; /* Subtler rounded corners */
     transition: background-color 0.3s ease, transform 0.2s ease, text-decoration 0.2s ease;
 }
 
 /* Hover Effect */
 nav ul a:hover {
     background-color: #00509e; /* Change background color on hover */
-    text-decoration: underline; /* Add underline when hovering */
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Address and Instagram Styling */
@@ -81,7 +80,7 @@ nav ul a:hover {
 
 address {
     font-style: normal;
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Smaller text size */
 }
 
 .info a {
@@ -92,7 +91,7 @@ address {
 }
 
 .info a:hover {
-    color: #1da1f2; /* Slightly lighter Instagram color */
+    color: #1da1f2; /* Lighter Instagram color on hover */
 }
 
 /* Responsive Design */
@@ -107,6 +106,7 @@ address {
     nav ul {
         flex-direction: column;
         gap: 10px;
+        justify-content: center; /* Center links on small screens */
     }
 
     .info {
