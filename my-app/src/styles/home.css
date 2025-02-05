@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, h2, p, ul, nav, footer {
+body, h1, h2, p, ul, footer {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,132 +12,6 @@ body {
     margin: 0;
 }
 
-/* Header Styling */
-header {
-    background-color: #003366;
-    color: white;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Flexbox Layout for Header */
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Navigation Styling */
-nav {
-    display: flex;
-    flex-grow: 1;
-    align-items: center; /* Center logo and links vertically */
-    gap: 15px; /* Space between the logo and the links */
-}
-
-/* Logo Styling */
-#navbar-logo img {
-    height: 70px; /* Adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space around the image */
-}
-
-/* Logo Link Styling */
-#navbar-logo a {
-    text-decoration: none; /* Remove underline from logo link */
-    padding: 0; /* Reset padding for the logo link */
-    border-radius: 0; /* Remove rounded corners */
-}
-
-/* Navigation Links */
-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto; /* Center the links in the available space */
-}
-
-/* Navigation Buttons Styling */
-nav ul a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.4rem; /* Increase font size for bigger text */
-    padding: 12px 20px; /* Increase padding for larger buttons */
-    border-radius: 6px; /* Optional: Add rounded corners for a modern look */
-    transition: background-color 0.3s ease, transform 0.2s ease, text-decoration 0.2s ease;
-}
-
-/* Hover Effect */
-nav ul a:hover {
-    background-color: #00509e; /* Change background color on hover */
-    text-decoration: underline; /* Add underline when hovering */
-}
-
-/* Address and Instagram Styling */
-.info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 5px;
-}
-
-address {
-    font-style: normal;
-    font-size: 0.9rem;
-}
-
-.info a {
-    color: #00acee; /* Instagram color */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.info a:hover {
-    color: #1da1f2; /* Slightly lighter Instagram color */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .info {
-        align-items: center;
-    }
-}
-
-
-/*Temporary BG Colors*/
-
-#about-us {
-    /*background-color: lightblue; /* Temporary color for the parent container */
-}
-#expect-more-logo {
-    /*background-color: lightcoral; /* Color for the logo container */
-}
-#about-us div:nth-child(2) {
-    /*background-color: lightgreen; /* Color for the text container */
-}
-#recruitment-video {
-    /*background-color: #ccffbb;*/
-}
-
-
 /* Main Content */
 #about-us {
     display: flex;
@@ -145,7 +19,6 @@ address {
     align-items: flex-end;
     padding: 20px;
     gap: 20px;
-    
 }
 
 #about-us div {
@@ -155,24 +28,24 @@ address {
 
 #expect-more-logo {
     flex: 0;
-    text-align: left; /* Center the logo horizontally */
+    text-align: left; /* Align the logo to the left */
 }
 
 #expect-more-logo img {
-    width: 100%; /* Set the logo width to 1/3 of the page width */
-    /*max-width: 400px; /* Optional: Set a maximum width to avoid the logo getting too large */
-    height: auto; /* Maintain the aspect ratio */
+    width: 100%; /* Set the logo width to fit its container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #about-us div:nth-child(2) {
-    flex: 2; /* Allow the text container to take up more space than the logo */
+    flex: 2; /* Allow the text container to take up more space */
 }
 
+/* Recruitment Video Section */
 #recruitment-video {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Add padding for spacing */
+    padding: 20px;
 }
 
 video {
@@ -188,4 +61,17 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about-us {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #expect-more-logo {
+        text-align: center;
+    }
 }
