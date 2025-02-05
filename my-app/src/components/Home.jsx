@@ -9,13 +9,13 @@ const Home = () => {
         <div className="header-content">
           <nav>
             <div id="navbar-logo">
-              <a href="#home">
-                <img src="images/LambdaDeltaLogo.png" alt="Lambda Delta Logo" />
+              <a href="index.html">
+                <img src="images/LambdaDeltaLogo.png" alt="Lambda Delta Logo"/>
               </a>
             </div>
             <ul>
               <li>
-                <a href="#home">Home</a>
+                <a href="index.html">Home</a>
               </li>
               <li>
                 <a href="#donate">Donate</a>
@@ -24,7 +24,7 @@ const Home = () => {
                 <a href="#events">Events</a>
               </li>
               <li>
-                <a href="#the-fraternity">The Fraternity</a>
+                <a href="https://sigmachi.org/" target="_blank" rel="noopener noreferrer">International Fraternity</a>
               </li>
             </ul>
           </nav>
