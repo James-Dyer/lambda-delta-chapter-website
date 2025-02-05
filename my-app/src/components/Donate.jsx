@@ -22,7 +22,7 @@ const Donation = () => {
             <button className="donate-button">Donate Now</button>
           </div>
           <div className="donation-image">
-            <img src="/images/chapter-donation.jpg" alt="Donate - Lambda Delta Chapter" />
+            <img src="/images/chapter-donation.jpg" alt="Donate - Lambda Delta Chapter Image" />
           </div>
         </section>
 
@@ -38,7 +38,7 @@ const Donation = () => {
             <button className="donate-button">Donate Now</button>
           </div>
           <div className="donation-image">
-            <img src="/images/partner-donation.jpg" alt="Donate - Huntsman Cancer Institute" />
+            <img src="/images/partner-donation.jpg" alt="Donate - Huntsman Cancer Institute Image" />
           </div>
         </section>
       </main>

@@ -29,7 +29,6 @@ const Header = () => {
           </ul>
         </nav>
         <div className="info">
-          <address>794 Newton Ct. Merced, CA 95348</address>
           <a href="https://instagram.com/ucmsigmachi" target="_blank" rel="noopener noreferrer">
             @ucmsigmachi
           </a>

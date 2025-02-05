@@ -13,16 +13,22 @@ const Home = () => {
       <main>
         <section id="about-us">
           <div id="expect-more-logo">
-            <img src="images/UC-Merced-SigmaChi-ExpectMore.svg" alt="Sigma Chi Expect More Logo" />
+            <img
+              src="images/UC-Merced-SigmaChi-ExpectMore.svg"
+              alt="Sigma Chi Expect More Logo"
+            />
           </div>
           <div>
-            <h1>The Lambda Delta Chapter</h1>
+            <h1>Welcome to the Lambda Delta Chapter at UC Merced!</h1>
             <p>
-              Welcome to the UC Merced Sigma Chi chapter. We focus on leadership, friendship, and more.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Welcome to the UC Merced Sigma Chi chapter. Our chapter champions academic excellence, 
+            community service, and personal growth—values that not only build character but also 
+            create a positive impact on campus and beyond. We are proud to uphold chapter 
+            traditions of giving back to the campus we call home, nurturing unity, leadership, 
+            and lifelong brotherhood. Together, we strive to make a difference that extends far beyond our college years.
+            </p>
+            <p className="important-quote">
+            Men join fraternities. Leaders of men join Sigma Chi.
             </p>
           </div>
         </section>
@@ -33,10 +39,29 @@ const Home = () => {
             Your browser does not support the video tag.
           </video>
         </section>
+
+        {/* Featured News Section */}
+        <section id="featured-news">
+          <h2>FEATURED NEWS</h2>
+          <div className="news-container">
+            <div className="news-item">
+              <img src="images/news1.jpg" alt="News 1 Image" />
+              <h3>News Title 1</h3>
+            </div>
+            <div className="news-item">
+              <img src="images/news2.jpg" alt="News 2 Image" />
+              <h3>News Title 2</h3>
+            </div>
+            <div className="news-item">
+              <img src="images/news3.jpg" alt="News 3 Image" />
+              <h3>News Title 3</h3>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
-      <Footer />  {/* Modular Footer Component */}
+      <Footer /> {/* Modular Footer Component */}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import "./styles/donate.css";
 function App() {
   return (
     <div className="App">
-      <Donate />  {/* ✅ Render your main component */}
+      <Home />  {/* ✅ Render your main component */}
     </div>
   );
 }
