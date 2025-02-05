@@ -1,12 +1,13 @@
 import React from "react";
 import "../styles/home.css";
 import Header from "../components/Header"; // Import the Header component
+import Footer from "../components/Footer"; // Import the Footer component
 
 const Home = () => {
   return (
     <div>
       {/* Navbar */}
-      <Header />  {/* Modular Header Component */}
+      <Header />
 
       {/* Main Content */}
       <main>
@@ -35,7 +36,7 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer></footer>
+      <Footer />  {/* Modular Footer Component */}
     </div>
   );
 };

@@ -55,14 +55,6 @@ video {
     border: 1px solid #ccc;
 }
 
-/* Footer */
-footer {
-    background: #003366;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     #about-us {
