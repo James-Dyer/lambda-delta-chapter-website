@@ -7,8 +7,6 @@ import Footer from "../components/Footer"; // Modular Footer
 const Donate = () => {
   return (
     <div className="donation-page">
-      <Header />
-
       <main className="donation-main">
         {/* Donation to the Lambda Delta Chapter */}
         <section className="donation-section chapter-donation">

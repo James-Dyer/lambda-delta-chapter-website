@@ -1,13 +1,19 @@
-import Home from "./components/Home";  // ✅ Import your component
-import "./styles/home.css";  // ✅ Import styles if needed
-import Donate from "./components/Donate";
-import "./styles/donate.css";
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import Donate from './components/Donate';
 
 function App() {
   return (
-    <div className="App">
-      <Home />  {/* ✅ Render your main component */}
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/donate" element={<Donate />} />
+      </Routes>
+    </Router>
   );
 }
 
