@@ -35,28 +35,7 @@ const Home = () => {
             Your browser does not support the video tag.
           </video>
         </section>
-
-        {/* Featured News Section */}
-        <section id="featured-news">
-          <h2>FEATURED NEWS</h2>
-          <div className="news-container">
-            <div className="news-item">
-              <img src="images/news1.jpg" alt="News 1 Image" />
-              <h3>News Title 1</h3>
-            </div>
-            <div className="news-item">
-              <img src="images/news2.jpg" alt="News 2 Image" />
-              <h3>News Title 2</h3>
-            </div>
-            <div className="news-item">
-              <img src="images/news3.jpg" alt="News 3 Image" />
-              <h3>News Title 3</h3>
-            </div>
-          </div>
-        </section>
       </main>
-
-      
 
       {/* Footer */}
       <Footer /> {}
