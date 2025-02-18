@@ -17,13 +17,12 @@ const Home = () => {
             />
           </div>
           <div>
-            <h1>Welcome to the Lambda Delta Chapter at UC Merced!</h1>
+            <h1>A Lasting Legacy</h1>
             <p>
-            Our chapter champions academic excellence, 
-            community service, and personal growth—values that not only build character, but also 
-            create a positive impact on campus and beyond. We are proud to uphold chapter 
-            traditions of giving back to the campus we call home, nurturing unity, leadership, 
-            and lifelong brotherhood.
+            Sigma Chi was founded on June 28th, 1855 at Miami University in Oxford, Ohio.  
+            Today the brotherhood has only grew, as Sigma Chi 
+            has initiated over 350,000 members. At UC Merced, we strive to 
+            uphold a great legacy by living ___.
             </p>
             <p className="important-quote">
             Men join fraternities. Leaders of men join Sigma Chi.

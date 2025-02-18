@@ -7,12 +7,11 @@ body, h1, h2, p, ul, footer {
 
 /* Body Styling */
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     color: #333333; /* Off-black text */
     background-color: #f9f9f9; /* Uniform background for the entire page */
-}
+}   
 
 /* Main Content */
 #about-us {

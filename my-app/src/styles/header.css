@@ -55,10 +55,11 @@ nav ul {
 
 /* Navigation Buttons Styling */
 nav ul a {
+    font-family: "Bebas Neue", serif;
     text-decoration: none;
     color: white;
-    font-weight: bold;
-    font-size: 1.1rem; /* Slightly smaller font size */
+    /*font-weight: bold;*/
+    font-size: 1.4rem; 
     padding: 8px 15px; /* Reduced padding for a sleeker appearance */
     border-radius: 4px; /* Subtler rounded corners */
     transition: background-color 0.3s ease, transform 0.2s ease, text-decoration 0.2s ease;
