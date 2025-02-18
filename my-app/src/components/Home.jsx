@@ -56,8 +56,10 @@ const Home = () => {
         </section>
       </main>
 
+      
+
       {/* Footer */}
-      <Footer /> {/* Modular Footer Component */}
+      <Footer /> {}
     </div>
   );
 };

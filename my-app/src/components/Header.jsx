@@ -24,13 +24,10 @@ const Header = () => {
               <a href="/members">Members</a>
             </li>
             <li>
-              <a
-                href="https://sigmachi.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                International Fraternity
-              </a>
+              <a href="/philanthropy">Philanthropy</a>
+            </li>
+            <li>
+              <a href="/archive">Archive</a>
             </li>
           </ul>
         </nav>
