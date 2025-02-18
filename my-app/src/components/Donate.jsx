@@ -4,7 +4,7 @@ import "../styles/donate.css"; // Donation-specific styles
 import Header from "../components/Header"; // Modular Header
 import Footer from "../components/Footer"; // Modular Footer
 
-const Donation = () => {
+const Donate = () => {
   return (
     <div className="donation-page">
       <Header />
@@ -48,4 +48,4 @@ const Donation = () => {
   );
 };
 
-export default Donation;
+export default Donate;
