@@ -49,21 +49,49 @@
     margin-bottom: 20px;
   }
   
-  /* Donate Button Styling */
-  .donate-button {
-    padding: 12px 24px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .donate-button:hover {
-    background-color: #0056b3;
-  }
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Donate Button Styling */
+.donate-button {
+  padding: 12px 24px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff; /* Blue */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+  background-color: #0056b3;
+}
+
+/* Wishlist Button Styling */
+.wishlist-button {
+  padding: 12px 24px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #ff9900; /* Amazon Orange */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-button:hover {
+  background-color: #cc7a00;
+}
+
   
   /* Donation Image Styling */
   .donation-image {
