@@ -6,8 +6,6 @@ import Footer from "../components/Footer"; // Import the Footer component
 const Home = () => {
   return (
     <div>
-      {/* Navbar */}
-      <Header />
 
       {/* Main Content */}
       <main>

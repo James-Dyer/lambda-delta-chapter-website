@@ -1,4 +1,6 @@
+// Header.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/header.css"; 
 
 const Header = () => {
@@ -7,29 +9,37 @@ const Header = () => {
       <div className="header-content">
         <nav>
           <div id="navbar-logo">
-            <a href="index.html">
+            <Link to="/">
               <img src="images/LambdaDeltaLogo.png" alt="Lambda Delta Logo" />
-            </a>
+            </Link>
           </div>
           <ul>
             <li>
-              <a href="index.html">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#donate">Donate</a>
+              <Link to="/donate">Donate</Link>
             </li>
             <li>
               <a href="#events">Events</a>
             </li>
             <li>
-              <a href="https://sigmachi.org/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://sigmachi.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 International Fraternity
               </a>
             </li>
           </ul>
         </nav>
         <div className="info">
-          <a href="https://instagram.com/ucmsigmachi" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com/ucmsigmachi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             @ucmsigmachi
           </a>
         </div>
