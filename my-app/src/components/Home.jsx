@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/home.css";
-import Header from "../components/Header"; // Import the Header component
 import Footer from "../components/Footer"; // Import the Footer component
 
 const Home = () => {
@@ -20,9 +19,9 @@ const Home = () => {
             <h1>A Lasting Legacy</h1>
             <p>
             Sigma Chi was founded on June 28th, 1855 at Miami University in Oxford, Ohio.  
-            Today the brotherhood has only grew, as Sigma Chi 
-            has initiated over 350,000 members. At UC Merced, we strive to 
-            uphold a great legacy by living ___.
+            The brotherhood has only grew, as Sigma Chi 
+            recently initiated it's 350,000th member. At UC Merced, we strive to 
+            uphold our fraternity's great legacy by  ___.
             </p>
             <p className="important-quote">
             Men join fraternities. Leaders of men join Sigma Chi.

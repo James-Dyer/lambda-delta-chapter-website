@@ -80,8 +80,9 @@ nav ul a:hover {
 }
 
 .info a {
-    color: #00acee; /* Instagram color */
-    font-weight: bold;
+    font-family: "Bebas Neue", serif;
+    color: #ffffff; /* Instagram color */
+    font-size: 1.4rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
