@@ -19,11 +19,11 @@ const Home = () => {
           <div>
             <h1>Welcome to the Lambda Delta Chapter at UC Merced!</h1>
             <p>
-            Welcome to the UC Merced Sigma Chi chapter. Our chapter champions academic excellence, 
-            community service, and personal growth—values that not only build character but also 
+            Our chapter champions academic excellence, 
+            community service, and personal growth—values that not only build character, but also 
             create a positive impact on campus and beyond. We are proud to uphold chapter 
             traditions of giving back to the campus we call home, nurturing unity, leadership, 
-            and lifelong brotherhood. Together, we strive to make a difference that extends far beyond our college years.
+            and lifelong brotherhood.
             </p>
             <p className="important-quote">
             Men join fraternities. Leaders of men join Sigma Chi.
