@@ -1,0 +1,93 @@
+.awards-section {
+    width: 100%;
+    padding: 80px 20px;
+    /* Background image with a slight blue overlay */
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
+                url('/public/images/krach2024-peterson-bob.jpg'); /* Remove /public/ from path */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+  }
+  
+  .awards-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .awards-title {
+    font-size: 4.0rem;
+    margin-bottom: 0px;
+  }
+  
+  .awards-blurb {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-style: italic; 
+  }
+  
+  /* Container for all award items */
+  .awards-items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Each individual award item */
+  .award-item {
+    text-align: left; /* Align internal content to the left */
+    background: rgba(0, 36, 72, 0.6); /* Optional subtle overlay */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Title for each award item */
+  .award-item-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  /* For the Balford Award nominee item */
+  .award-item-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px;
+  }
+  
+  /* Container for text (blurb + quote) */
+  .award-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Image styling */
+  .award-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Quote styling */
+  .award-quote {
+    font-style: italic;
+    font-size: 1.0rem;
+    margin: 0;
+  }
+  
+  .award-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* Description paragraphs for the other awards */
+  .award-item-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
