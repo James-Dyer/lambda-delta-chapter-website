@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/home.css";
 import Footer from "../components/Footer"; // Import the Footer component
+import Awards from "../components/Awards";
 
 const Home = () => {
   return (
@@ -36,6 +37,9 @@ const Home = () => {
           </video>
         </section>
       </main>
+
+      {/* Awards & Recognition*/}
+      <Awards />
 
       {/* Footer */}
       <Footer /> {}
