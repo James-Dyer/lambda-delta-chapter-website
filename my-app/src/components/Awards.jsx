@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/awards.css"; // Ensure this CSS file is in place
 
 const Awards = () => {
+
+    const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+            const awardsList = [
+              "Peterson Blue, 2025",
+              "Peterson Blue, 2024",
+              "Peterson Blue, 2023",
+              "This list is a placeholder and is not accurate.",
+              "Peterson Blue, 2021",
+              "Peterson Blue, 2020",
+              "Peterson Blue, 2019",
+              "Peterson Blue, 2018",
+              "Peterson Gold, 2017",
+              "This list is a placeholder and is not accurate.",
+            ];
+
+            // Toggle visibility of the full list
+            const toggleAccordion = () => {
+              setIsAccordionOpen(!isAccordionOpen);
+            };
+
+
   return (
     <section className="awards-section">
       <div className="awards-content">
@@ -12,13 +34,29 @@ const Awards = () => {
 
         <div className="awards-items">
 
-            {/* J. Dwight Peterson Significant Chapter Awards */}
-            <div className="award-item">
-                <h2 className="award-item-title">J. Dwight Peterson Significant Chapter Awards</h2>
-                <p className="award-item-description">
-                    Our chapter’s impressive track record speaks for itself—we have consistently been recognized for outstanding performance and impactful initiatives.
-                </p>
+          {/* J. Dwight Peterson Significant Chapter Awards */}
+          <div className="award-item accordion">
+            <div className="accordion-header" onClick={toggleAccordion}>
+              <h2 className="award-item-title">J. Dwight Peterson Significant Chapter Awards</h2>
+              <span className={`accordion-icon ${isAccordionOpen ? "open" : ""}`}>
+                {isAccordionOpen ? "-" : "+"}
+              </span>
             </div>
+            {isAccordionOpen && (
+              <div className="accordion-content">
+                <p className="award-item-description">
+                <i>The J. Dwight Peterson Significant Chapter Award is given to Sigma Chi chapters that demonstrate 
+                excellence in leadership, operations, and community impact. We are proud that our chapter has consistently 
+                earned this distinction over the years, reflecting our continued commitment to these high standards.</i>
+                </p>
+                <ul className="award-list">
+                  {awardsList.map((award, index) => (
+                    <li key={index}>{award}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
           
             {/* Balford Award Nominee */}
             <div className="award-item">
@@ -26,18 +64,18 @@ const Awards = () => {
             <div className="award-item-content">
                 <img
                 src="/images/balford-nominee-temp.jpg" 
-                alt="Balford Award Nominee"
+                alt="Balford Award Nominees"
                 className="award-image"
                 />
                 <div className="award-text">
                 <p className="balfour-blurb">
-                    We are excited to announce our Balfour Award chapter winner and international nominee: Name.
+                    We are excited to announce our 2025 Balfour Province Award winner and international nominee: Collin O' Neil.
                     <br /><br />
                 </p>
                 
                 <blockquote className="award-quote">
-                    "Excellence is not an act, but a habit—one that inspires us every day."
-                    <cite>– Brother</cite>
+                    "Quote from the Balfour Award Winner"
+                    <cite>– Brother O'Neil</cite>
                 </blockquote>
                 </div>
             </div>
@@ -58,3 +96,4 @@ const Awards = () => {
 };
 
 export default Awards;
+  
