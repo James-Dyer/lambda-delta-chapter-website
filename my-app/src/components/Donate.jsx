@@ -10,7 +10,7 @@ const Donate = () => {
         {/* Donation to the Lambda Delta Chapter */}
         <section className="donation-section chapter-donation">
           <div className="donation-content">
-            <h1>Lambda Delta Chapter</h1>
+            <h1>Support the Lambda Delta Chapter</h1>
             <p>
               Support our chapter today!
               Your contribution helps us create meaningful experiences for our members and
@@ -29,7 +29,6 @@ const Donate = () => {
             <img src="/images/bidDaySpring2024.jpg" alt="Donate - Lambda Delta Chapter" />
           </div>
         </section>
-
 
         {/* Donation to the Huntsman Cancer Institute */}
         <section className="donation-section partner-donation">
