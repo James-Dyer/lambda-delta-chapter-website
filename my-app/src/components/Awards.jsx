@@ -28,10 +28,6 @@ const Awards = () => {
     <section className="awards-section">
       <div className="awards-content">
         <h1 className="awards-title">Achievements &amp; Recognition</h1>
-        <p className="awards-blurb">
-          We strive to better ourselves every day—and it shows in our dedication and accomplishments.
-        </p>
-
         <div className="awards-items">
 
           {/* J. Dwight Peterson Significant Chapter Awards */}
@@ -40,8 +36,7 @@ const Awards = () => {
             <p className="award-item-description">
               <i>
                 The J. Dwight Peterson Significant Chapter Award is given to Sigma Chi chapters that demonstrate
-                excellence in leadership, operations, and community impact. We are proud that our chapter has consistently 
-                earned this distinction over the years, reflecting our continued commitment to these high standards.
+                excellence in leadership, operations, and community impact.
               </i>
             </p>
             

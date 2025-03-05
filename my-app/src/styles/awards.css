@@ -18,14 +18,7 @@
 
 .awards-title {
   font-size: 4.0rem;
-  margin-bottom: 0px;
-}
-
-.awards-blurb {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  font-style: italic; 
+  margin-bottom: 20px;
 }
 
 /* Container for all award items */
