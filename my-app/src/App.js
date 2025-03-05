@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Donate from './components/Donate';
 import Members from './components/Members';
+import Archive from './components/Archive';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/members" element={<Members />} />
+        <Route path="/archive" element={<Archive />} />
       </Routes>
     </Router>
   );
