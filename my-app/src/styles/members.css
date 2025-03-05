@@ -1,0 +1,94 @@
+/* General container styling for the members page */
+  .members-page {
+    padding: 20px;
+  }
+  
+  
+  .members-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.6rem
+  }
+  
+  /* Each section (Head Table, EC, OC, Actives) */
+  section {
+    margin-bottom: 60px;
+  }
+  
+  /* Grid layout for the committee sections */
+  .members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Styling for individual member cards */
+  .member-card {
+    width: 200px;
+    background: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Extra emphasis for Head Table cards */
+  .head-table-card {
+    border: 2px solid #003366;
+  }
+  
+  /* Placeholder for headshots */
+  .headshot-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #cccccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    border-radius: 4px;
+  }
+  
+  /* Member info text styling */
+  .member-info {
+    font-family: Arial, sans-serif;
+  }
+  
+  .member-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .member-position {
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+  
+  .member-email a {
+    text-decoration: none;
+    color: #003366;
+  }
+  
+  /* Styling for the Actives list */
+.actives {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+  }
+  
+  .actives-list {
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: justify;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+
+  
