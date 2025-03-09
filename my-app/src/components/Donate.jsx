@@ -20,7 +20,7 @@ const Donate = () => {
             </p>
             <div className="button-group">
               <button className="donate-button">Donate Now</button>
-              <a href="https://www.amazon.com/hz/wishlist/your-wishlist-link" target="_blank" rel="noopener noreferrer" className="wishlist-button">
+              <a href="https://www.amazon.com/hz/wishlist/ls/1Y4C3VN99C84U" target="_blank" rel="noopener noreferrer" className="wishlist-button">
                 Amazon Wishlist
               </a>
             </div>
@@ -38,7 +38,15 @@ const Donate = () => {
             We are proud to partner with the Huntsman Cancer Institute in the fight against cancer. 
             Please join us in supporting their work by donating today. 
             </p>
-            <button className="donate-button">Donate Now</button>
+            <a 
+              href="https://hope.huntsmancancer.org/gentoend/derby-days-2025" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="donate-button"
+            >
+              Donate Now
+            </a>
+
           </div>
           <div className="donation-image">
             <img src="/images/nieceBidDaySpeechSpring2024.jpg" alt="Donate - Huntsman Cancer Institute" />
