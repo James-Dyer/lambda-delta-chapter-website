@@ -8,6 +8,8 @@
               url('/public/images/stock-background-image.jpeg');
   background-size: cover;
   background-position: center;
+
+  background-attachment: fixed;
   color: #333;
 }
 
