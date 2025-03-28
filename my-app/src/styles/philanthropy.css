@@ -1,0 +1,118 @@
+/* Overall page styling */
+.philanthropy-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+
+  .philanthropy-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.6rem
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: "Bebas Neue", serif;
+    text-align: center;
+  }
+  
+  /* Hero section with background image */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://cdn.discordapp.com/attachments/723014403217162334/1354980005440000070/image.jpg?ex=67e742f7&is=67e5f177&hm=5a13256130025b508885ae35698cf373523cafeaa3cba30feed7273ec0d54a61&");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Blue overlay to slightly blue out the background */
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 23, 79, 0.5); /* Adjust the blue tint as needed */
+    z-index: 1;
+  }
+  
+  /* Hero overlay content styling */
+  .hero-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  /* Overall section styling */
+.content-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Title on top of the section */
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  /* Container for image and text side-by-side */
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  /* Image container takes left half */
+  .left-image {
+    flex: 1;
+  }
+  
+  /* Ensure image is responsive */
+  .left-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Text container takes right half */
+  .right-text {
+    flex: 1;
+    display: flex;
+    align-items: center; /* vertically center the text if needed */
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  
+  /* Donation section styling */
+  .donation-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .donation-button {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .donation-button:hover {
+    background-color: #0055a5;
+  }
+  
