@@ -3,16 +3,49 @@
     padding: 20px;
   }
   
-  .archive-page h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+.archive-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.masonry-grid {
+  column-gap: 16px;
+}
   
-  /* Masonry grid using CSS columns */
+  /* 5 columns for large screens */
+@media (min-width: 1200px) {
+  .masonry-grid {
+    column-count: 5;
+  }
+}
+
+/* 4 columns for medium-large screens */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .masonry-grid {
+    column-count: 4;
+  }
+}
+
+/* 3 columns for medium screens */
+@media (max-width: 991px) and (min-width: 768px) {
   .masonry-grid {
     column-count: 3;
-    column-gap: 16px;
   }
+}
+
+/* 2 columns for small screens */
+@media (max-width: 767px) and (min-width: 480px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+/* 1 column for extra small screens */
+@media (max-width: 479px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
   
   /* Each masonry item should avoid breaking inside columns */
   .masonry-item {
