@@ -1,57 +1,56 @@
 /* Overall page styling */
 .philanthropy-page {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     color: #333;
   }
 
-  .philanthropy-page h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.6rem
-  }
+h2 {
+  font-size: 2.0rem;
+  margin-bottom: 1rem;
+  font-family: "Bebas Neue", serif;
+  text-align: center;
+}
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-family: "Bebas Neue", serif;
-    text-align: center;
-  }
-  
-  /* Hero section with background image */
-  .hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url("https://cdn.discordapp.com/attachments/723014403217162334/1354980005440000070/image.jpg?ex=67e742f7&is=67e5f177&hm=5a13256130025b508885ae35698cf373523cafeaa3cba30feed7273ec0d54a61&");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Blue overlay to slightly blue out the background */
-  .hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(23, 23, 79, 0.5); /* Adjust the blue tint as needed */
-    z-index: 1;
-  }
+.hero-overlay h2 {
+  font-size: 5.0rem;
+}
+
+/* Hero section with background image */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url("https://cdn.discordapp.com/attachments/723014403217162334/1354980544232034304/image.jpg?ex=67e74378&is=67e5f1f8&hm=9d439124e97697c6e25de3d64ae52539b8f79702defb22406deb53db4f2ccef4&");
+  background-size: cover;
+  background-position: center 36%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blue overlay to slightly blue out the background */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 30, 95, 0.65); /* Adjust the blue tint as needed */
+  z-index: 1;
+}
   
   /* Hero overlay content styling */
-  .hero-overlay {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-  }
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 20px;
+  max-width: 900px; /* Adjust this as needed */
+  margin: 0 auto;
+  text-align: justify;
+}
   
   /* Overall section styling */
 .content-section {
@@ -81,8 +80,11 @@
   /* Ensure image is responsive */
   .left-image img {
     width: 100%;
-    height: auto;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center 10%;
     display: block;
+    
   }
   
   /* Text container takes right half */
@@ -90,8 +92,9 @@
     flex: 1;
     display: flex;
     align-items: center; /* vertically center the text if needed */
-    font-size: 1rem;
     line-height: 1.5;
+    text-align: center;
+    
   }
   
   
