@@ -7,6 +7,7 @@ body, h1, h2, p, ul, footer {
 
 /* Body Styling */
 body {
+    
     line-height: 1.6;
     margin: 0;
     color: #333333; /* Off-black text */

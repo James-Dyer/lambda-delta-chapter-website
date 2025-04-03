@@ -50,7 +50,9 @@ const Donate = () => {
 
           </div>
           <div className="donation-image">
-            <img src="/images/nieceBidDaySpeechSpring2024.jpg" alt="Donate - Huntsman Cancer Institute" />
+            <div className="neice-img">
+              <img src="/images/nieceBidDaySpeechSpring2024.jpg" alt="Donate - Huntsman Cancer Institute" />
+            </div>
           </div>
         </section>
       </main>
