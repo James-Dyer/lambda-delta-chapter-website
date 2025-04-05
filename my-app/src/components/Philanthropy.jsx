@@ -7,16 +7,16 @@ function Philanthropy() {
       <header className="hero-section">
         <div className="hero-overlay">
           
-          <h2>Huntsman Cancer Foundation</h2>
+          <h2>The Huntsman Cancer Institute</h2>
           <p>
-            At the heart of our mission, the Huntsman Cancer Foundation is a beacon of hope in the relentless battle against cancer.
-            We are committed to accelerating the pace of cancer research and treatment, funding breakthrough studies, and pioneering life-saving therapies.
-            By partnering with world-class research institutions and clinical experts, we fuel innovative approaches that transform experimental ideas into proven treatments.
+          We are proud to stand in partnership with the <b>Huntsman Cancer Institute</b>, alongside thousands 
+          of college students, in supporting their lifesaving work. 
+          Through collective action, compassion, and determination, we believe real change is possible.
+          Together, we hope to become <b>The Generation to End Cancer™</b>.
           </p>
         </div>
       </header>
 
-      
       <section className="content-section">
     <h2 className="section-title">Derby Days 2025</h2>
     <div className="content-container">
