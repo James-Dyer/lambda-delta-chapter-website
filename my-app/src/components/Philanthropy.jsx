@@ -7,7 +7,7 @@ function Philanthropy() {
       <header className="hero-section">
         <div className="hero-overlay">
           
-          <h2>The Huntsman Cancer Institute</h2>
+          <h1>The Huntsman Cancer Institute</h1>
           <p>
           We are proud to stand in partnership with the <b>Huntsman Cancer Institute</b>, alongside thousands 
           of college students, in supporting their lifesaving work. 
@@ -18,7 +18,7 @@ function Philanthropy() {
       </header>
 
       <section className="content-section">
-    <h2 className="section-title">Derby Days 2025</h2>
+    <h1 className="section-title">Derby Days 2025</h1>
     <div className="content-container">
         <div className="left-image">
         <img

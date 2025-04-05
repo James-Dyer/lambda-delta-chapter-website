@@ -6,14 +6,12 @@
 }
 
 /* Headings */
-h2 {
-  font-size: 2rem;
+h1 {
   margin-bottom: 1rem;
-  font-family: "Bebas Neue", serif;
   text-align: center;
 }
 
-.hero-overlay h2 {
+.hero-overlay h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }

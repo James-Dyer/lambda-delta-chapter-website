@@ -17,7 +17,7 @@ const Home = () => {
             />
           </div>
           <div>
-            <h1>A Lasting Legacy</h1>
+            <h2>A Legacy of Excellence</h2>
             <p>
             Founded on June 28, 1855, at Miami University in Oxford, Ohio, Sigma Chi has grown into one of 
             the largest and most respected fraternities in the world, recently initiating its 350,000th member.

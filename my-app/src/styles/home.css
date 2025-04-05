@@ -6,19 +6,10 @@ body, h1, h2, p, ul, footer {
 }
 
 /* Body Styling */
-body {
-    
+body {  
     line-height: 1.6;
     margin: 0;
-    color: #333333; /* Off-black text */
-    background-color: #f9f9f9; /* Uniform background for the entire page */
-    
 } 
-
-h1 {
-    font-family: "Bebas Neue", serif;
-}
-  
 
 /* Main Content */
 #about-us {
@@ -52,7 +43,7 @@ h1 {
 
 .important-quote {
     margin-top: 10px;         /* Adds space above the quote */
-    font-size: 1.3rem;        /* Slightly larger font size */
+    font-size: 1.2rem;        /* Slightly larger font size */
     color: #222222b6;           /* A darker shade of off-black */
     font-family: 'Playfair Display', serif;
   }
