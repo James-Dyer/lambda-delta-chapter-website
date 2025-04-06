@@ -1,7 +1,7 @@
+/* Awards Section Wrapper */
 .awards-section {
   width: 100%;
   padding: 80px 20px;
-  /* Background image with a slight blue overlay */
   background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
               url('/public/images/krach2024-peterson-bob.jpg');
   background-size: cover;
@@ -9,27 +9,31 @@
   background-attachment: fixed;
   color: #fff;
   text-align: center;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
+/* Container to center content */
 .awards-content {
   max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
 }
 
+/* Main Title */
 .awards-title {
-  font-size: 4.0rem;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  font-family: "Bebas Neue", serif;
 }
 
-/* Container for all award items */
+/* Awards List Container */
 .awards-items {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-/* Each individual award item */
+/* Individual Award Card */
 .award-item {
   text-align: left;
   background: rgba(0, 36, 72, 0.6);
@@ -37,7 +41,7 @@
   border-radius: 8px;
 }
 
-/* Accordion specific styles */
+/* Accordion Header */
 .accordion-header {
   display: flex;
   justify-content: space-between;
@@ -48,15 +52,16 @@
   border-radius: 8px;
 }
 
+/* Accordion Icon */
 .accordion-icon {
   font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
-
 .accordion-icon.open {
   transform: rotate(180deg);
 }
 
+/* Accordion Content */
 .accordion-content {
   padding: 10px 15px;
   background-color: rgba(0, 36, 72, 0.6);
@@ -64,41 +69,49 @@
   margin-top: 10px;
 }
 
-/* Title for each award item */
+/* Award Title */
 .award-item-title {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: #fff;
 }
 
-/* For the Balford Award nominee item */
+/* Layout for Award Image + Text */
 .award-item-content {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-/* Container for text (blurb + quote) */
+/* Image Styling */
+.award-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Text Content Next to Image */
 .award-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Image styling */
-.award-image {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
+/* Description Paragraphs */
+.award-item-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-/* Quote styling */
+/* Quotes */
 .award-quote {
   font-style: italic;
-  font-size: 1.0rem;
+  font-size: 1rem;
   margin: 0;
 }
-
 .award-quote cite {
   display: block;
   margin-top: 10px;
@@ -106,16 +119,37 @@
   color: #ccc;
 }
 
-/* Description paragraphs for the awards */
-.award-item-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-/* Styles for the bullet list */
+/* Bullet List */
 .award-list {
   list-style-type: disc;
   padding-left: 30px;
   margin-top: 5px;
+}
+
+/* 📱 Responsive Fixes */
+@media (max-width: 768px) {
+  .awards-title {
+    font-size: 2.5rem;
+  }
+
+  .award-item-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .award-image {
+    width: 100px;
+  }
+
+  .award-text {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .accordion-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
