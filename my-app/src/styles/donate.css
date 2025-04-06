@@ -1,16 +1,15 @@
-/* donate.css */
-
 /* Overall Page Styling */
 .donation-page {
   font-family: Arial, sans-serif;
-  font-size: 1.0rem;
-  /* White overlay with background image */
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+  font-size: 1rem;
+  color: #333;
+
+  /* Light white overlay with a background image */
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
               url('/public/images/stock-background-image.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #333;
 }
 
 /* Main Container */
@@ -20,9 +19,10 @@
   padding: 40px 20px;
 }
 
-/* Donation Sections */
+/* Donation Section Container */
 .donation-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
@@ -30,91 +30,87 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  gap: 20px;
 }
 
-/* Alternate layout for even sections for visual variety */
+/* Alternate layout for even sections */
 .donation-section:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* Donation Content Styling */
+/* Content (Text) Styling */
 .donation-content {
-  flex: 1;
+  flex: 1 1 300px;
   padding: 20px;
 }
 
 .donation-content h1 {
   margin-bottom: 10px;
   color: #2c3e50;
+  font-size: 2rem;
 }
 
 .donation-content p {
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
-  
+
 /* Button Group Styling */
 .button-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin-top: 15px;
   justify-content: center;
 }
 
-/* Donate Button Styling */
-.donate-button {
-  display: inline-block;
-  text-decoration: none;
-
-  padding: 12px 24px;
-  font-size: 1em;
-  color: #fff;
-  background-color: #007bff; /* Blue */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.donate-button:hover {
-  background-color: #0056b3;
-}
-
-/* Wishlist Button Styling */
+/* Base Button Styling */
+.donate-button,
 .wishlist-button {
   padding: 12px 24px;
-  font-size: 1em;
+  font-size: 1rem;
   color: #fff;
-  background-color: #ff9900; /* Amazon Orange */
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   text-decoration: none;
+  transition: background-color 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Donate Button Specific */
+.donate-button {
+  background-color: #007bff;
+}
+.donate-button:hover {
+  background-color: #0056b3;
+}
+
+/* Wishlist Button Specific */
+.wishlist-button {
+  background-color: #ff9900;
+}
 .wishlist-button:hover {
   background-color: #cc7a00;
 }
 
-  
-/* Donation Image Styling */
+/* Image Container Styling */
 .donation-image {
-  flex: 1;
+  flex: 1 1 300px;
   padding: 20px;
 }
 
 .donation-image img {
   width: 100%;
-  height: 45vh;
+  height: auto; /* Let image scale naturally */
   border-radius: 8px;
   object-fit: cover;
 }
 
+/* Optional vertical crop control for specific images */
 .neice-img img {
   object-position: center 15%;
 }
@@ -123,11 +119,20 @@
 @media (max-width: 768px) {
   .donation-section {
     flex-direction: column;
+    text-align: center;
   }
 
+  .donation-content,
   .donation-image {
-    padding: 0;
-    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .donation-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
   }
 }
-  
