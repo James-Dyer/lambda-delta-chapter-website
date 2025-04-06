@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/home.css";
-import Footer from "../components/Footer"; // Import the Footer component
-import Awards from "../components/Awards";
+import "../../styles/home/home.css";
+import Footer from "../Footer"; // Import the Footer component
+import Awards from "../Home/Awards";
 
 const Home = () => {
   return (

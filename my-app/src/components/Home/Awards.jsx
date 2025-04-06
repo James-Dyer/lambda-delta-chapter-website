@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/awards.css"; // Ensure this CSS file is in place
+import "../../styles/home/awards.css"; // Ensure this CSS file is in place
 
 const Awards = () => {
 
