@@ -1,7 +1,7 @@
 /* Awards Section Wrapper */
 .awards-section {
   width: 100%;
-  padding: 80px 20px;
+  padding: 80px 0px;
   background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
               url('/public/images/krach2024-peterson-bob.jpg');
   background-size: cover;
@@ -10,6 +10,7 @@
   color: #fff;
   text-align: center;
   font-size: 1rem;
+  
 }
 
 /* Container to center content */
@@ -39,6 +40,7 @@
   background: rgba(0, 36, 72, 0.6);
   padding: 20px;
   border-radius: 8px;
+  
 }
 
 /* Accordion Header */
@@ -130,6 +132,11 @@
 @media (max-width: 768px) {
   .awards-title {
     font-size: 2.5rem;
+  }
+
+  .award-item {
+    text-align: center;
+    padding: 20px;
   }
 
   .award-item-content {
