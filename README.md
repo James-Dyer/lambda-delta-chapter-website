@@ -38,11 +38,13 @@
    - Collect professional headshots from every officer
    - Update brother info sheet for up-to-date positions and committes
    - Double check Head Table and Tribune emails for accuracy
+   - Implement lazy loading images
 - Philanthropy 
    - Bug: clicking on philanthropy refreshes the page instead of routing properly
    - Replace derby days photo with the instagram $16,301 raised photo
 - Archive
    - Still need a place to upload all the photos
+   - Implement lazy loading images
    
 
 ## Site Design
