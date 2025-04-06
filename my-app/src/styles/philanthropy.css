@@ -95,27 +95,6 @@ h1 {
   line-height: 1.5;
 }
 
-/* Donation button section */
-.donation-section {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.donation-button {
-  background-color: #003366;
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.donation-button:hover {
-  background-color: #0055a5;
-}
-
 /* 🔁 Responsive Fixes */
 @media (max-width: 768px) {
   .hero-overlay h2 {
