@@ -7,7 +7,7 @@
 - Donate
   - Chapter Donation portal
   - Chapter Amazon wishlist link
-  - Huntsman Cancer Institute portal
+  - Huntsman Cancer Institute link
 - Members
   - Headtable, EC, and OC teams with name and headshot
   - Contact info for appropriate chairmen
@@ -20,6 +20,30 @@
   - Maybe a little bio of the tribune
 
  Some of these features are still in progress.
+
+## Issues / To-do
+- Navbar
+   - Hamburger menu implementation for navbar for mobile support
+- Home
+   - Need to replace placeholder video with recruitment video
+- Awards
+   - Need to update Peterson list
+   - Need Balfour award winner collin's photo and quote
+   - Horizons section is TBD
+ - Donate
+   - Need to implement chapter donation link portal
+   - Add more items to amazon wishlist
+   - Update huntsman portal (currently 2025 Derby Days link)
+- Members
+   - Collect professional headshots from every officer
+   - Update brother info sheet for up-to-date positions and committes
+   - Double check Head Table and Tribune emails for accuracy
+- Philanthropy 
+   - Bug: clicking on philanthropy refreshes the page instead of routing properly
+   - Replace derby days photo with the instagram $16,301 raised photo
+- Archive
+   - Still need a place to upload all the photos
+   
 
 ## Site Design
 ### body 
