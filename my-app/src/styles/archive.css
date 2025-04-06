@@ -1,7 +1,10 @@
 /* Container for the archive page */
 .archive-page {
-    padding: 20px;
-  }
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
   
 .archive-page h1 {
   text-align: center;
@@ -52,6 +55,16 @@
   .masonry-item {
     break-inside: avoid;
     margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Image styling */
@@ -59,18 +72,16 @@
     width: 100%;
     display: block;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .masonry-grid {
-      column-count: 2;
-    }
+  .masonry-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
   
-  @media (max-width: 480px) {
-    .masonry-grid {
-      column-count: 1;
-    }
-  }
+  
+  
+  
+
   
