@@ -2,8 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './components/Home';
-import Donate from './components/Donate';
+import Home from './components/Home/Home';
+import Donate from './components/Donate/Donate';
 import Members from './components/Members';
 import Archive from './components/Archive';
 import Philanthropy from './components/Philanthropy';
