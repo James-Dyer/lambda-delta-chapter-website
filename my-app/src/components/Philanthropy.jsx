@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/philanthropy.css';
+import HuntsmanDonate from './Donate/HuntsmanDonate'; 
+import '../styles/donate/huntsmanDonate.css';
 
 function Philanthropy() {
   return (
@@ -37,9 +39,7 @@ function Philanthropy() {
     </section>
 
 
-      <section className="donation-section">
-        <button className="donation-button">Donate Now</button>
-      </section>
+    <HuntsmanDonate />
     </div>
   );
 }
