@@ -33,10 +33,12 @@ const Home = () => {
         </section>
 
         <section id="recruitment-video">
+          <div className="videoWrapper">
           <video controls autoPlay muted loop>
-            <source src="videos/sample-video.mp4" type="video/mp4" />
+            <source src="videos/recruitmentVid.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          </div>
         </section>
       </main>
 
