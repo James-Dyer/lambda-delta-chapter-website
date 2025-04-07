@@ -1,9 +1,10 @@
 // Header.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.css"; 
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header>
       <div className="header-content">
@@ -13,7 +14,7 @@ const Header = () => {
               <img src="images/LambdaDeltaLogo.png" alt="Lambda Delta Logo" />
             </Link>
           </div>
-          <ul>
+          <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -29,8 +30,15 @@ const Header = () => {
             <li>
             <Link to="/Archive">Archive</Link>
             </li>
+            <li>
+              <Link to="/Alumni">Alumni</Link>
+            </li>
           </ul>
         </nav>
+        <div>
+          <img className='menuBtn' src={menuOpen ?"/images/navbar/closeIcon.png" : "/images/navbar/hamburgerMenuIcon.png"} 
+          alt="menu button" onClick={() => setMenuOpen(!menuOpen)} />
+        </div>
         <div className="info">
           <a
             href="https://instagram.com/ucmsigmachi"

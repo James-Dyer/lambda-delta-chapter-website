@@ -71,6 +71,12 @@ nav ul a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
+.menuBtn{
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
 /* Instagram Styling */
 .info {
     display: flex;
@@ -94,7 +100,7 @@ nav ul a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
+        
         align-items: center;
         text-align: center;
         gap: 10px;
@@ -109,4 +115,36 @@ nav ul a:hover {
     .info {
         align-items: center;
     }
+    .menuItems {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* adjust based on your header height */
+        right: 20px;
+        background-color: #003366;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+    
+      .menuItems.open {
+        display: flex;
+      }
+    
+      .menuItems li {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    
+      .menuItems li:last-child {
+        border-bottom: none;
+      }
+    
+      .menuBtn {
+        display: block;
+        height: 30px;
+        cursor: pointer;
+      }
 }
