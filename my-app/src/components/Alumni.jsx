@@ -1,5 +1,5 @@
 import React from 'react'
-import alumni from "../Data/alumni.json"
+//import alumni from "../Data/alumni.json"
 const Alumni = ()=>{
     return(
         <div className="alumni-container">
