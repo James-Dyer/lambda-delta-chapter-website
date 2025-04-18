@@ -11,8 +11,8 @@ const Home = () => {
       <main>
         <section id="about-us">
           <div id="expect-more-logo">
-            <img
-              src="images/UC-Merced-SigmaChi-ExpectMore.svg"
+          <img
+              src={`${process.env.PUBLIC_URL}/images/UC-Merced-SigmaChi-ExpectMore.svg`}
               alt="Sigma Chi Expect More Logo"
             />
           </div>
@@ -35,7 +35,10 @@ const Home = () => {
         <section id="recruitment-video">
           <div className="videoWrapper">
           <video controls autoPlay muted loop>
-            <source src="videos/recruitmentVid.mp4" type="video/mp4" />
+            <source
+              src={`${process.env.PUBLIC_URL}/videos/recruitmentVid.mp4`}
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
           </div>
