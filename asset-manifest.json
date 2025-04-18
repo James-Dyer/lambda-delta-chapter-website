@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/your-repo-name/static/css/main.e4fa515f.css",
+    "main.js": "/your-repo-name/static/js/main.e3c33d19.js",
+    "static/js/488.9c92ff38.chunk.js": "/your-repo-name/static/js/488.9c92ff38.chunk.js",
+    "static/media/krach2024-peterson-bob.jpg": "/your-repo-name/static/media/krach2024-peterson-bob.9a5ab3963eb4f49a9f1a.jpg",
+    "static/media/stock-background-image.jpeg": "/your-repo-name/static/media/stock-background-image.cf4378e93c0df8da7e24.jpeg",
+    "index.html": "/your-repo-name/index.html",
+    "main.e4fa515f.css.map": "/your-repo-name/static/css/main.e4fa515f.css.map",
+    "main.e3c33d19.js.map": "/your-repo-name/static/js/main.e3c33d19.js.map",
+    "488.9c92ff38.chunk.js.map": "/your-repo-name/static/js/488.9c92ff38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4fa515f.css",
+    "static/js/main.e3c33d19.js"
+  ]
+}
