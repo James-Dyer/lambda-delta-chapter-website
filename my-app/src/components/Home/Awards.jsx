@@ -67,11 +67,12 @@ const Awards = () => {
             <div className="award-item">
             <h2 className="award-item-title">Province Balfour Award Winner</h2>
             <div className="award-item-content">
-                <img
-                src="/images/balford-nominee-temp.jpg" 
-                alt="Balford Award Nominees"
-                className="award-image"
-                />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/balford-nominee-temp.jpg`}
+              alt="Balford Award Nominees"
+              className="award-image"
+            />
+
                 <div className="award-text">
                 <p className="balfour-blurb">
                     We are excited to announce our 2025 Balfour Province Award winner and international nominee: Collin O' Neil.
