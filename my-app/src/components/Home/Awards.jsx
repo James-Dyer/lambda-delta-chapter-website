@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import "../../styles/home/awards.css"; // Ensure this CSS file is in place
+import "../../styles/home/awards.css";
+
+// Image imports
+import balfordImage from "../../assets/images/balford-nominee-temp.jpg";
+
 
 const Awards = () => {
 
@@ -68,10 +72,11 @@ const Awards = () => {
             <h2 className="award-item-title">Province Balfour Award Winner</h2>
             <div className="award-item-content">
             <img
-              src={`${process.env.PUBLIC_URL}/images/balford-nominee-temp.jpg`}
+              src={balfordImage}
               alt="Balford Award Nominees"
               className="award-image"
             />
+
 
                 <div className="award-text">
                 <p className="balfour-blurb">
