@@ -3,7 +3,7 @@
   width: 100%;
   padding: 80px 0px;
   background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
-              url('/public/images/krach2024-peterson-bob.jpg');
+              url('/src/assets/images/krach2024-peterson-bob.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

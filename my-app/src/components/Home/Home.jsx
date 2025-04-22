@@ -1,7 +1,12 @@
 import React from "react";
 import "../../styles/home/home.css";
-import Footer from "../Footer"; // Import the Footer component
+
+import Footer from "../Footer";
 import Awards from "../Home/Awards";
+
+// Media
+import expect_more_logo from "../../assets/images/UC-Merced-SigmaChi-ExpectMore.svg"
+import recruitment_video from "../../assets/videos/recruitmentVid.mp4"
 
 const Home = () => {
   return (
@@ -12,7 +17,7 @@ const Home = () => {
         <section id="about-us">
           <div id="expect-more-logo">
           <img
-              src={`${process.env.PUBLIC_URL}/images/UC-Merced-SigmaChi-ExpectMore.svg`}
+              src={expect_more_logo}
               alt="Sigma Chi Expect More Logo"
             />
           </div>
@@ -36,7 +41,7 @@ const Home = () => {
           <div className="videoWrapper">
           <video controls autoPlay muted loop>
             <source
-              src={`${process.env.PUBLIC_URL}/videos/recruitmentVid.mp4`}
+              src={recruitment_video}
               type="video/mp4"
             />
             Your browser does not support the video tag.
