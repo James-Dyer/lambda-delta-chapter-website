@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/your-repo-name/static/css/main.e4fa515f.css",
-    "main.js": "/your-repo-name/static/js/main.e3c33d19.js",
-    "static/js/488.9c92ff38.chunk.js": "/your-repo-name/static/js/488.9c92ff38.chunk.js",
-    "static/media/krach2024-peterson-bob.jpg": "/your-repo-name/static/media/krach2024-peterson-bob.9a5ab3963eb4f49a9f1a.jpg",
-    "static/media/stock-background-image.jpeg": "/your-repo-name/static/media/stock-background-image.cf4378e93c0df8da7e24.jpeg",
-    "index.html": "/your-repo-name/index.html",
-    "main.e4fa515f.css.map": "/your-repo-name/static/css/main.e4fa515f.css.map",
-    "main.e3c33d19.js.map": "/your-repo-name/static/js/main.e3c33d19.js.map",
-    "488.9c92ff38.chunk.js.map": "/your-repo-name/static/js/488.9c92ff38.chunk.js.map"
+    "main.css": "/lambda-delta-chapter-website/static/css/main.da2f664c.css",
+    "main.js": "/lambda-delta-chapter-website/static/js/main.e8e84543.js",
+    "static/js/488.9c92ff38.chunk.js": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js",
+    "static/media/recruitmentVid.mp4": "/lambda-delta-chapter-website/static/media/recruitmentVid.0a9622c88a7c99f78ae4.mp4",
+    "static/media/bidDaySpring2024.jpg": "/lambda-delta-chapter-website/static/media/bidDaySpring2024.f5b6841ba948ec2feace.jpg",
+    "static/media/nieceBidDaySpeechSpring2024.jpg": "/lambda-delta-chapter-website/static/media/nieceBidDaySpeechSpring2024.c554145a67d27356fab1.jpg",
+    "static/media/krach2024-peterson-bob.jpg": "/lambda-delta-chapter-website/static/media/krach2024-peterson-bob.9a5ab3963eb4f49a9f1a.jpg",
+    "static/media/balford-nominee-temp.jpg": "/lambda-delta-chapter-website/static/media/balford-nominee-temp.5f51f203a273fd35015d.jpg",
+    "static/media/stock-background-image.jpeg": "/lambda-delta-chapter-website/static/media/stock-background-image.cf4378e93c0df8da7e24.jpeg",
+    "static/media/UC-Merced-SigmaChi-ExpectMore.svg": "/lambda-delta-chapter-website/static/media/UC-Merced-SigmaChi-ExpectMore.2ed405827bbeb7900c541bdf55414b06.svg",
+    "index.html": "/lambda-delta-chapter-website/index.html",
+    "main.da2f664c.css.map": "/lambda-delta-chapter-website/static/css/main.da2f664c.css.map",
+    "main.e8e84543.js.map": "/lambda-delta-chapter-website/static/js/main.e8e84543.js.map",
+    "488.9c92ff38.chunk.js.map": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4fa515f.css",
-    "static/js/main.e3c33d19.js"
+    "static/css/main.da2f664c.css",
+    "static/js/main.e8e84543.js"
   ]
 }
