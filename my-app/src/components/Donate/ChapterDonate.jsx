@@ -1,6 +1,8 @@
 // ChapterDonate.jsx
 import React from "react";
 import "../../styles/donate/chapterDonate.css";
+import bidDayImage from "../../assets/images/bidDaySpring2024.jpg";
+
 
 const ChapterDonate = () => {
   return (
@@ -26,10 +28,11 @@ const ChapterDonate = () => {
         </div>
       </div>
       <div className="donation-image">
-        <img
-          src="/images/bidDaySpring2024.jpg"
-          alt="Donate - Lambda Delta Chapter"
-        />
+      <img
+        src={bidDayImage}
+        alt="Donate - Lambda Delta Chapter"
+      />
+
       </div>
     </section>
   );
