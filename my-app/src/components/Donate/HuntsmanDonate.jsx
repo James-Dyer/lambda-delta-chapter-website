@@ -1,6 +1,8 @@
 // HuntsmanDonate.jsx
 import React from "react";
 import "../../styles/donate/huntsmanDonate.css";
+import nieceSpeechImage from "../../assets/images/nieceBidDaySpeechSpring2024.jpg";
+
 
 const HuntsmanDonate = () => {
   return (
@@ -23,10 +25,11 @@ const HuntsmanDonate = () => {
         </a>
       </div>
       <div className="donation-image neice-img">
-        <img
-          src="/images/nieceBidDaySpeechSpring2024.jpg"
-          alt="Donate - Huntsman Cancer Institute"
-        />
+      <img
+        src={nieceSpeechImage}
+        alt="Donate - Huntsman Cancer Institute"
+      />
+
       </div>
     </section>
   );
