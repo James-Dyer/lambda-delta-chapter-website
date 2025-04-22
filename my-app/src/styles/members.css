@@ -1,131 +1,61 @@
-/* General container styling for the members page */
+/* members.css */
+
 .members-page {
-  padding: 40px 20px;
-  font-size: 1rem;
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* Page title */
-.members-page h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.6rem;
-  font-family: "Bebas Neue", sans-serif;
+.list-section {
+  margin-bottom: 2.5rem;
 }
 
-/* Section spacing */
-section {
-  margin-bottom: 60px;
+.list-section h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.25rem;
 }
 
-/* Grid layout for member groups */
-.members-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.member-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
-/* Member cards */
-.member-card {
-  width: 220px;
-  background: #f2f2f2;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-/* Head Table emphasis */
-.head-table-card {
-  border: 2px solid #003366;
-}
-
-/* Placeholder for headshots / fallback */
-.headshot-placeholder {
-  width: 100%;
-  height: 200px;
-  background-color: #cccccc;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 1.2rem;
+.member-list-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 6px;
-  overflow: hidden;
-  object-fit: cover;
-}
-
-/* Optional if using real images */
-.headshot-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Member text content */
-.member-info {
-  color: #333;
-}
-
-.member-name {
-  font-weight: bold;
-  margin-bottom: 6px;
-  font-size: 1.1rem;
-}
-
-.member-position {
-  font-style: italic;
-  margin-bottom: 6px;
-  color: #555;
-}
-
-.member-email a {
-  text-decoration: none;
-  color: #003366;
-  font-size: 0.95rem;
-  word-break: break-word;
-}
-
-/* Actives section layout */
-.actives {
+  line-height: 1.4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 60px 0;
 }
 
-.actives-list {
-  max-width: 800px;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  text-align: justify;
-  line-height: 1.7;
-  font-size: 1rem;
+.member-list-item:last-child {
+  margin-bottom: 0;
 }
 
-/* 🔁 Responsive Tweaks */
-@media (max-width: 768px) {
-  .member-card {
-    width: 100%;
-    max-width: 300px;
+@media (min-width: 600px) {
+  .member-list-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
+}
 
-  .members-page h1 {
-    font-size: 2rem;
-  }
+.member-list-item::before {
+  content: "•";
+  color: #2c3e50;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
 
-  .actives-list {
-    padding: 20px;
-  }
+/* Adjust text elements */
+.member-list-item p {
+  margin: 0;
 }
