@@ -19,6 +19,16 @@ const Header = () => {
               <img src={logo} alt="Lambda Delta Logo" />
             </Link>
           </div>
+
+          <div>
+            <img
+              className="menuBtn"
+              src={menuOpen ? closeIcon : hamburgerIcon}
+              alt="menu button"
+              onClick={() => setMenuOpen(!menuOpen)}
+            />
+          </div>
+
           <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
             <li>
               <Link to="/">Home</Link>
@@ -41,14 +51,7 @@ const Header = () => {
           </ul>
         </nav>
 
-        <div>
-          <img
-            className="menuBtn"
-            src={menuOpen ? closeIcon : hamburgerIcon}
-            alt="menu button"
-            onClick={() => setMenuOpen(!menuOpen)}
-          />
-        </div>
+        
 
         <div className="info">
           <a
