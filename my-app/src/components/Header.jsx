@@ -47,12 +47,16 @@ const Header = () => {
 
           {/* Container to position menu button and dropdown relative to each other */}
           <div className="menu-container" ref={containerRef}>
-            <img
-              className="menuBtn"
-              src={menuOpen ? closeIcon : hamburgerIcon}
-              alt="menu button"
-              onClick={() => setMenuOpen(prev => !prev)}
-            />
+          <div className={`menuBtn-wrapper ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(prev => !prev)}>
+          <img
+            className="menuBtn"
+            src={menuOpen ? closeIcon : hamburgerIcon}
+            alt="menu button"
+          />
+        </div>
+
+
+
 
             <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
               <li>
