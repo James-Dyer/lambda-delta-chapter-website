@@ -40,7 +40,7 @@ const Awards = () => {
         <p className="awards-intro">
           <i>
           Our chapter is dedicated to embodying the highest ideals, a commitment reflected in our international recognition.
-          For more information on international fraternity awards, see{' '}
+          For more information on the International Fraternity's awards, see{' '}
           <a href="https://sigmachi.org/home/resources-3/awards/" target="_blank" rel="noopener noreferrer">
             Sigma Chi International Awards
           </a>.
@@ -98,7 +98,7 @@ const Awards = () => {
                   developed me into the person I have become today, and I will
                   forever be in its debt. I am so glad I met this group of guys, and
                   am proud to say I have brothers for life. As Isaac M Jordan said,
-                  “Sigma Chi was my first love, and it shall be my last”. IHSV"
+                  'Sigma Chi was my first love, and it shall be my last'. IHSV"
                   <cite>– Brother O'Neil</cite>
                 </blockquote>
               </div>
@@ -116,6 +116,9 @@ const Awards = () => {
               <li>Brother Two, Chi</li>
               <li>Brother Three, Alpha Alpha</li>
             </ul>
+            <p className="award-item-description">
+              <br/>We are incredibly proud of our brothers, and we wish them luck on thier journey.
+            </p>
           </div>
 
         </div>
