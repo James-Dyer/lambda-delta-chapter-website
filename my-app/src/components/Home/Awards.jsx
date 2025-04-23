@@ -48,8 +48,8 @@ const Awards = () => {
             <h2 className="award-item-title">J. Dwight Peterson Significant Chapter Awards</h2>
             <p className="award-item-description">
               <i>
-                The J. Dwight Peterson Significant Chapter Award is given to Sigma Chi chapters that demonstrate
-                excellence in leadership, operations, and community impact.
+              The highest honor an individual chapter may receive is the J. Dwight Peterson Significant 
+              Chapter Award, given to Sigma Chi chapters that demonstrate excellence in leadership, operations, and community impact.
               </i>
             </p>
             
@@ -107,12 +107,17 @@ const Awards = () => {
 
 
             {/* Horizons Huntsman Leadership Summit */}
-            <div className="award-item">
-                <h2 className="award-item-title">Horizons Huntsman Leadership Summit</h2>
-                <p className="award-item-description">
-                Several of our brothers have been selected to attend the prestigious Horizons Huntsman Leadership Summit at Snowbird, Utah:
-                </p>
-            </div>
+          <div className="award-item">
+            <h2 className="award-item-title">Horizons Huntsman Leadership Summit 2025</h2>
+            <p className="award-item-description">
+              Several of our brothers have been selected to attend the prestigious Horizons Huntsman Leadership Summit at Snowbird, Utah:
+            </p>
+            <ul className="summit-list">
+              <li>Joshua Jessen, Omega</li>
+              <li>Brother Two, Chi</li>
+              <li>Brother Three, Alpha Alpha</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

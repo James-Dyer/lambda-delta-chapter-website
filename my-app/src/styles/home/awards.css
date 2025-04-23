@@ -131,6 +131,18 @@
   margin-top: 5px;
 }
 
+.summit-list {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.summit-list li {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
 /* 📱 Responsive Fixes */
 @media (max-width: 768px) {
   .awards-title {
