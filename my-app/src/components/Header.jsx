@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// Header.jsx
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/header.css";
 
 // Image imports
@@ -9,6 +10,30 @@ import hamburgerIcon from "../assets/images/navbar/hamburgerMenuIcon.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const containerRef = useRef(null);
+  const location = useLocation();
+
+  // Close menu when navigating (link click)
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  // Close when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (containerRef.current && !containerRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <header>
@@ -20,37 +45,31 @@ const Header = () => {
             </Link>
           </div>
 
-          <div>
-          <img
-            className="menuBtn"
-            src={menuOpen ? closeIcon : hamburgerIcon}
-            alt="menu button"
-            onClick={() => setMenuOpen(!menuOpen)}
-          />
-        </div>
-          <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/donate">Donate</Link>
-            </li>
-            <li>
-              <Link to="/members">Members</Link>
-            </li>
-            <li>
-              <Link to="philanthropy">Philanthropy</Link>
-            </li>
-            {/*<li>
-              <Link to="/Archive">Archive</Link>
-            </li>
-            <li>
-              <Link to="/Alumni">Alumni</Link>
-            </li>*/}
-          </ul>
-        </nav>
+          {/* Container to position menu button and dropdown relative to each other */}
+          <div className="menu-container" ref={containerRef}>
+            <img
+              className="menuBtn"
+              src={menuOpen ? closeIcon : hamburgerIcon}
+              alt="menu button"
+              onClick={() => setMenuOpen(prev => !prev)}
+            />
 
-        
+            <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
+              <li>
+                <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+              </li>
+              <li>
+                <Link to="/donate" onClick={() => setMenuOpen(false)}>Donate</Link>
+              </li>
+              <li>
+                <Link to="/members" onClick={() => setMenuOpen(false)}>Members</Link>
+              </li>
+              <li>
+                <Link to="/philanthropy" onClick={() => setMenuOpen(false)}>Philanthropy</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
         <div className="info">
           <a
