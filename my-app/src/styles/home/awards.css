@@ -22,6 +22,7 @@
 
 /* Main Title */
 .awards-title {
+  color: #fff;
   font-size: 3.5rem;
   margin-bottom: 30px;
   font-family: "Bebas Neue", serif;
@@ -91,7 +92,9 @@
   height: auto;
   border-radius: 8px;
   flex-shrink: 0;
+  object-fit: cover; /* Maintain aspect ratio without stretching */
 }
+
 
 /* Text Content Next to Image */
 .award-text {
@@ -159,4 +162,6 @@
     gap: 10px;
     text-align: center;
   }
+
+  
 }

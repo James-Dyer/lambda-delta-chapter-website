@@ -11,7 +11,7 @@ import Alumni from './components/Alumni';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/lambda-delta-chapter-website">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/members" element={<Members />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/philanthropy" element={<Philanthropy />} />
-        <Route path="/Alumni" element={<Alumni />}/>
+        <Route path="/Alumni" element={<Alumni />} />
       </Routes>
     </Router>
   );

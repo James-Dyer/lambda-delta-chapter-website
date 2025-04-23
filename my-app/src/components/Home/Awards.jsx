@@ -2,25 +2,34 @@ import React, { useState } from "react";
 import "../../styles/home/awards.css";
 
 // Image imports
-import balfordImage from "../../assets/images/balford-nominee-temp.jpg";
+import balfordImage from "../../assets/images/collinoneil.jpg";
 
 
 const Awards = () => {
 
     const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
-            const awardsList = [
-              "Peterson Blue, 2025",
-              "Peterson Blue, 2024",
-              "Peterson Blue, 2023",
-              "This list is a placeholder and is not accurate.",
-              "Peterson Blue, 2021",
-              "Peterson Blue, 2020",
-              "Peterson Blue, 2019",
-              "Peterson Blue, 2018",
-              "Peterson Gold, 2017",
-              "This list is a placeholder and is not accurate.",
-            ];
+    const awardsList = [
+      "Peterson Significant Chapter Award, 2009-2010",
+      "Peterson Significant Chapter Award, 2010-2011",
+      "Peterson Significant Chapter Award, 2011-2012",
+      "Peterson Significant Chapter Award, 2012-2013",
+      "Legion of Honor Award, 2014-2015",
+      "Peterson Significant Chapter Award, 2013-2014",
+      "Peterson Significant Chapter Award, 2014-2015",
+      "Peterson Significant Chapter Award, 2015-2016",
+      "Legion of Honor Award, 2015-2016",
+      "Peterson Significant Chapter Award, 2016-2017",
+      "Peterson Significant Chapter Award, 2017-2018",
+      "Peterson Significant Chapter Award, 2018-2019",
+      "Daniel William Cooper Award, 2018-2019",
+      "Peterson Significant Chapter Award, 2019-2020",
+      "Peterson Significant Chapter Award, 2020-2021",
+      "Peterson Significant Chapter Award, 2022-2023",
+      "Peterson Significant Chapter Award, 2023-2024",
+      "Legion of Honor Award, 2023-2024"
+    ];
+    
 
             // Toggle visibility of the full list
             const toggleAccordion = () => {
@@ -77,7 +86,6 @@ const Awards = () => {
               className="award-image"
             />
 
-
                 <div className="award-text">
                 <p className="balfour-blurb">
                     We are excited to announce our 2025 Balfour Province Award winner and international nominee: Collin O' Neil.
@@ -85,7 +93,12 @@ const Awards = () => {
                 </p>
                 
                 <blockquote className="award-quote">
-                    "Quote from the Balfour Award Winner"
+                    "I joined Sigma Chi when I was a freshman, and I could not have 
+                    imagined the role this fraternity would play in my life. Sigma Chi 
+                    developed me into the person I have become today, and I will 
+                    forever be in its debt. I am so glad I met this group of guys, and 
+                    am proud to say I have brothers for life. As Isaac M Jordan said, 
+                    “Sigma Chi was my first love, and it shall be my last”. IHSV"
                     <cite>– Brother O'Neil</cite>
                 </blockquote>
                 </div>
