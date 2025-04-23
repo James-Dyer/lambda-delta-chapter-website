@@ -85,8 +85,17 @@ nav ul a:hover {
   width: auto;
   object-fit: contain;
   display: none;
-  transition: transform 0.2s ease;
 }
+
+.menuBtn-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.menuBtn-wrapper.open {
+  transform: rotate(180deg);
+}
+
+
 
 .menuBtn:hover,
 .menuBtn:focus {
