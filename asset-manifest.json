@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lambda-delta-chapter-website/static/css/main.83870110.css",
-    "main.js": "/lambda-delta-chapter-website/static/js/main.a285a452.js",
+    "main.js": "/lambda-delta-chapter-website/static/js/main.0ee6aefb.js",
     "static/js/488.9c92ff38.chunk.js": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js",
     "static/media/recruitmentVid.mp4": "/lambda-delta-chapter-website/static/media/recruitmentVid.0a9622c88a7c99f78ae4.mp4",
     "static/media/bidDaySpring2024.jpg": "/lambda-delta-chapter-website/static/media/bidDaySpring2024.f5b6841ba948ec2feace.jpg",
@@ -12,11 +12,11 @@
     "static/media/UC-Merced-SigmaChi-ExpectMore.svg": "/lambda-delta-chapter-website/static/media/UC-Merced-SigmaChi-ExpectMore.2ed405827bbeb7900c541bdf55414b06.svg",
     "index.html": "/lambda-delta-chapter-website/index.html",
     "main.83870110.css.map": "/lambda-delta-chapter-website/static/css/main.83870110.css.map",
-    "main.a285a452.js.map": "/lambda-delta-chapter-website/static/js/main.a285a452.js.map",
+    "main.0ee6aefb.js.map": "/lambda-delta-chapter-website/static/js/main.0ee6aefb.js.map",
     "488.9c92ff38.chunk.js.map": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83870110.css",
-    "static/js/main.a285a452.js"
+    "static/js/main.0ee6aefb.js"
   ]
 }

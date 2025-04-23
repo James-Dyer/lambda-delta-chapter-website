@@ -2,8 +2,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/lambda-delta-chapter-website/" />
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Save the current path
+      const redirectTo = location.pathname.replace("/lambda-delta-chapter-website", "");
+      // Redirect to index.html and re-add the path
+      sessionStorage.redirect = redirectTo;
+      window.location.replace("/lambda-delta-chapter-website/");
+    </script>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
