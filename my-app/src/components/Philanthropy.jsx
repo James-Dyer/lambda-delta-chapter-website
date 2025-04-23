@@ -33,14 +33,24 @@ function Philanthropy() {
           <h1 className="section-title">Derby Days 2025</h1>
             <p>
               Derby Days is far more than an annual event—it is a heartfelt celebration of community, resilience, and collective impact.
-              Organized by Huntsman Chairman Collin O' Neil, our efforts culminated in a record-breaking donation of $16,301 this year, 
+              Organized by <b>Huntsman Chairman Collin O' Neil</b>, our efforts culminated in a record-breaking philanthropic fundraiser of <b>$16,301</b> this year, 
               a milestone that speaks volumes about our unwavering commitment to advancing cancer research and treatment.
+
+              <br/><br/>If you'd like, take a moment to Huntsman's mission directly.
             </p>
+
+            <a
+              href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="donate-button"
+            >
+              Donate Now
+            </a>
           </div>
         </div>
       </section>
 
-      <HuntsmanDonate />
     </div>
   );
 }
