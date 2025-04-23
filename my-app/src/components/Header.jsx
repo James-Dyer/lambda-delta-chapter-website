@@ -21,14 +21,13 @@ const Header = () => {
           </div>
 
           <div>
-            <img
-              className="menuBtn"
-              src={menuOpen ? closeIcon : hamburgerIcon}
-              alt="menu button"
-              onClick={() => setMenuOpen(!menuOpen)}
-            />
-          </div>
-
+          <img
+            className="menuBtn"
+            src={menuOpen ? closeIcon : hamburgerIcon}
+            alt="menu button"
+            onClick={() => setMenuOpen(!menuOpen)}
+          />
+        </div>
           <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
             <li>
               <Link to="/">Home</Link>
