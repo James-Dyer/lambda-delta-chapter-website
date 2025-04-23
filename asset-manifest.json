@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/lambda-delta-chapter-website/static/css/main.83870110.css",
-    "main.js": "/lambda-delta-chapter-website/static/js/main.0ee6aefb.js",
+    "main.css": "/lambda-delta-chapter-website/static/css/main.96eee83f.css",
+    "main.js": "/lambda-delta-chapter-website/static/js/main.5abde8c7.js",
     "static/js/488.9c92ff38.chunk.js": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js",
     "static/media/recruitmentVid.mp4": "/lambda-delta-chapter-website/static/media/recruitmentVid.0a9622c88a7c99f78ae4.mp4",
+    "static/media/derby_games_2025.jpg": "/lambda-delta-chapter-website/static/media/derby_games_2025.80d59997afa01b0d2f51.jpg",
     "static/media/bidDaySpring2024.jpg": "/lambda-delta-chapter-website/static/media/bidDaySpring2024.f5b6841ba948ec2feace.jpg",
     "static/media/nieceBidDaySpeechSpring2024.jpg": "/lambda-delta-chapter-website/static/media/nieceBidDaySpeechSpring2024.c554145a67d27356fab1.jpg",
     "static/media/krach2024-peterson-bob.jpg": "/lambda-delta-chapter-website/static/media/krach2024-peterson-bob.9a5ab3963eb4f49a9f1a.jpg",
     "static/media/collinoneil.jpg": "/lambda-delta-chapter-website/static/media/collinoneil.aad63c45442ebcbf365d.jpg",
     "static/media/stock-background-image.jpeg": "/lambda-delta-chapter-website/static/media/stock-background-image.cf4378e93c0df8da7e24.jpeg",
+    "static/media/Derby_Days_Recap_2025.png": "/lambda-delta-chapter-website/static/media/Derby_Days_Recap_2025.a94147c5a3919758c10e.png",
     "static/media/UC-Merced-SigmaChi-ExpectMore.svg": "/lambda-delta-chapter-website/static/media/UC-Merced-SigmaChi-ExpectMore.2ed405827bbeb7900c541bdf55414b06.svg",
     "index.html": "/lambda-delta-chapter-website/index.html",
-    "main.83870110.css.map": "/lambda-delta-chapter-website/static/css/main.83870110.css.map",
-    "main.0ee6aefb.js.map": "/lambda-delta-chapter-website/static/js/main.0ee6aefb.js.map",
+    "main.96eee83f.css.map": "/lambda-delta-chapter-website/static/css/main.96eee83f.css.map",
+    "main.5abde8c7.js.map": "/lambda-delta-chapter-website/static/js/main.5abde8c7.js.map",
     "488.9c92ff38.chunk.js.map": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83870110.css",
-    "static/js/main.0ee6aefb.js"
+    "static/css/main.96eee83f.css",
+    "static/js/main.5abde8c7.js"
   ]
 }
