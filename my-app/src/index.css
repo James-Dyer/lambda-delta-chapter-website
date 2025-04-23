@@ -10,7 +10,8 @@ body {
   color: #333333; /* Off-black text */
 
   font-size: 1.2rem;
-    
+  line-height: 1.6;
+
 }
 
 h1 {
@@ -22,6 +23,7 @@ h1 {
 h2 {
   font-family: "Bebas Neue", serif;
   font-size: 1.7rem;
+  color: #2c3e50;
 }
 
 code {
