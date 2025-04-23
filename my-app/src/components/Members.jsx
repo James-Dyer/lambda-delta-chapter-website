@@ -62,26 +62,28 @@ const Members = () => {
       !inCommittee(m, "OC")
   );
 
-  // Renders a table of members with conditional Position header
+  // Renders a table of members with optional hiding of Position(s) column
   const renderTable = (members, hidePositionsHeader = false) => (
-    <table className="member-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>{hidePositionsHeader ? "" : "Position(s)"}</th>
-          <th>Class</th>
-        </tr>
-      </thead>
-      <tbody>
-        {members.map((m, idx) => (
-          <tr key={idx}>
-            <td data-label="Name">{m.name}</td>
-            <td data-label="Position(s)">{hidePositionsHeader ? "" : m.positions.join(", ")}</td>
-            <td data-label="Class">{m.grad}</td>
+    <div className="table-responsive">
+      <table className="member-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>{hidePositionsHeader ? "" : "Position(s)"}</th>
+            <th>Class</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {members.map((m, idx) => (
+            <tr key={idx}>
+              <td>{m.name}</td>
+              <td>{hidePositionsHeader ? "" : m.positions.join(", ")}</td>
+              <td>{m.grad}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 
   return (
