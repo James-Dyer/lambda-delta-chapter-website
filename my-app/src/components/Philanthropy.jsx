@@ -32,11 +32,12 @@ function Philanthropy() {
           <div className="right-text">
           <h1 className="section-title">Derby Days 2025</h1>
             <p>
-              Derby Days is far more than an annual event—it is a heartfelt celebration of community, resilience, and collective impact.
-              Organized by <b>Huntsman Chairman Collin O' Neil</b>, our efforts culminated in a record-breaking philanthropic fundraiser of <b>$16,301</b> this year, 
+              Derby Days is far more than an annual event—it is a heartfelt celebration of 
+              community, resilience, and collective impact. Organized by <b>Huntsman Chairman Collin O' Neil</b>, 
+              our efforts  this year culminated in a record-breaking philanthropic fundraiser of <b>$16,301</b>, 
               a milestone that speaks volumes about our unwavering commitment to advancing cancer research and treatment.
 
-              <br/><br/>If you'd like, take a moment to Huntsman's mission directly.
+              <br/><br/>If you'd like, take a moment to donate to the Huntsman Cancer Institute directly.
             </p>
 
             <a
