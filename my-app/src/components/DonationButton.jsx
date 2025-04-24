@@ -2,6 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/donationButton.css";
+import newTabIcon from "../assets/images/navbar/newTab.svg"; // Import the icon
 
 const DonationButton = ({
   children,
@@ -11,11 +12,23 @@ const DonationButton = ({
   hoverColor,
   ...rest
 }) => {
-  // Use CSS custom properties so that our hover rule still works
   const style = {
     "--bg": backgroundColor,
     ...(hoverColor ? { "--hover-bg": hoverColor } : {}),
   };
+
+  const content = (
+    <>
+      {children}
+      {href && (
+        <img
+          src={newTabIcon}
+          alt="Opens in new tab"
+          style={{ marginLeft: "8px", height: "1em", verticalAlign: "middle" }}
+        />
+      )}
+    </>
+  );
 
   if (href) {
     return (
@@ -27,7 +40,7 @@ const DonationButton = ({
         style={style}
         {...rest}
       >
-        {children}
+        {content}
       </a>
     );
   }
@@ -46,15 +59,10 @@ const DonationButton = ({
 };
 
 DonationButton.propTypes = {
-  /** Button label or inner content */
   children: PropTypes.node.isRequired,
-  /** If provided, renders as an <a> instead of <button> */
   href: PropTypes.string,
-  /** Click handler for <button> version */
   onClick: PropTypes.func,
-  /** Base background color (CSS var --bg) */
   backgroundColor: PropTypes.string,
-  /** Hover background color (CSS var --hover-bg) */
   hoverColor: PropTypes.string,
 };
 

@@ -18,11 +18,12 @@ const ChapterDonate = () => {
         </p>
         <div className="button-group">
           <DonationButton
-            href="" //TODO: Implement donation portal
+            href="w" //TODO: Implement payment portal
             style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
           >
             Donate Now
           </DonationButton>
+
           <DonationButton
             href="https://www.amazon.com/hz/wishlist/ls/1Y4C3VN99C84U"
             style={{ "--bg": "#ff9900", "--hover-bg": "#cc7a00" }}
