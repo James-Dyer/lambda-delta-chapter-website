@@ -1,7 +1,7 @@
 // src/components/DonationButton.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import "../../styles/components/button.css";
+import "../styles/donationButton.css";
 
 const DonationButton = ({
   children,
@@ -21,6 +21,8 @@ const DonationButton = ({
     return (
       <a
         href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         className="btn"
         style={style}
         {...rest}
