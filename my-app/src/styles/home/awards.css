@@ -10,7 +10,6 @@
   color: #fff;
   text-align: center;
   font-size: 1rem;
-  
 }
 
 /* Container to center content */
@@ -24,9 +23,28 @@
 .awards-title {
   color: #fff;
   font-size: 3.5rem;
-  margin-bottom: 30px;
   font-family: "Bebas Neue", serif;
+  margin-bottom: 0rem;
 }
+
+/* Intro paragraph under title */
+.awards-intro {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #fff;
+  
+}
+
+.awards-intro a {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+
+.awards-intro a:hover {
+  color: #61b9ef;
+}
+
 
 /* Awards List Container */
 .awards-items {
@@ -41,7 +59,6 @@
   background: rgba(0, 36, 72, 0.6);
   padding: 20px;
   border-radius: 8px;
-  
 }
 
 /* Accordion Header */
@@ -92,9 +109,8 @@
   height: auto;
   border-radius: 8px;
   flex-shrink: 0;
-  object-fit: cover; /* Maintain aspect ratio without stretching */
+  object-fit: cover;
 }
-
 
 /* Text Content Next to Image */
 .award-text {
@@ -106,9 +122,8 @@
 
 /* Description Paragraphs */
 .award-item-description {
-  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /* Quotes */
@@ -125,10 +140,18 @@
 }
 
 /* Bullet List */
-.award-list {
+.award-list,
+.summit-list {
   list-style-type: disc;
   padding-left: 30px;
   margin-top: 5px;
+}
+
+.summit-list li,
+.award-list li {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 /* 📱 Responsive Fixes */
@@ -149,7 +172,7 @@
   }
 
   .award-image {
-    width: 100px;
+    width: 250px;
   }
 
   .award-text {
@@ -162,6 +185,4 @@
     gap: 10px;
     text-align: center;
   }
-
-  
 }

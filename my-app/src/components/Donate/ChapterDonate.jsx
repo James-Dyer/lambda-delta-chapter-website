@@ -2,6 +2,7 @@
 import React from "react";
 import "../../styles/donate/chapterDonate.css";
 import bidDayImage from "../../assets/images/bidDaySpring2024.jpg";
+import DonationButton from "../DonationButton";
 
 
 const ChapterDonate = () => {
@@ -16,15 +17,19 @@ const ChapterDonate = () => {
           If you'd like, check out our Amazon Wishlist!
         </p>
         <div className="button-group">
-          <button className="donate-button">Donate Now</button>
-          <a
+          <DonationButton
+            href="" //TODO: Implement donation portal
+            style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
+          >
+            Donate Now
+          </DonationButton>
+          <DonationButton
             href="https://www.amazon.com/hz/wishlist/ls/1Y4C3VN99C84U"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="wishlist-button"
+            style={{ "--bg": "#ff9900", "--hover-bg": "#cc7a00" }}
           >
             Amazon Wishlist
-          </a>
+          </DonationButton>
+
         </div>
       </div>
       <div className="donation-image">

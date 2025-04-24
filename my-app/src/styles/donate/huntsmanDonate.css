@@ -29,24 +29,7 @@
     line-height: 1.6;
     margin-bottom: 20px;
   }
-  
-  .donate-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007bff;
-  }
-  .donate-button:hover {
-    background-color: #0056b3;
-  }
+
   
   .donation-image {
     flex: 1 1 300px;
