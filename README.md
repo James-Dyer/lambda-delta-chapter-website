@@ -23,19 +23,14 @@ A dynamic and responsive website for the **Lambda Delta Chapter of Sigma Chi** a
 
 ```
 /src
+ ├── assets
+ │   ├── images
+ │   ├── videos
  ├── components
- │   ├── Header.jsx
- │   ├── Footer.jsx
- │   ├── Awards.jsx
- │   ├── Donate.jsx
- │   └── Members.jsx
+ │   ├── .jsx
  ├── styles
- │   ├── header.css
- │   ├── home.css
- │   ├── members.css
- │   ├── donate.css
- │   └── awards.css
- └── App.jsx
+ │   ├── .css
+ └── App.js
 ```
 
 ## Data & Assets
@@ -60,10 +55,6 @@ A dynamic and responsive website for the **Lambda Delta Chapter of Sigma Chi** a
    ```bash
    npm start
    ```
-
-## Contributing
-
-We welcome contributions from brothers or tech enthusiasts. Submit a pull request or reach out to `sigmachi@ucmerced.edu`.
 
 ## Contact
 
