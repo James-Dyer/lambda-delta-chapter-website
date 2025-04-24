@@ -3,11 +3,11 @@
 A dynamic and responsive website for the **Lambda Delta Chapter of Sigma Chi** at UC Merced, built with React and styled using CSS modules.
 
 ## Features
-
-- Member Directory: Organized view of the chapter's Head Table, Executive Committee, Outreach Committee, and Actives.
-- Awards Page: Highlights Peterson Blue and Balfour awards with interactive elements.
 - Home Page: Introductory video and chapter background with responsive layout.
+- Awards: Highlights Peterson and Balfour awards with interactive elements.
+- Member Directory: Organized view of the chapter's Head Table, Executive Committee, Outreach Committee, and Actives.
 - Donate Page: Options to support the chapter and the Huntsman Cancer Institute.
+- Philanthropy Page: Highlight's the chapter's commitment to charitable causes.
 - Mobile Friendly: Fully responsive design with flexible layouts and scalable media.
 
 ## Technologies Used
@@ -36,7 +36,7 @@ A dynamic and responsive website for the **Lambda Delta Chapter of Sigma Chi** a
 ## Data & Assets
 
 - Excel file: `brother-info.xlsx` located in `/public/data`
-- Images & Videos: Stored in `/public/images` and `/public/videos`
+- Images & Videos: Stored in `/src/assets/images` and `/src/assets/videos`
 
 ## Setup Instructions
 
