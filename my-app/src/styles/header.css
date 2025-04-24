@@ -61,14 +61,15 @@ nav ul a:hover {
   position: relative;
 }
 
-.info {
+.instagram {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  align-items: center;
   gap: 5px;
 }
 
-.info a {
+.instagram a {
   font-family: "Bebas Neue", serif;
   color: #ffffff;
   font-size: 1.4rem;
@@ -76,7 +77,7 @@ nav ul a:hover {
   transition: color 0.3s ease;
 }
 
-.info a:hover {
+.instagram a:hover {
   color: #61b9ef;
 }
 
@@ -120,10 +121,6 @@ nav ul a:hover {
   nav ul a {
     font-size: 1.2rem;
     padding: 10px 16px;
-  }
-
-  .info {
-    align-items: center;
   }
 
   .menuBtn {

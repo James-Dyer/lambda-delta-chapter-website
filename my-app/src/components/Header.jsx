@@ -75,7 +75,7 @@ const Header = () => {
           </div>
         </nav>
 
-        <div className="info">
+        <div className="instagram">
           <a
             href="https://instagram.com/ucmsigmachi"
             target="_blank"

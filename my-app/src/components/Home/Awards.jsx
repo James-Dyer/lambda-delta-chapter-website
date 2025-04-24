@@ -40,7 +40,7 @@ const Awards = () => {
         <p className="awards-intro">
           <i>
           Our chapter is dedicated to embodying the highest ideals, a commitment reflected in our international recognition.
-          For more information on the International Fraternity's awards, see{' '}
+          For more information about the International Fraternity's awards, see{' '}
           <a href="https://sigmachi.org/home/resources-3/awards/" target="_blank" rel="noopener noreferrer">
             Sigma Chi International Awards
           </a>.
