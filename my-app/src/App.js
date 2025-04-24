@@ -8,6 +8,7 @@ import Members from './components/Members';
 import Archive from './components/Archive';
 import Philanthropy from './components/Philanthropy';
 import Alumni from './components/Alumni';
+import Recruitment from './components/Recruitment';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/archive" element={<Archive />} />
         <Route path="/philanthropy" element={<Philanthropy />} />
         <Route path="/Alumni" element={<Alumni />} />
+        <Route path="/Recruitment" element={<Recruitment />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,122 @@
+/* src/styles/recruitmentExclusive.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+.recruitment-exclusive-page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #fff;
+  border-left: 4px solid #001f3f;
+  padding-left: 12px;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: disc inside;
+  margin-bottom: 1rem;
+}
+
+.table-block,
+.event-card {
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.event-card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.image-placeholder {
+  background: #111;
+  border: 1px dashed #333;
+  border-radius: 6px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.image-placeholder.small {
+  width: 200px;
+  height: 140px;
+}
+
+.backup-event {
+  border-color: #444;
+}
+
+.requirements-section,
+.contact-section {
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+  }
+  .image-placeholder.small {
+    width: 100%;
+    height: 180px;
+  }
+}
