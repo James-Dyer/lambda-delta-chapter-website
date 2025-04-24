@@ -34,10 +34,10 @@ function Philanthropy() {
             <p>
               Derby Days is far more than an annual event—it is a heartfelt celebration of 
               community, resilience, and collective impact. Organized by <b>Huntsman Chairman Collin O' Neil</b>, 
-              our efforts  this year culminated in a record-breaking philanthropic fundraiser of <b>$16,301</b>, 
-              a milestone that speaks volumes about our unwavering commitment to advancing cancer research and treatment.
+              our efforts  this year culminated in a record-breaking philanthropic fundraiser raising over <b>$16,000</b>, 
+              a milestone that will support invaluable cancer research and treatment for years to come.
 
-              <br/><br/>If you'd like, take a moment to donate to the Huntsman Cancer Institute directly.
+              <br/><br/>If you'd like, support our cause and take a moment to donate to the Huntsman Cancer Institute directly.
             </p>
 
             <DonationButton
