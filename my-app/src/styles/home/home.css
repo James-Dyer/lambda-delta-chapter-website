@@ -56,12 +56,20 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
+    padding-bottom: 60px;
+    
+}   
 
 video {
-    width: 100%;
-    height: auto;
+    width: 100vw; /* Full width of the viewport */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100vh; /* Optional: keep it from getting too tall */
+    display: block;
+    object-fit: cover; /* Optional: crops to fill if needed */
+    object-position: center;
   }
+  
+  
   
 
 /* Responsive Design */
