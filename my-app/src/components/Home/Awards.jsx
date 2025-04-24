@@ -9,25 +9,25 @@ const Awards = () => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const awardsList = [
-    "Peterson Significant Chapter Award, 2009-2010",
-    "Peterson Significant Chapter Award, 2010-2011",
-    "Peterson Significant Chapter Award, 2011-2012",
-    "Peterson Significant Chapter Award, 2012-2013",
-    "Legion of Honor Award, 2014-2015",
-    "Peterson Significant Chapter Award, 2013-2014",
-    "Peterson Significant Chapter Award, 2014-2015",
-    "Peterson Significant Chapter Award, 2015-2016",
-    "Legion of Honor Award, 2015-2016",
-    "Peterson Significant Chapter Award, 2016-2017",
-    "Peterson Significant Chapter Award, 2017-2018",
-    "Peterson Significant Chapter Award, 2018-2019",
-    "Daniel William Cooper Award, 2018-2019",
-    "Peterson Significant Chapter Award, 2019-2020",
-    "Peterson Significant Chapter Award, 2020-2021",
-    "Peterson Significant Chapter Award, 2022-2023",
-    "Peterson Significant Chapter Award, 2023-2024",
-    "Legion of Honor Award, 2023-2024"
-  ];
+    "Peterson Significant Chapter Award, 2024",
+    "Legion of Honor Award, 2024",
+    "Peterson Significant Chapter Award, 2023",
+    "Peterson Significant Chapter Award, 2021",
+    "Peterson Significant Chapter Award, 2020",
+    "Peterson Significant Chapter Award, 2019",
+    "Daniel William Cooper Award, 2019",
+    "Peterson Significant Chapter Award, 2018",
+    "Peterson Significant Chapter Award, 2017",
+    "Peterson Significant Chapter Award, 2016",
+    "Legion of Honor Award, 2016",
+    "Peterson Significant Chapter Award, 2015",
+    "Legion of Honor Award, 2015",
+    "Peterson Significant Chapter Award, 2014",
+    "Peterson Significant Chapter Award, 2013",
+    "Peterson Significant Chapter Award, 2012",
+    "Peterson Significant Chapter Award, 2011",
+    "Peterson Significant Chapter Award, 2010"
+  ];  
 
   const toggleAccordion = () => {
     setIsAccordionOpen(!isAccordionOpen);
