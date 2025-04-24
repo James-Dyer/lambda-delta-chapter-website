@@ -104,8 +104,9 @@ const Awards = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Horizons Huntsman Leadership Summit 2025 */}
+          {/*
           <div className="award-item">
             <h2 className="award-item-title">Horizons Huntsman Leadership Summit 2025</h2>
             <p className="award-item-description">
@@ -120,6 +121,7 @@ const Awards = () => {
               <br/>We are incredibly proud of our brothers, and we wish them luck on thier journey.
             </p>
           </div>
+          */}
 
         </div>
       </div>
