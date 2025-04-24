@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/philanthropy.css';
-import HuntsmanDonate from './Donate/HuntsmanDonate'; 
 import '../styles/donate/huntsmanDonate.css';
+import DonationButton from "./DonationButton";
 
 import derby_days_recap_2025 from "../assets/images/philanthropy/Derby_Days_Recap_2025.png";
 
@@ -40,14 +40,12 @@ function Philanthropy() {
               <br/><br/>If you'd like, take a moment to donate to the Huntsman Cancer Institute directly.
             </p>
 
-            <a
+            <DonationButton
               href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="donate-button"
+              style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
             >
               Donate Now
-            </a>
+            </DonationButton>
           </div>
         </div>
       </section>

@@ -83,24 +83,6 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-.donate-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff;
-}
-.donate-button:hover {
-  background-color: #0056b3;
-}
-
 /* ─── Left image styling ─────────────────────────────────────────────────────── */
 .left-image img {
   width: 100%;

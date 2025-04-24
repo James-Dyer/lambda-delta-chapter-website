@@ -2,6 +2,7 @@
 import React from "react";
 import "../../styles/donate/huntsmanDonate.css";
 import nieceSpeechImage from "../../assets/images/nieceBidDaySpeechSpring2024.jpg";
+import DonationButton from "../DonationButton";
 
 
 const HuntsmanDonate = () => {
@@ -15,14 +16,14 @@ const HuntsmanDonate = () => {
           the Huntsman Cancer Foundation. Please join us in supporting their work by
           donating today.
         </p>
-        <a
-          href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="donate-button"
-        >
-          Donate Now
-        </a>
+        <div className="button-group">
+          <DonationButton
+            href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
+            style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
+          >
+            Donate Now
+          </DonationButton>
+        </div>
       </div>
       <div className="donation-image neice-img">
       <img
