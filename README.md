@@ -1,39 +1,70 @@
-# Lambda Delta Chapter website
-## Features:
-- Home
-  - About us
-  - Recruitment Video
-  - Awards & Recognition
-- Donate
-  - Chapter Donation portal
-  - Chapter Amazon wishlist link
-  - Huntsman Cancer Institute link
-- Members
-  - Headtable, EC, and OC teams with name and headshot
-  - Contact info for appropriate chairmen
-- Philanthropy
-  - TBD
-- Gallery
-  - Showcase of chapter's photos
-- Alumni Resources
-  - A way to sign up to the Alum emailing list
-  - Maybe a little bio of the tribune
+# Lambda Delta Chapter Website
 
- Some of these features are still in progress.
+A dynamic and responsive website for the **Lambda Delta Chapter of Sigma Chi** at UC Merced, built with React and styled using CSS modules.
 
-## Site Design
-### body 
-- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-- font-size: 1.2rem;
-- body color: #333333;
+## Features
 
-### h1 
-- font-size: 2.6rem
-- font-family: "Bebas Neue", serif;
+- Member Directory: Organized view of the chapter's Head Table, Executive Committee, Outreach Committee, and Actives.
+- Awards Page: Highlights Peterson Blue and Balfour awards with interactive elements.
+- Home Page: Introductory video and chapter background with responsive layout.
+- Donate Page: Options to support the chapter and the Huntsman Cancer Institute.
+- Mobile Friendly: Fully responsive design with flexible layouts and scalable media.
 
-### Color Pallete
-- background-color: #f9f9f9;
-- header background-color: #003366;
-- text color: #333333
+## Technologies Used
+
+- React.js
+- CSS (custom per page)
+- React Router DOM
+- XLSX for parsing Excel data
+- HTML5 video
+- Hosted assets (images, spreadsheets)
+
+## File Structure
+
+```
+/src
+ ├── components
+ │   ├── Header.jsx
+ │   ├── Footer.jsx
+ │   ├── Awards.jsx
+ │   ├── Donate.jsx
+ │   └── Members.jsx
+ ├── styles
+ │   ├── header.css
+ │   ├── home.css
+ │   ├── members.css
+ │   ├── donate.css
+ │   └── awards.css
+ └── App.jsx
+```
+
+## Data & Assets
+
+- Excel file: `brother-info.xlsx` located in `/public/data`
+- Images & Videos: Stored in `/public/images` and `/public/videos`
+
+## Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/lambda-delta-site.git
+   cd lambda-delta-site
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## Contributing
+
+We welcome contributions from brothers or tech enthusiasts. Submit a pull request or reach out to `sigmachi@ucmerced.edu`.
+
+## Contact
+
+Have questions or want to support the chapter? Connect with us on [Instagram](https://instagram.com/ucmsigmachi) or email chapter leadership `sigmachi@ucmerced.edu`.
