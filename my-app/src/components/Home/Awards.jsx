@@ -9,6 +9,7 @@ const Awards = () => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const awardsList = [
+    "FSL Chapter of the Year, 2025",
     "Peterson Significant Chapter Award, 2024",
     "Legion of Honor Award, 2024",
     "Peterson Significant Chapter Award, 2023",
