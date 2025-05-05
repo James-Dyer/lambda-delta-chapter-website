@@ -112,9 +112,10 @@ const Awards = () => {
               Several of our brothers have been selected to attend the prestigious Horizons Huntsman Leadership Summit at Snowbird, Utah:
             </p>
             <ul className="summit-list">
+              <li>Kshitij "KT" Tamang Chi</li>
+              <li>Caleb Lee, Psi</li>
               <li>Joshua Jessen, Omega</li>
-              <li>Brother Two, Chi</li>
-              <li>Brother Three, Alpha Alpha</li>
+              <li>Dustin Chancey, Alpha Alpha</li>
             </ul>
             <p className="award-item-description">
               <br/>We are incredibly proud of our brothers, and we wish them luck on thier journey.
