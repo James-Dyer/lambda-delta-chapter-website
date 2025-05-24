@@ -1,6 +1,6 @@
 // Header.jsx
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "../styles/header.css";
 
 // Image imports
@@ -13,26 +13,21 @@ const Header = () => {
   const containerRef = useRef(null);
   const location = useLocation();
 
-  // Close menu when navigating (link click)
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location]);
+  // close mobile menu on navigation
+  useEffect(() => setMenuOpen(false), [location]);
 
-  // Close when clicking outside
+  // close when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         setMenuOpen(false);
       }
     };
-    if (menuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    document.addEventListener(
+      menuOpen ? "mousedown" : "click",
+      handleClickOutside,
+    );
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
   return (
@@ -40,37 +35,41 @@ const Header = () => {
       <div className="header-content">
         <nav>
           <div id="navbar-logo">
-            <Link to="/">
+            <NavLink to="/">
               <img src={logo} alt="Lambda Delta Logo" />
-            </Link>
+            </NavLink>
           </div>
 
-          {/* Container to position menu button and dropdown relative to each other */}
           <div className="menu-container" ref={containerRef}>
-          <div className={`menuBtn-wrapper ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(prev => !prev)}>
-          <img
-            className="menuBtn"
-            src={menuOpen ? closeIcon : hamburgerIcon}
-            alt="menu button"
-          />
-        </div>
-
-
-
+            <div
+              className={`menuBtn-wrapper ${menuOpen ? "open" : ""}`}
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              <img
+                className="menuBtn"
+                src={menuOpen ? closeIcon : hamburgerIcon}
+                alt="menu button"
+              />
+            </div>
 
             <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
-              <li>
-                <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-              </li>
-              <li>
-                <Link to="/donate" onClick={() => setMenuOpen(false)}>Donate</Link>
-              </li>
-              <li>
-                <Link to="/members" onClick={() => setMenuOpen(false)}>Members</Link>
-              </li>
-              <li>
-                <Link to="/philanthropy" onClick={() => setMenuOpen(false)}>Philanthropy</Link>
-              </li>
+              {[
+                { to: "/", label: "Home" },
+                { to: "/donate", label: "Donate" },
+                { to: "/members", label: "Members" },
+                { to: "/philanthropy", label: "Philanthropy" },
+              ].map(({ to, label }) => (
+                <li key={to}>
+                  <NavLink
+                    to={to}
+                    end
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
         </nav>

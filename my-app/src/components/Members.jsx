@@ -37,7 +37,7 @@ const Members = () => {
             ? item["Position(s)"].split(",").map((pos) => pos.trim())
             : [],
           gradDate: item["Grad Year"] || "TBD",
-          committee: item["Committee"] ? item["Committee"].trim() : ""
+          committee: item["Committee"] ? item["Committee"].trim() : "",
         }));
 
         setData(processed);
@@ -50,16 +50,14 @@ const Members = () => {
   // Group members by committee
   const headTable = data.filter((m) => inCommittee(m, "HT"));
   const executive = data.filter(
-    (m) => inCommittee(m, "EC") && !inCommittee(m, "HT")
+    (m) => inCommittee(m, "EC") && !inCommittee(m, "HT"),
   );
   const outreach = data.filter(
-    (m) => inCommittee(m, "OC") && !inCommittee(m, "HT")
+    (m) => inCommittee(m, "OC") && !inCommittee(m, "HT"),
   );
   const actives = data.filter(
     (m) =>
-      !inCommittee(m, "HT") &&
-      !inCommittee(m, "EC") &&
-      !inCommittee(m, "OC")
+      !inCommittee(m, "HT") && !inCommittee(m, "EC") && !inCommittee(m, "OC"),
   );
 
   // Renders a table of members with optional hiding of Position(s) column

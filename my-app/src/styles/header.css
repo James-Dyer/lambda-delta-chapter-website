@@ -1,5 +1,7 @@
 /* header.css */
-header, nav, ul {
+header,
+nav,
+ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,7 +51,10 @@ nav ul a {
   font-size: 1.5rem;
   padding: 8px 18px;
   border-radius: 6px;
-  transition: background-color 0.3s ease, transform 0.2s ease, text-decoration 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    text-decoration 0.2s ease;
 }
 
 nav ul a:hover {
@@ -96,13 +101,16 @@ nav ul a:hover {
   transform: rotate(180deg);
 }
 
-
-
 .menuBtn:hover,
 .menuBtn:focus {
   transform: scale(1.1);
 }
 
+/* Highlight for the currently active tab/link */
+nav ul a.active {
+  background-color: #00509e;
+  transform: none;
+}
 
 @media (max-width: 768px) {
   .header-content {
