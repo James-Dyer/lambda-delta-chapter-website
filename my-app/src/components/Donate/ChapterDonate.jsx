@@ -18,7 +18,7 @@ const ChapterDonate = () => {
         </p>
         <div className="button-group">
           <DonationButton
-            href="w" //TODO: Implement payment portal
+            href="https://www.zeffy.com/donation-form/b0a9d5ff-e93c-47af-802b-9253c1dfc3b4"
             style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
           >
             Donate Now
