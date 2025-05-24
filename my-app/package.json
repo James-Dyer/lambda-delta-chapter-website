@@ -18,9 +18,8 @@
     "test": "react-scripts test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint src/**/*.js src/**/*.jsx",   
-    "lint:fix": "eslint src/**/*.js src/**/*.jsx --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,css,json,md}'"
+    "lint": "eslint src/**/*.{js,jsx} && prettier --check src/**/*.{js,jsx,css,html,md,json}",
+    "format": "eslint src/**/*.{js,jsx} --fix && prettier --write src/**/*.{js,jsx,css,html,md,json}"
   },
   "eslintConfig": {
     "extends": [
