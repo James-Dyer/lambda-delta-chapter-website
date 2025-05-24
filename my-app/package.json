@@ -16,9 +16,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint src/**/*.js src/**/*.jsx",   
+    "lint:fix": "eslint src/**/*.js src/**/*.jsx --fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,css,json,md}'"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +41,13 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "@eslint/js": "^9.27.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "gh-pages": "^6.3.0",
+    "globals": "^16.1.0",
+    "prettier": "^3.5.3"
   }
 }
