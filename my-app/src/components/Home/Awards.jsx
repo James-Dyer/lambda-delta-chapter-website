@@ -27,8 +27,8 @@ const Awards = () => {
     "Peterson Significant Chapter Award, 2013",
     "Peterson Significant Chapter Award, 2012",
     "Peterson Significant Chapter Award, 2011",
-    "Peterson Significant Chapter Award, 2010"
-  ];  
+    "Peterson Significant Chapter Award, 2010",
+  ];
 
   const toggleAccordion = () => {
     setIsAccordionOpen(!isAccordionOpen);
@@ -40,30 +40,38 @@ const Awards = () => {
         <h1 className="awards-title">Achievements &amp; Recognition</h1>
         <p className="awards-intro">
           <i>
-          Our chapter is dedicated to embodying the highest ideals, a commitment reflected in our international recognition.
-          For more information about the International Fraternity's awards, see{' '}
-          <a href="https://sigmachi.org/home/resources-3/awards/" target="_blank" rel="noopener noreferrer">
-            Sigma Chi International Awards
-          </a>.
+            Our chapter is dedicated to embodying the highest ideals, a
+            commitment reflected in our international recognition. For more
+            information about the International Fraternity's awards, see{" "}
+            <a
+              href="https://sigmachi.org/home/resources-3/awards/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sigma Chi International Awards
+            </a>
+            .
           </i>
         </p>
         <div className="awards-items">
-
           {/* J. Dwight Peterson Significant Chapter Awards */}
           <div className="award-item">
             <h2 className="award-item-title">
               J. Dwight Peterson Significant Chapter Awards and More
             </h2>
             <p className="award-item-description">
-                The highest honor an individual chapter may receive is the J. Dwight Peterson Significant
-                Chapter Award, given to Sigma Chi chapters that demonstrate excellence in leadership,
-                operations, and community impact.
+              The highest honor an individual chapter may receive is the J.
+              Dwight Peterson Significant Chapter Award, given to Sigma Chi
+              chapters that demonstrate excellence in leadership, operations,
+              and community impact.
             </p>
 
             {/* Accordion Menu */}
             <div className="accordion-header" onClick={toggleAccordion}>
               <p className="accordion-menu-title">View our award history</p>
-              <span className={`accordion-icon ${isAccordionOpen ? "open" : ""}`}>
+              <span
+                className={`accordion-icon ${isAccordionOpen ? "open" : ""}`}
+              >
                 {isAccordionOpen ? "-" : "+"}
               </span>
             </div>
@@ -90,22 +98,25 @@ const Awards = () => {
               />
               <div className="award-text">
                 <p className="balfour-blurb">
-                  We are excited to announce our 2025 Balfour Province Award winner and international nominee: Collin O'Neil.
-                  <br /><br />
+                  We are excited to announce our 2025 Balfour Province Award
+                  winner and international nominee: Collin O'Neil.
+                  <br />
+                  <br />
                 </p>
                 <blockquote className="award-quote">
-                  "I joined Sigma Chi when I was a freshman, and I could not have
-                  imagined the role this fraternity would play in my life. Sigma Chi
-                  developed me into the person I have become today, and I will
-                  forever be in its debt. I am so glad I met this group of guys, and
-                  am proud to say I have brothers for life. As Isaac M Jordan said,
-                  'Sigma Chi was my first love, and it shall be my last'. IHSV"
+                  "I joined Sigma Chi when I was a freshman, and I could not
+                  have imagined the role this fraternity would play in my life.
+                  Sigma Chi developed me into the person I have become today,
+                  and I will forever be in its debt. I am so glad I met this
+                  group of guys, and am proud to say I have brothers for life.
+                  As Isaac M Jordan said, 'Sigma Chi was my first love, and it
+                  shall be my last'. IHSV"
                   <cite>– Brother O'Neil</cite>
                 </blockquote>
               </div>
             </div>
           </div>
-          
+
           {/* Horizons Huntsman Leadership Summit 2025 */}
           {/*
           <div className="award-item">
@@ -124,7 +135,6 @@ const Awards = () => {
             </p>
           </div>
           */}
-
         </div>
       </div>
     </section>

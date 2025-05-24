@@ -18,12 +18,15 @@ const Header = () => {
 
   // close when clicking outside
   useEffect(() => {
-    const handleClickOutside = e => {
+    const handleClickOutside = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         setMenuOpen(false);
       }
     };
-    document.addEventListener(menuOpen ? "mousedown" : "click", handleClickOutside);
+    document.addEventListener(
+      menuOpen ? "mousedown" : "click",
+      handleClickOutside,
+    );
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
@@ -40,7 +43,7 @@ const Header = () => {
           <div className="menu-container" ref={containerRef}>
             <div
               className={`menuBtn-wrapper ${menuOpen ? "open" : ""}`}
-              onClick={() => setMenuOpen(o => !o)}
+              onClick={() => setMenuOpen((o) => !o)}
             >
               <img
                 className="menuBtn"
@@ -51,16 +54,16 @@ const Header = () => {
 
             <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
               {[
-                { to: "/",    label: "Home" },
-                { to: "/donate",       label: "Donate" },
-                { to: "/members",      label: "Members" },
+                { to: "/", label: "Home" },
+                { to: "/donate", label: "Donate" },
+                { to: "/members", label: "Members" },
                 { to: "/philanthropy", label: "Philanthropy" },
-              ].map(({to,label}) => (
+              ].map(({ to, label }) => (
                 <li key={to}>
                   <NavLink
                     to={to}
                     end
-                    className={({ isActive }) => isActive ? "active" : ""}
+                    className={({ isActive }) => (isActive ? "active" : "")}
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}

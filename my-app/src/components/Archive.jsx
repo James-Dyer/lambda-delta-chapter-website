@@ -15,7 +15,7 @@ const Archive = () => {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDCsqRYLAFDdL4Ix_AHai7kNVyoPV9Ssv1xg&s",
       "https://www.aspca.org/sites/default/files/cat-care_general-cat-care_body1-left.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQEtrZpSL4T_53zcFsGnhjpbYrvdJLpXBADw&s",
-    ]
+    ];
     setImages(imageList);
   }, []);
 
