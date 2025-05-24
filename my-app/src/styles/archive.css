@@ -5,18 +5,17 @@
   margin: 0 auto;
 }
 
-  
 .archive-page h1 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 2.6rem
+  font-size: 2.6rem;
 }
 
 .masonry-grid {
   column-gap: 16px;
 }
-  
-  /* 5 columns for large screens */
+
+/* 5 columns for large screens */
 @media (min-width: 1200px) {
   .masonry-grid {
     column-count: 5;
@@ -50,38 +49,34 @@
     column-count: 1;
   }
 }
-  
-  /* Each masonry item should avoid breaking inside columns */
-  .masonry-item {
-    break-inside: avoid;
-    margin-bottom: 16px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease forwards;
-  }
 
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Image styling */
-  .masonry-item img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .masonry-item img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  
-  
-  
-  
+/* Each masonry item should avoid breaking inside columns */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
 
-  
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image styling */
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.masonry-item img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

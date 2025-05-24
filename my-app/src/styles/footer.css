@@ -1,16 +1,16 @@
 /* Footer */
 footer {
-    background: #003366;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.85rem;
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.85rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    footer {
-        padding: 15px;
-        font-size: 0.75rem;
-    }
+  footer {
+    padding: 15px;
+    font-size: 0.75rem;
+  }
 }

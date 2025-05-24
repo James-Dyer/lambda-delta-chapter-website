@@ -4,16 +4,17 @@ import "../../styles/donate/chapterDonate.css";
 import bidDayImage from "../../assets/images/bidDaySpring2024.jpg";
 import DonationButton from "../DonationButton";
 
-
 const ChapterDonate = () => {
   return (
     <section className="donation-section chapter-donation">
       <div className="donation-content">
         <h1>Support the Lambda Delta Chapter</h1>
         <p>
-          Support our chapter today! Your contribution helps us create meaningful
-          experiences for our members and invests in the future of our chapter.
-          <br /><br />
+          Support our chapter today! Your contribution helps us create
+          meaningful experiences for our members and invests in the future of
+          our chapter.
+          <br />
+          <br />
           If you'd like, check out our Amazon Wishlist!
         </p>
         <div className="button-group">
@@ -30,15 +31,10 @@ const ChapterDonate = () => {
           >
             Amazon Wishlist
           </DonationButton>
-
         </div>
       </div>
       <div className="donation-image">
-      <img
-        src={bidDayImage}
-        alt="Donate - Lambda Delta Chapter"
-      />
-
+        <img src={bidDayImage} alt="Donate - Lambda Delta Chapter" />
       </div>
     </section>
   );

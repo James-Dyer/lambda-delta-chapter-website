@@ -1,8 +1,9 @@
 /* donate.css */
 .donation-page {
   color: #333;
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-              url('/src/assets/images/stock-background-image.jpeg');
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url("/src/assets/images/stock-background-image.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
