@@ -96,13 +96,16 @@ nav ul a:hover {
   transform: rotate(180deg);
 }
 
-
-
 .menuBtn:hover,
 .menuBtn:focus {
   transform: scale(1.1);
 }
 
+/* Highlight for the currently active tab/link */
+nav ul a.active {
+  background-color: #00509e;     
+  transform: none;           
+}
 
 @media (max-width: 768px) {
   .header-content {
