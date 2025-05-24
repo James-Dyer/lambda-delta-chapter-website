@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lambda-delta-chapter-website/static/css/main.f2c5c0c9.css",
-    "main.js": "/lambda-delta-chapter-website/static/js/main.81985281.js",
+    "main.js": "/lambda-delta-chapter-website/static/js/main.c2c7e0d9.js",
     "static/js/488.9c92ff38.chunk.js": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js",
     "static/media/recruitmentVid.mp4": "/lambda-delta-chapter-website/static/media/recruitmentVid.0a9622c88a7c99f78ae4.mp4",
     "static/media/derby_games_2025.jpg": "/lambda-delta-chapter-website/static/media/derby_games_2025.80d59997afa01b0d2f51.jpg",
@@ -15,11 +15,11 @@
     "index.html": "/lambda-delta-chapter-website/index.html",
     "static/media/newTab.svg": "/lambda-delta-chapter-website/static/media/newTab.a9fdb14610655e769d99a6b9df4e31b1.svg",
     "main.f2c5c0c9.css.map": "/lambda-delta-chapter-website/static/css/main.f2c5c0c9.css.map",
-    "main.81985281.js.map": "/lambda-delta-chapter-website/static/js/main.81985281.js.map",
+    "main.c2c7e0d9.js.map": "/lambda-delta-chapter-website/static/js/main.c2c7e0d9.js.map",
     "488.9c92ff38.chunk.js.map": "/lambda-delta-chapter-website/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f2c5c0c9.css",
-    "static/js/main.81985281.js"
+    "static/js/main.c2c7e0d9.js"
   ]
 }
