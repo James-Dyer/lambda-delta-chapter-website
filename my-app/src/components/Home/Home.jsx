@@ -1,12 +1,12 @@
-import React from "react";
-import "../../styles/home/home.css";
+import React from 'react';
+import '../../styles/home/home.css';
 
-import Footer from "../Footer";
-import Awards from "../Home/Awards";
+import Footer from '../Footer';
+import Awards from '../Home/Awards';
 
 // Media
-import expect_more_logo from "../../assets/images/UC-Merced-SigmaChi-ExpectMore.svg";
-import recruitment_video from "../../assets/videos/recruitmentVid.mp4";
+import expect_more_logo from '../../assets/images/UC-Merced-SigmaChi-ExpectMore.svg';
+import recruitment_video from '../../assets/videos/recruitmentVid.mp4';
 
 const Home = () => {
   return (

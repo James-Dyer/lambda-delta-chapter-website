@@ -1,33 +1,33 @@
 // Awards.jsx
-import React, { useState } from "react";
-import "../../styles/home/awards.css";
+import React, { useState } from 'react';
+import '../../styles/home/awards.css';
 
 // Image imports
-import balfordImage from "../../assets/images/collinoneil.jpg";
+import balfordImage from '../../assets/images/collinoneil.jpg';
 
 const Awards = () => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const awardsList = [
-    "FSL Chapter of the Year, 2025",
-    "Peterson Significant Chapter Award, 2024",
-    "Legion of Honor Award, 2024",
-    "Peterson Significant Chapter Award, 2023",
-    "Peterson Significant Chapter Award, 2021",
-    "Peterson Significant Chapter Award, 2020",
-    "Peterson Significant Chapter Award, 2019",
-    "Daniel William Cooper Award, 2019",
-    "Peterson Significant Chapter Award, 2018",
-    "Peterson Significant Chapter Award, 2017",
-    "Peterson Significant Chapter Award, 2016",
-    "Legion of Honor Award, 2016",
-    "Peterson Significant Chapter Award, 2015",
-    "Legion of Honor Award, 2015",
-    "Peterson Significant Chapter Award, 2014",
-    "Peterson Significant Chapter Award, 2013",
-    "Peterson Significant Chapter Award, 2012",
-    "Peterson Significant Chapter Award, 2011",
-    "Peterson Significant Chapter Award, 2010",
+    'FSL Chapter of the Year, 2025',
+    'Peterson Significant Chapter Award, 2024',
+    'Legion of Honor Award, 2024',
+    'Peterson Significant Chapter Award, 2023',
+    'Peterson Significant Chapter Award, 2021',
+    'Peterson Significant Chapter Award, 2020',
+    'Peterson Significant Chapter Award, 2019',
+    'Daniel William Cooper Award, 2019',
+    'Peterson Significant Chapter Award, 2018',
+    'Peterson Significant Chapter Award, 2017',
+    'Peterson Significant Chapter Award, 2016',
+    'Legion of Honor Award, 2016',
+    'Peterson Significant Chapter Award, 2015',
+    'Legion of Honor Award, 2015',
+    'Peterson Significant Chapter Award, 2014',
+    'Peterson Significant Chapter Award, 2013',
+    'Peterson Significant Chapter Award, 2012',
+    'Peterson Significant Chapter Award, 2011',
+    'Peterson Significant Chapter Award, 2010',
   ];
 
   const toggleAccordion = () => {
@@ -42,7 +42,7 @@ const Awards = () => {
           <i>
             Our chapter is dedicated to embodying the highest ideals, a
             commitment reflected in our international recognition. For more
-            information about the International Fraternity's awards, see{" "}
+            information about the International Fraternity's awards, see{' '}
             <a
               href="https://sigmachi.org/home/resources-3/awards/"
               target="_blank"
@@ -70,9 +70,9 @@ const Awards = () => {
             <div className="accordion-header" onClick={toggleAccordion}>
               <p className="accordion-menu-title">View our award history</p>
               <span
-                className={`accordion-icon ${isAccordionOpen ? "open" : ""}`}
+                className={`accordion-icon ${isAccordionOpen ? 'open' : ''}`}
               >
-                {isAccordionOpen ? "-" : "+"}
+                {isAccordionOpen ? '-' : '+'}
               </span>
             </div>
 

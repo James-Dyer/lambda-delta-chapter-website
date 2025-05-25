@@ -1,20 +1,20 @@
 // src/components/DonationButton.jsx
-import React from "react";
-import PropTypes from "prop-types";
-import "../styles/donationButton.css";
-import newTabIcon from "../assets/images/navbar/newTab.svg"; // Import the icon
+import React from 'react';
+import PropTypes from 'prop-types';
+import '../styles/donationButton.css';
+import newTabIcon from '../assets/images/navbar/newTab.svg'; // Import the icon
 
 const DonationButton = ({
   children,
   href,
   onClick,
-  backgroundColor = "#007bff",
+  backgroundColor = '#007bff',
   hoverColor,
   ...rest
 }) => {
   const style = {
-    "--bg": backgroundColor,
-    ...(hoverColor ? { "--hover-bg": hoverColor } : {}),
+    '--bg': backgroundColor,
+    ...(hoverColor ? { '--hover-bg': hoverColor } : {}),
   };
 
   const content = (
@@ -24,7 +24,7 @@ const DonationButton = ({
         <img
           src={newTabIcon}
           alt="Opens in new tab"
-          style={{ marginLeft: "8px", height: "1em", verticalAlign: "middle" }}
+          style={{ marginLeft: '8px', height: '1em', verticalAlign: 'middle' }}
         />
       )}
     </>

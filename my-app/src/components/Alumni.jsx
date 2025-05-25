@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 //import alumni from "../Data/alumni.json"
 const Alumni = () => {
   return (
@@ -9,7 +9,7 @@ const Alumni = () => {
         <img
           src="https://plus.unsplash.com/premium_photo-1673967831980-1d377baaded2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0c3xlbnwwfHwwfHx8MA%3D%3D"
           alt="Alumni spotlight"
-          style={{ width: "10%", height: "auto" }}
+          style={{ width: '10%', height: 'auto' }}
         />
         <p>Godoy, Class of 2015 - employment here. </p>
         <div>
@@ -29,7 +29,7 @@ const Alumni = () => {
       <section>
         <h2>Stay Involved</h2>
         <p>
-          add in automated email listing here{" "}
+          add in automated email listing here{' '}
           <a href="/donate">Click here to support</a>.
         </p>
       </section>
