@@ -1,8 +1,8 @@
 // HuntsmanDonate.jsx
-import React from "react";
-import "../../styles/donate/huntsmanDonate.css";
-import nieceSpeechImage from "../../assets/images/nieceBidDaySpeechSpring2024.jpg";
-import DonationButton from "../DonationButton";
+import React from 'react';
+import '../../styles/donate/huntsmanDonate.css';
+import nieceSpeechImage from '../../assets/images/nieceBidDaySpeechSpring2024.jpg';
+import DonationButton from '../DonationButton';
 
 const HuntsmanDonate = () => {
   return (
@@ -18,7 +18,7 @@ const HuntsmanDonate = () => {
         <div className="button-group">
           <DonationButton
             href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
-            style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
+            style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
           >
             Donate Now
           </DonationButton>

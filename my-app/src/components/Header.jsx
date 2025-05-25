@@ -1,12 +1,12 @@
 // Header.jsx
-import React, { useState, useRef, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import "../styles/header.css";
+import React, { useState, useRef, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import '../styles/header.css';
 
 // Image imports
-import logo from "../assets/images/navbar/LambdaDeltaLogo.png";
-import closeIcon from "../assets/images/navbar/closeIcon.png";
-import hamburgerIcon from "../assets/images/navbar/hamburgerMenuIcon.png";
+import logo from '../assets/images/navbar/LambdaDeltaLogo.png';
+import closeIcon from '../assets/images/navbar/closeIcon.png';
+import hamburgerIcon from '../assets/images/navbar/hamburgerMenuIcon.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,10 +24,10 @@ const Header = () => {
       }
     };
     document.addEventListener(
-      menuOpen ? "mousedown" : "click",
-      handleClickOutside,
+      menuOpen ? 'mousedown' : 'click',
+      handleClickOutside
     );
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
 
   return (
@@ -42,7 +42,7 @@ const Header = () => {
 
           <div className="menu-container" ref={containerRef}>
             <div
-              className={`menuBtn-wrapper ${menuOpen ? "open" : ""}`}
+              className={`menuBtn-wrapper ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen((o) => !o)}
             >
               <img
@@ -52,18 +52,18 @@ const Header = () => {
               />
             </div>
 
-            <ul className={`menuItems ${menuOpen ? "open" : ""}`}>
+            <ul className={`menuItems ${menuOpen ? 'open' : ''}`}>
               {[
-                { to: "/", label: "Home" },
-                { to: "/donate", label: "Donate" },
-                { to: "/members", label: "Members" },
-                { to: "/philanthropy", label: "Philanthropy" },
+                { to: '/', label: 'Home' },
+                { to: '/donate', label: 'Donate' },
+                { to: '/members', label: 'Members' },
+                { to: '/philanthropy', label: 'Philanthropy' },
               ].map(({ to, label }) => (
                 <li key={to}>
                   <NavLink
                     to={to}
                     end
-                    className={({ isActive }) => (isActive ? "active" : "")}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}

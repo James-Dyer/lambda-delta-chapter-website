@@ -1,9 +1,9 @@
-import React from "react";
-import "../styles/philanthropy.css";
-import "../styles/donate/huntsmanDonate.css";
-import DonationButton from "./DonationButton";
+import React from 'react';
+import '../styles/philanthropy.css';
+import '../styles/donate/huntsmanDonate.css';
+import DonationButton from './DonationButton';
 
-import derby_days_recap_2025 from "../assets/images/philanthropy/Derby_Days_Recap_2025.png";
+import derby_days_recap_2025 from '../assets/images/philanthropy/Derby_Days_Recap_2025.png';
 
 function Philanthropy() {
   return (
@@ -12,11 +12,11 @@ function Philanthropy() {
         <div className="hero-overlay">
           <h1>The Huntsman Cancer Institute</h1>
           <p>
-            We are proud to stand in partnership with the{" "}
+            We are proud to stand in partnership with the{' '}
             <b>Huntsman Cancer Institute</b>, alongside thousands of college
             students, in supporting their lifesaving work. Through collective
             action, compassion, and determination, we believe real change is
-            possible. Together, we hope to become{" "}
+            possible. Together, we hope to become{' '}
             <b>The Generation to End Cancer™</b>.
           </p>
         </div>
@@ -45,7 +45,7 @@ function Philanthropy() {
 
             <DonationButton
               href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
-              style={{ "--bg": "#007bff", "--hover-bg": "#0056b3" }}
+              style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
             >
               Donate Now
             </DonationButton>
