@@ -205,6 +205,11 @@
 
   .timeline-item {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .timeline-year,
+  .timeline-title {
+    text-align: center;
   }
 }
