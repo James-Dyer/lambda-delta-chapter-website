@@ -6,32 +6,32 @@ import '../../styles/home/awards.css';
 import balfordImage from '../../assets/images/collinoneil.jpg';
 
 const Awards = () => {
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   const awardsList = [
-    'FSL Chapter of the Year, 2025',
-    'Peterson Significant Chapter Award, 2024',
-    'Legion of Honor Award, 2024',
-    'Peterson Significant Chapter Award, 2023',
-    'Peterson Significant Chapter Award, 2021',
-    'Peterson Significant Chapter Award, 2020',
-    'Peterson Significant Chapter Award, 2019',
-    'Daniel William Cooper Award, 2019',
-    'Peterson Significant Chapter Award, 2018',
-    'Peterson Significant Chapter Award, 2017',
-    'Peterson Significant Chapter Award, 2016',
-    'Legion of Honor Award, 2016',
-    'Peterson Significant Chapter Award, 2015',
-    'Legion of Honor Award, 2015',
-    'Peterson Significant Chapter Award, 2014',
-    'Peterson Significant Chapter Award, 2013',
-    'Peterson Significant Chapter Award, 2012',
-    'Peterson Significant Chapter Award, 2011',
-    'Peterson Significant Chapter Award, 2010',
+    { year: 2025, title: 'FSL Chapter of the Year' },
+    { year: 2024, title: 'Peterson Significant Chapter Award' },
+    { year: 2024, title: 'Legion of Honor Award' },
+    { year: 2023, title: 'Peterson Significant Chapter Award' },
+    { year: 2021, title: 'Peterson Significant Chapter Award' },
+    { year: 2020, title: 'Peterson Significant Chapter Award' },
+    { year: 2019, title: 'Peterson Significant Chapter Award' },
+    { year: 2019, title: 'Daniel William Cooper Award' },
+    { year: 2018, title: 'Peterson Significant Chapter Award' },
+    { year: 2017, title: 'Peterson Significant Chapter Award' },
+    { year: 2016, title: 'Peterson Significant Chapter Award' },
+    { year: 2016, title: 'Legion of Honor Award' },
+    { year: 2015, title: 'Peterson Significant Chapter Award' },
+    { year: 2015, title: 'Legion of Honor Award' },
+    { year: 2014, title: 'Peterson Significant Chapter Award' },
+    { year: 2013, title: 'Peterson Significant Chapter Award' },
+    { year: 2012, title: 'Peterson Significant Chapter Award' },
+    { year: 2011, title: 'Peterson Significant Chapter Award' },
+    { year: 2010, title: 'Peterson Significant Chapter Award' },
   ];
 
-  const toggleAccordion = () => {
-    setIsAccordionOpen(!isAccordionOpen);
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
   };
 
   return (
@@ -66,25 +66,21 @@ const Awards = () => {
               and community impact.
             </p>
 
-            {/* Accordion Menu */}
-            <div className="accordion-header" onClick={toggleAccordion}>
-              <p className="accordion-menu-title">View our award history</p>
-              <span
-                className={`accordion-icon ${isAccordionOpen ? 'open' : ''}`}
-              >
-                {isAccordionOpen ? '-' : '+'}
-              </span>
+            <div className="timeline-container">
+              {(showAll ? awardsList : awardsList.slice(0, 5)).map(
+                (award, index) => (
+                  <div className="timeline-item" key={index}>
+                    <span className="timeline-year">{award.year}</span>
+                    <span className="timeline-title">{award.title}</span>
+                  </div>
+                )
+              )}
+              {awardsList.length > 5 && (
+                <button className="timeline-toggle" onClick={toggleShowAll}>
+                  {showAll ? 'Show Less' : 'Show More'}
+                </button>
+              )}
             </div>
-
-            {isAccordionOpen && (
-              <div className="accordion-content">
-                <ul className="award-list">
-                  {awardsList.map((award, index) => (
-                    <li key={index}>{award}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
 
           {/* Province Balfour Award Winner */}
