@@ -1,106 +1,64 @@
 # Lambda Delta Chapter Website
 
-A dynamic and responsive website for the **Lambda Delta Chapter of Sigma Chi** at UC Merced, built with React and styled using CSS Modules.
+This repository contains the source for the **Lambda Delta Chapter of Sigma Chi** website hosted at [ucmsigmachi.org](https://ucmsigmachi.org). The site is a single page React application served on GitHub Pages and styled using CSS Modules.
 
----
+## Project layout
 
-## Features
-
-- **Home Page**: Introductory video and chapter background with a responsive layout.
-- **Awards**: Highlights Peterson and Balfour awards with interactive elements.
-- **Member Directory**: Organized view of the chapter's Head Table, Executive Committee, Outreach Committee, and Actives.
-- **Donate Page**: Options to support the chapter and the Huntsman Cancer Institute.
-- **Philanthropy Page**: Highlights the chapter's commitment to charitable causes.
-- **Mobile-Friendly**: Fully responsive design with flexible layouts and scalable media.
-
----
-
-## Technologies Used
-
-- React.js
-- React Router DOM
-- CSS Modules (custom per page)
-- XLSX (for parsing Excel data)
-- HTML5 video
-- Hosted assets (images, spreadsheets)
-
----
-
-## File Structure
+All code lives under `my-app/`:
 
 ```
-/src
- ├── assets
- │   ├── images
- │   └── videos
- ├── components
- │   └── *.jsx
- ├── styles
- │   └── *.css
- └── App.js
+my-app/
+├── public/          # static files (index.html, 404.html, robots.txt, CNAME)
+├── src/
+│   ├── assets/      # images and videos
+│   ├── components/  # React components for each page
+│   ├── styles/      # CSS Modules grouped by feature
+│   ├── Data/        # example JSON data
+│   ├── App.js       # router setup
+│   └── ...
+├── package.json     # dependencies and npm scripts
+└── ...
 ```
 
----
+The root of the repository only includes this README and a lockfile. The React app itself is self contained inside `my-app/`.
 
-## Data & Assets
+## Key features
 
-- **Excel File**: `brother-info.xlsx` located in `/public/data`
-- **Images & Videos**: Stored in `/src/assets/images` and `/src/assets/videos`
+- **Home page** with an embedded recruitment video and an interactive awards section.
+- **Member Directory** that reads `brother-info.xlsx` at runtime using the `xlsx` library and groups members by committee.
+- **Donate page** with options to support the chapter directly or donate to the Huntsman Cancer Institute.
+- **Archive and Alumni** pages with photos and chapter history.
+- Fully responsive layout for desktop and mobile.
 
----
+## Installing and running
 
-## Setup Instructions
-
-### Required Software
-
-- [Git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org) (includes npm)
-
----
-
-1. **Clone the repository**:
+1. Install dependencies from the `my-app` directory:
    ```bash
-   git clone https://github.com/your-username/lambda-delta-chapter-website.git
-   cd lambda-delta-chapter-website
-   ```
-
-2. **Install dependencies**:
-   ```bash
+   cd my-app
    npm install
    ```
-
-2.1 **(Optional)** Install `gh-pages` if not already included:
-   ```bash
-   npm install gh-pages --save-dev
-   ```
-
-3. **Start the development server**:
+2. Start the development server:
    ```bash
    npm start
    ```
-
-4. **Deploy to GitHub Pages**:
+3. Optional quality checks:
    ```bash
-   npm run deploy
+   npm run lint   # check lint rules
+   npm run format # format source files
    ```
+4. Build or deploy:
+   ```bash
+   npm run build   # produce a production build
+   npm run deploy  # deploy to GitHub Pages
+   ```
+   The deploy script uses the `gh-pages` package and the `CNAME` file to publish to `ucmsigmachi.org`.
 
----
+## Next steps
 
-### Note
-
-Ensure your `package.json` includes the following configuration:
-
-```json
-"homepage": "https://your-username.github.io/lambda-delta-chapter-website",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-```
-
----
+- Review `src/App.js` to understand how each component is mapped to a route.
+- Explore `src/styles/` for examples of CSS Modules.
+- The site is designed to be easily extendable. New pages can be added by placing components in `src/components/` and registering them in the router.
 
 ## Contact
 
-Have questions or want to support the chapter?  
-Connect with us on [Instagram](https://instagram.com/ucmsigmachi) or email chapter leadership at **sigmachi@ucmerced.edu**.
+For questions or to get involved, connect with us on [Instagram](https://instagram.com/ucmsigmachi) or email **sigmachi@ucmerced.edu**.
