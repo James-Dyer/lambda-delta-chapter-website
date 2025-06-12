@@ -94,7 +94,7 @@ nav ul a:hover {
 }
 
 .menuBtn-wrapper {
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
 }
 
 .menuBtn-wrapper.open {
@@ -162,10 +162,10 @@ nav ul a.active {
 
   @media (prefers-reduced-motion: no-preference) {
     .menuItems {
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.1s ease, opacity 0.1s ease;
     }
     .menuBtn-wrapper {
-      transition: transform 0.3s ease;
+      transition: transform 0.1s ease;
     }
   }
 
