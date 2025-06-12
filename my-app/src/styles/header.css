@@ -162,7 +162,9 @@ nav ul a.active {
 
   @media (prefers-reduced-motion: no-preference) {
     .menuItems {
-      transition: transform 0.1s ease, opacity 0.1s ease;
+      transition:
+        transform 0.1s ease,
+        opacity 0.1s ease;
     }
     .menuBtn-wrapper {
       transition: transform 0.1s ease;
