@@ -139,7 +139,7 @@ nav ul a.active {
   }
 
   .menuItems {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: calc(100% + 5px);
@@ -149,10 +149,31 @@ nav ul a.active {
     border-radius: 5px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
   }
 
   .menuItems.open {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .menuItems {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .menuBtn-wrapper {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menuItems,
+    .menuBtn-wrapper {
+      transition: none;
+    }
   }
 
   .menuItems li {
