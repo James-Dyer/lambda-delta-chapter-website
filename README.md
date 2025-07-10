@@ -40,12 +40,17 @@ The root of the repository only includes this README and a lockfile. The React a
    ```bash
    npm start
    ```
-3. Optional quality checks:
+3. Linting and formatting:
    ```bash
    npm run lint   # check lint rules
    npm run format # format source files
    ```
-4. Build or deploy:
+4. Unit tests:
+   ```bash
+   npm run test            # run all unit tests
+   npm run test:coverage   # run tests and display a coverage report
+   ```
+5. Build or deploy:
    ```bash
    npm run build   # produce a production build
    npm run deploy  # deploy to GitHub Pages

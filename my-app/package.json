@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://ucmsigmachi.org",
   "prettier": {
+    "bracketSpacing": true,
     "printWidth": 80,
     "singleQuote": true,
     "trailingComma": "es5",
@@ -22,11 +23,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint src/**/*.{js,jsx} && prettier --check src/**/*.{js,jsx,css,html,md,json}",
-    "format": "eslint src/**/*.{js,jsx} --fix && prettier --write src/**/*.{js,jsx,css,html,md,json}"
+    "lint": "eslint src/**/*.{js,jsx} && prettier --check src/**/*.{js,jsx,css,json}",
+    "format": "eslint src/**/*.{js,jsx} --fix && prettier --write src/**/*.{js,jsx,css,json}"
   },
   "eslintConfig": {
     "extends": [
