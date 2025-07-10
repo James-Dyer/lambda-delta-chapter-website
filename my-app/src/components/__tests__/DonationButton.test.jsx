@@ -1,23 +1,31 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 import DonationButton from '../DonationButton';
 
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+
 let container;
+let root;
 
 beforeEach(() => {
   container = document.createElement('div');
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
+  act(() => {
+    root.unmount();
+  });
   document.body.removeChild(container);
   container = null;
+  root = null;
 });
 
 test('renders anchor with icon when href provided', () => {
   act(() => {
-    createRoot(container).render(
+    root.render(
       <DonationButton href="https://example.com">Give</DonationButton>
     );
   });
@@ -32,9 +40,7 @@ test('renders anchor with icon when href provided', () => {
 test('calls onClick when button is clicked', () => {
   const onClick = jest.fn();
   act(() => {
-    createRoot(container).render(
-      <DonationButton onClick={onClick}>Press</DonationButton>
-    );
+    root.render(<DonationButton onClick={onClick}>Press</DonationButton>);
   });
   const button = container.querySelector('button');
   expect(button).not.toBeNull();
