@@ -60,10 +60,7 @@ test('external links are reachable', async () => {
   );
 
   results.forEach(({ url, status }) => {
-    if (url === KNOWN_DEAD) {
-      expect(status).toBeGreaterThanOrEqual(400);
-    } else {
-      expect(status).toBeLessThan(400);
-    }
+    const isValid = url === KNOWN_DEAD ? status >= 400 : status < 400;
+    expect(isValid).toBe(true);
   });
 });
