@@ -16,6 +16,7 @@ import Members from './components/Members';
 import Archive from './components/Archive';
 import Philanthropy from './components/Philanthropy';
 import Alumni from './components/Alumni';
+import ScrollToTop from './components/ScrollToTop';
 
 const PageWrapper = ({ children }) => {
   const reduceMotion = useReducedMotion();
@@ -98,6 +99,7 @@ const AnimatedRoutes = () => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <AnimatedRoutes />
     </Router>
