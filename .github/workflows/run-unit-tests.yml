@@ -1,8 +1,10 @@
 # .github/workflows/integration-test.yml
-name: Integration Test
+name: Run Unit Tests
 
 on:
   push:
+    branches: [ dev, main ]
+  pull_request:
     branches: [ dev, main ]
   workflow_dispatch:
 
