@@ -1,5 +1,5 @@
 # .github/workflows/integration-test.yml
-name: Integration Test
+name: Run Unit Tests
 
 on:
   push:
