@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/philanthropy.css';
 import '../styles/donate/huntsmanDonate.css';
 import DonationButton from './DonationButton';
+import Footer from './Footer';
 
 import derby_days_recap_2025 from '../assets/images/philanthropy/Derby_Days_Recap_2025.png';
 
@@ -52,6 +53,7 @@ function Philanthropy() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
