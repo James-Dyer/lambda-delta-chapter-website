@@ -1,6 +1,6 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
-import {act} from 'react-dom/test-utils';
+import { createRoot } from 'react-dom/client';
+import { act } from 'react-dom/test-utils';
 import DonationButton from '../DonationButton';
 
 let container;
@@ -17,7 +17,9 @@ afterEach(() => {
 
 test('renders anchor with icon when href provided', () => {
   act(() => {
-    createRoot(container).render(<DonationButton href="https://example.com">Give</DonationButton>);
+    createRoot(container).render(
+      <DonationButton href="https://example.com">Give</DonationButton>
+    );
   });
   const anchor = container.querySelector('a');
   expect(anchor).not.toBeNull();
@@ -30,12 +32,14 @@ test('renders anchor with icon when href provided', () => {
 test('calls onClick when button is clicked', () => {
   const onClick = jest.fn();
   act(() => {
-    createRoot(container).render(<DonationButton onClick={onClick}>Press</DonationButton>);
+    createRoot(container).render(
+      <DonationButton onClick={onClick}>Press</DonationButton>
+    );
   });
   const button = container.querySelector('button');
   expect(button).not.toBeNull();
   act(() => {
-    button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   expect(onClick).toHaveBeenCalled();
 });

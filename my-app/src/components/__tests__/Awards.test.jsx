@@ -1,6 +1,6 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
-import {act} from 'react-dom/test-utils';
+import { createRoot } from 'react-dom/client';
+import { act } from 'react-dom/test-utils';
 import Awards from '../Home/Awards';
 
 let container;
@@ -24,7 +24,7 @@ test('shows more awards after clicking toggle', () => {
   const initialCount = items().length;
   expect(initialCount).toBeLessThanOrEqual(5);
   act(() => {
-    toggle.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+    toggle.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   expect(items().length).toBeGreaterThan(initialCount);
   expect(toggle.textContent).toMatch(/show less/i);

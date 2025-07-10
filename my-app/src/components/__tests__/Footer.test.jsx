@@ -1,6 +1,6 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
-import {act} from 'react-dom/test-utils';
+import { createRoot } from 'react-dom/client';
+import { act } from 'react-dom/test-utils';
 import Footer from '../Footer';
 
 let container;
