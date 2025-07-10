@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../../styles/home/awards.css';
 
 // Image imports
-import balfordImage from '../../assets/images/collinoneil.jpg';
+import balfourImage from '../../assets/images/collinoneil.jpg';
 
 const Awards = () => {
   const [showAll, setShowAll] = useState(false);
@@ -88,8 +88,8 @@ const Awards = () => {
             <h2 className="award-item-title">Province Balfour Award Winner</h2>
             <div className="award-item-content">
               <img
-                src={balfordImage}
-                alt="Balfour Award Nominee"
+                src={balfourImage}
+                alt="Collin O'Neil - Balfour Award Nominee"
                 className="award-image"
               />
               <div className="award-text">
@@ -127,7 +127,7 @@ const Awards = () => {
               <li>Dustin Chancey, Alpha Alpha</li>
             </ul>
             <p className="award-item-description">
-              <br/>We are incredibly proud of our brothers, and we wish them luck on thier journey.
+              <br/>We are incredibly proud of our brothers, and we wish them luck on their journey.
             </p>
           </div>
           */}
