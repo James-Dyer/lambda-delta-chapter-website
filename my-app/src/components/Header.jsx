@@ -23,11 +23,14 @@ const Header = () => {
         setMenuOpen(false);
       }
     };
-    document.addEventListener(
-      menuOpen ? 'mousedown' : 'click',
-      handleClickOutside
-    );
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [menuOpen]);
 
   return (
