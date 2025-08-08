@@ -16,6 +16,7 @@ import Members from './components/Members';
 import Archive from './components/Archive';
 import Philanthropy from './components/Philanthropy';
 import Alumni from './components/Alumni';
+import Recruitment from './components/Recruitment';
 import ScrollToTop from './components/ScrollToTop';
 
 const PageWrapper = ({ children }) => {
@@ -80,6 +81,14 @@ const AnimatedRoutes = () => {
           element={
             <PageWrapper>
               <Philanthropy />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/recruitment"
+          element={
+            <PageWrapper>
+              <Recruitment />
             </PageWrapper>
           }
         />

@@ -61,6 +61,7 @@ const Header = () => {
                 { to: '/donate', label: 'Donate' },
                 { to: '/members', label: 'Members' },
                 { to: '/philanthropy', label: 'Philanthropy' },
+                { to: '/recruitment', label: 'Recruitment' },
               ].map(({ to, label }) => (
                 <li key={to}>
                   <NavLink
