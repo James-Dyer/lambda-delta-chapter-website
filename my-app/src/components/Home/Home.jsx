@@ -6,7 +6,7 @@ import Awards from '../Home/Awards';
 
 // Media
 import expect_more_logo from '../../assets/images/UC-Merced-SigmaChi-ExpectMore.svg';
-import recruitment_video from '../../assets/videos/recruitmentVid.mp4';
+import recruitment_video from '../../assets/videos/recruitmentVid.MOV';
 
 const Home = () => {
   return (
@@ -43,6 +43,17 @@ const Home = () => {
               Your browser does not support the video tag.
             </video>
           </div>
+        </section>
+        <section id="schedule">
+          <h2>Schedule</h2>
+          <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&title=Sigma%20Chi%20Public%20Calendar&src=MjI4NzU3MDRmMjZjY2M2MjhmYTJjYmRhNGMzMDcxODIyYjM3YWY3Nzg0OTc0NDU0MGRlM2Q3ZTgxYTgwZTVkYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23795548"
+            style={{ border: 'solid 1px #777' }}
+            width="800"
+            height="600"
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
         </section>
       </main>
       {/* Awards & Recognition*/}

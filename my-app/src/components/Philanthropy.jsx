@@ -45,7 +45,7 @@ function Philanthropy() {
             </p>
 
             <DonationButton
-              href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
+              href="https://hope.huntsmancancer.org/gentoend/california---merced---fall-2025-fall-pledge-class"
               style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
             >
               Donate Now

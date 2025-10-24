@@ -214,3 +214,29 @@
     text-align: center;
   }
 }
+.award-item .brother-of-the-month-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.award-item .brother-of-the-month-name h3 {
+  margin: 0; /* remove default heading margin that adds extra space */
+  line-height: 1.1;
+  text-align: center;
+}
+.BOTM {
+  width: 100%;
+  max-width: 360px;
+  margin: 12px auto;
+  padding: 14px;
+  background: rgba(0, 36, 72, 0.45); /* dark card that matches theme */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers children horizontally */
+  gap: 10px;
+  text-align: center; /* ensures text inside is centered */
+  overflow: hidden;
+}
