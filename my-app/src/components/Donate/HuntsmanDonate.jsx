@@ -17,7 +17,7 @@ const HuntsmanDonate = () => {
         </p>
         <div className="button-group">
           <DonationButton
-            href="https://hope.huntsmancancer.org/gentoend/derby-days-2025"
+            href="https://hope.huntsmancancer.org/gentoend/lambda-delta-chapter#"
             style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
           >
             Donate Now

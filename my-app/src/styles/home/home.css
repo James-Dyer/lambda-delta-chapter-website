@@ -71,6 +71,24 @@ video {
   object-fit: cover; /* Optional: crops to fill if needed */
   object-position: center;
 }
+#schedule {
+  border-bottom: 50px solid #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+#schedule h2 {
+  font-size: 3.5rem;
+}
+
+#schedule .calendar-wrapper iframe {
+  display: block;
+  max-width: 100%;
+  border: 1px solid #777;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
