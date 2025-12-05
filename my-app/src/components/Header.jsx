@@ -44,11 +44,10 @@ const Header = () => {
   }, [shouldNavigate, navigate]);
 
   const handleValidKnock = useCallback(() => {
-    console.log('Valid Knock');
     setShouldNavigate(true);
   }, []);
 
-  const knockPattern = [200, 700];
+  const knockPattern = [250, 800];
 
   const handleClick = useKnockDetector(knockPattern, handleValidKnock);
 
