@@ -1,17 +1,20 @@
 // Header.jsx
-import React, { useState, useRef, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/header.css';
 
 // Image imports
 import logo from '../assets/images/navbar/LambdaDeltaLogo.png';
 import closeIcon from '../assets/images/navbar/closeIcon.png';
 import hamburgerIcon from '../assets/images/navbar/hamburgerMenuIcon.png';
+import useKnockDetector from './Secret/Knock';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shouldNavigate, setShouldNavigate] = useState(false);
   const containerRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // close mobile menu on navigation
   useEffect(() => setMenuOpen(false), [location]);
@@ -33,11 +36,26 @@ const Header = () => {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (shouldNavigate) {
+      navigate('/challenge');
+      setShouldNavigate(false);
+    }
+  }, [shouldNavigate, navigate]);
+
+  const handleValidKnock = useCallback(() => {
+    setShouldNavigate(true);
+  }, []);
+
+  const knockPattern = [250, 800];
+
+  const handleClick = useKnockDetector(knockPattern, handleValidKnock);
+
   return (
     <header>
       <div className="header-content">
         <nav>
-          <div id="navbar-logo">
+          <div id="navbar-logo" onClick={handleClick}>
             <NavLink to="/">
               <img src={logo} alt="Lambda Delta Logo" />
             </NavLink>

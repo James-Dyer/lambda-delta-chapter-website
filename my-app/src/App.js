@@ -19,6 +19,8 @@ import Alumni from './components/Alumni';
 import Recruitment from './components/Recruitment';
 import DerbyDays from './components/DerbyDays';
 import ScrollToTop from './components/ScrollToTop';
+import Challenge from './components/Secret/Challenge.jsx';
+import SecretPage from './components/Secret/SecretPage.jsx';
 
 const PageWrapper = ({ children }) => {
   const reduceMotion = useReducedMotion();
@@ -106,6 +108,22 @@ const AnimatedRoutes = () => {
           element={
             <PageWrapper>
               <DerbyDays />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/challenge"
+          element={
+            <PageWrapper>
+              <Challenge />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/secret"
+          element={
+            <PageWrapper>
+              <SecretPage />
             </PageWrapper>
           }
         />
