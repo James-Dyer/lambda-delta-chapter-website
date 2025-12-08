@@ -47,7 +47,7 @@ const Header = () => {
     setShouldNavigate(true);
   }, []);
 
-  const knockPattern = [250, 800];
+  const knockPattern = [250, 600];
 
   const handleClick = useKnockDetector(knockPattern, handleValidKnock);
 
