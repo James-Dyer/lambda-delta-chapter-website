@@ -4,10 +4,10 @@ This repository contains the source for the **Lambda Delta Chapter of Sigma Chi*
 
 ## Project layout
 
-All code lives under `my-app/`:
+All code lives under `frontend/`:
 
 ```
-my-app/
+frontend/
 ├── public/          # static files (index.html, 404.html, robots.txt, CNAME)
 ├── src/
 │   ├── assets/      # images and videos
@@ -20,7 +20,7 @@ my-app/
 └── ...
 ```
 
-The root of the repository only includes this README and a lockfile. The React app itself is self contained inside `my-app/`.
+The root of the repository only includes this README and a lockfile. The React app itself is self contained inside `frontend/`.
 
 ## Key features
 
@@ -31,9 +31,9 @@ The root of the repository only includes this README and a lockfile. The React a
 
 ## Installing and running
 
-1. Install dependencies from the `my-app` directory:
+1. Install dependencies from the `frontend` directory:
    ```bash
-   cd my-app
+   cd frontend
    npm install
    ```
 2. Start the development server:

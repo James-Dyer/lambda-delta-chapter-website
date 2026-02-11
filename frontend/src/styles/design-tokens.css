@@ -1,0 +1,321 @@
+/**
+ * Design Tokens - Lambda Delta Chapter Website
+ *
+ * This file contains all design system variables extracted from the existing codebase.
+ * Import this file early in your CSS to use these tokens throughout the application.
+ *
+ * Usage:
+ * @import './styles/design-tokens.css';
+ *
+ * Then use variables like:
+ * color: var(--color-primary);
+ * padding: var(--spacing-md);
+ */
+
+:root {
+  /* ========================================================================
+     COLORS
+     ======================================================================== */
+
+  /* Primary Colors */
+  --color-primary: #003366;
+  --color-primary-hover: #00509e;
+  --color-primary-rgb: 0, 51, 102; /* For rgba() usage */
+
+  /* Accent Colors */
+  --color-accent-blue: #61b9ef;
+  --color-accent-gold: #edba68;
+
+  /* Neutral Colors */
+  --color-background: #f9f9f9;
+  --color-text-primary: #333333;
+  --color-text-heading: #2c3e50;
+  --color-text-muted: #222222b6;
+  --color-border: #e0e0e0;
+  --color-border-dark: #777777;
+
+  /* Whites and Blacks */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Button Colors */
+  --color-button-primary: #007bff;
+  --color-button-primary-hover: #0056b3;
+  --color-button-success: #28a745;
+  --color-button-success-hover: #218838;
+
+  /* Overlay Colors (use with rgba) */
+  --overlay-navy-strong: rgba(0, 51, 102, 0.8);
+  --overlay-navy-medium: rgba(0, 30, 95, 0.65);
+  --overlay-navy-card: rgba(0, 36, 72, 0.6);
+  --overlay-navy-card-light: rgba(0, 36, 72, 0.45);
+  --overlay-white: rgba(255, 255, 255, 0.6);
+  --overlay-white-border: rgba(255, 255, 255, 0.4);
+  --overlay-white-separator: rgba(255, 255, 255, 0.2);
+
+  /* Table Colors */
+  --color-table-header: #f2f2f2;
+  --color-table-row-odd: #fafafa;
+  --color-table-row-hover: #f5f5f5;
+
+  /* ========================================================================
+     TYPOGRAPHY
+     ======================================================================== */
+
+  /* Font Families */
+  --font-heading: 'Bebas Neue', serif;
+  --font-quote: 'Playfair Display', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-button: Arial, Helvetica, sans-serif;
+  --font-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.85rem; /* 13.6px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.1rem; /* 17.6px */
+  --font-size-body: 1.2rem; /* 19.2px */
+  --font-size-nav-mobile: 1.2rem;
+  --font-size-instagram: 1.4rem;
+  --font-size-nav: 1.5rem; /* 24px */
+  --font-size-timeline: 1.5rem;
+  --font-size-h2-small: 1.7rem; /* 27.2px */
+  --font-size-h2-medium: 1.8rem;
+  --font-size-award-title: 1.8rem;
+  --font-size-h1: 2.2rem; /* 35.2px */
+  --font-size-h1-mobile: 2.5rem;
+  --font-size-h1-large: 3rem;
+  --font-size-h-xl: 3.5rem; /* 56px */
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================================================
+     SPACING
+     ======================================================================== */
+
+  /* Spacing Scale */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 60px;
+  --spacing-4xl: 80px;
+
+  /* Specific Spacing (from existing patterns) */
+  --gap-tight: 5px;
+  --gap-small: 10px;
+  --gap-medium: 15px;
+  --gap-standard: 20px;
+  --gap-large: 24px;
+  --gap-xl: 40px;
+
+  /* Padding Presets */
+  --padding-button: 12px 24px;
+  --padding-nav-link: 8px 18px;
+  --padding-header: 12px 24px;
+  --padding-footer: 10px;
+  --padding-card: 20px;
+  --padding-section: 40px 20px;
+
+  /* ========================================================================
+     LAYOUT
+     ======================================================================== */
+
+  /* Max Widths */
+  --max-width-narrow: 800px;
+  --max-width-medium: 900px;
+  --max-width-wide: 1200px;
+
+  /* Image Sizes */
+  --image-award-width: 150px;
+  --image-award-width-mobile: 250px;
+  --image-botm-max-width: 360px;
+  --image-logo-height: 48px;
+  --image-logo-mobile-height: 30px;
+
+  /* Menu Widths */
+  --menu-dropdown-width: 200px;
+
+  /* ========================================================================
+     BORDERS
+     ======================================================================== */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-standard: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+
+  /* Border Widths */
+  --border-thin: 1px;
+  --border-medium: 2px;
+
+  /* Border Styles */
+  --border-color: var(--color-border);
+  --border-table: 1px solid var(--color-border);
+  --border-glass: 1px solid var(--overlay-white-border);
+  --border-white: 1px solid var(--color-white);
+
+  /* ========================================================================
+     SHADOWS
+     ======================================================================== */
+
+  /* Box Shadows */
+  --shadow-header: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-dropdown: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-card-dark: 0 8px 20px rgba(0, 0, 0, 0.45);
+
+  /* ========================================================================
+     TRANSITIONS
+     ======================================================================== */
+
+  /* Duration */
+  --transition-fast: 0.1s;
+  --transition-quick: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.6s;
+
+  /* Easing */
+  --ease-default: ease;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+
+  /* Common Transitions */
+  --transition-bg: background-color var(--transition-normal) var(--ease-default);
+  --transition-transform: transform var(--transition-quick) var(--ease-default);
+  --transition-opacity: opacity var(--transition-fast) var(--ease-default);
+  --transition-shadow: box-shadow var(--transition-normal) var(--ease-default);
+  --transition-all: all var(--transition-normal) var(--ease-default);
+
+  /* ========================================================================
+     Z-INDEX
+     ======================================================================== */
+
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-overlay: 2;
+  --z-dropdown: 1000;
+  --z-modal: 2000;
+  --z-toast: 3000;
+
+  /* ========================================================================
+     BREAKPOINTS
+     ======================================================================== */
+
+  /* Media Query Breakpoints (for use in JavaScript) */
+  --breakpoint-mobile: 768px;
+}
+
+/* ============================================================================
+   UTILITY CLASSES (Optional)
+   ========================================================================== */
+
+/* If you want to use these design tokens as utility classes,
+   uncomment the section below */
+
+/*
+.text-primary { color: var(--color-primary); }
+.text-heading { color: var(--color-text-heading); }
+.text-muted { color: var(--color-text-muted); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-light { background-color: var(--color-background); }
+
+.font-heading { font-family: var(--font-heading); }
+.font-quote { font-family: var(--font-quote); }
+
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+
+.shadow-sm { box-shadow: var(--shadow-card-hover); }
+.shadow-md { box-shadow: var(--shadow-dropdown); }
+.shadow-lg { box-shadow: var(--shadow-card-dark); }
+*/
+
+/* ============================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+/* Fade-slide animation (from Awards timeline) */
+@keyframes fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo spin (from App.css, if needed) */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================================
+   NOTES FOR FUTURE DEVELOPMENT
+   ========================================================================== */
+
+/*
+ * Migration Guide:
+ * ----------------
+ * To gradually adopt these design tokens in your existing CSS:
+ *
+ * 1. Import this file in index.css or App.css:
+ *    @import './styles/design-tokens.css';
+ *
+ * 2. Replace hardcoded values with variables:
+ *    Before: color: #003366;
+ *    After:  color: var(--color-primary);
+ *
+ * 3. Use fallback values for critical properties:
+ *    color: var(--color-primary, #003366);
+ *
+ * 4. Test thoroughly, especially in older browsers
+ *
+ * Benefits:
+ * ---------
+ * - Single source of truth for design values
+ * - Easy theming (light/dark mode)
+ * - Consistent spacing and colors
+ * - Easier to maintain and update
+ * - Better developer experience
+ */
