@@ -4,15 +4,15 @@
  */
 
 import React from 'react';
-import { usePolling } from '../hooks/usePolling';
+import { useGoogleSheetsPolling } from '../hooks/useGoogleSheetsPolling';
 import Footer from './Footer';
 import '../styles/callathonLeaderboard.css';
 
 const CallathonLeaderboard = () => {
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
-  const { data, loading, error, lastUpdated } = usePolling(
-    `${apiUrl}/api/leaderboard/callathon`,
-    3000
+  const range = process.env.REACT_APP_SHEET_RANGE_CALLATHON || 'Callathon!A1:B100';
+  const { data, loading, error, lastUpdated } = useGoogleSheetsPolling(
+    range,
+    3000 // Poll every 3 seconds for Callathon (fast updates)
   );
 
   // Format last updated timestamp

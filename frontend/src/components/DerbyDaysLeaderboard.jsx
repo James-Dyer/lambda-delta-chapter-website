@@ -4,15 +4,15 @@
  */
 
 import React from 'react';
-import { usePolling } from '../hooks/usePolling';
+import { useGoogleSheetsPolling } from '../hooks/useGoogleSheetsPolling';
 import Footer from './Footer';
 import '../styles/derbyDaysLeaderboard.css';
 
 const DerbyDaysLeaderboard = () => {
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
-  const { data, loading, error, lastUpdated } = usePolling(
-    `${apiUrl}/api/leaderboard/derbyDays`,
-    3000
+  const range = process.env.REACT_APP_SHEET_RANGE_DERBY_DAYS || 'DerbyDays!A1:B100';
+  const { data, loading, error, lastUpdated } = useGoogleSheetsPolling(
+    range,
+    30000 // Poll every 30 seconds for Derby Days
   );
 
   // Format last updated timestamp
