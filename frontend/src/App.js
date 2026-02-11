@@ -18,6 +18,8 @@ import Philanthropy from './components/Philanthropy';
 import Alumni from './components/Alumni';
 import Recruitment from './components/Recruitment';
 import DerbyDays from './components/DerbyDays';
+import DerbyDaysLeaderboard from './components/DerbyDaysLeaderboard';
+import CallathonLeaderboard from './components/CallathonLeaderboard';
 import ScrollToTop from './components/ScrollToTop';
 import Challenge from './components/Secret/Challenge.jsx';
 import SecretPage from './components/Secret/SecretPage.jsx';
@@ -108,6 +110,22 @@ const AnimatedRoutes = () => {
           element={
             <PageWrapper>
               <DerbyDays />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/derbyDaysLeaderboard"
+          element={
+            <PageWrapper>
+              <DerbyDaysLeaderboard />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/callathon"
+          element={
+            <PageWrapper>
+              <CallathonLeaderboard />
             </PageWrapper>
           }
         />

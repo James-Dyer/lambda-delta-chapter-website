@@ -1,0 +1,254 @@
+/**
+ * Derby Days Leaderboard Styles
+ * Table-based leaderboard view
+ */
+
+@import './design-tokens.css';
+
+.derby-days-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.derby-days-page {
+  flex: 1;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  max-width: var(--max-width-medium);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header */
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.leaderboard-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 1px;
+}
+
+.leaderboard-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Status Banners */
+.status-banner {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.status-banner.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: var(--border-thin) solid #ffc107;
+}
+
+.status-banner.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: var(--border-thin) solid #dc3545;
+}
+
+.status-error {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  margin-top: var(--spacing-xs);
+  opacity: 0.8;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4xl) var(--spacing-lg);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--spacing-lg);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+/* Leaderboard Content */
+.leaderboard-content {
+  margin-top: var(--spacing-lg);
+}
+
+.leaderboard-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.last-updated {
+  font-weight: var(--font-weight-semibold);
+}
+
+.row-count {
+  font-style: italic;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-standard);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-white);
+}
+
+.leaderboard-table thead {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.leaderboard-table th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.5px;
+}
+
+.leaderboard-table tbody tr {
+  border-bottom: var(--border-thin) solid var(--color-border);
+  transition: var(--transition-bg);
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: var(--color-table-row-hover);
+}
+
+.leaderboard-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-table td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+}
+
+/* Column Specific Styles */
+.rank-column {
+  width: 80px;
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+}
+
+.name-column {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.score-column {
+  width: 120px;
+  text-align: right;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+}
+
+/* Top 3 Highlights */
+.leaderboard-table tbody tr.rank-1 {
+  background-color: #fff9e6;
+}
+
+.leaderboard-table tbody tr.rank-2 {
+  background-color: #f5f5f5;
+}
+
+.leaderboard-table tbody tr.rank-3 {
+  background-color: #fff5f0;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-lg);
+  background-color: var(--color-background);
+  border-radius: var(--radius-standard);
+  margin-top: var(--spacing-lg);
+}
+
+.empty-state p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  margin: var(--spacing-sm) 0;
+}
+
+.empty-state-subtitle {
+  font-size: var(--font-size-sm) !important;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .derby-days-page {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .leaderboard-header h1 {
+    font-size: var(--font-size-h1-mobile);
+  }
+
+  .leaderboard-meta {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .rank-column {
+    width: 60px;
+  }
+
+  .score-column {
+    width: 80px;
+  }
+}
