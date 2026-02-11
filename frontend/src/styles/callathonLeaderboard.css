@@ -51,7 +51,9 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible; /* Allow external points to show outside */
+  display: flex;
+  align-items: center;
 }
 
 .bar-fill {
@@ -68,11 +70,13 @@
   min-width: 15%;
   /* transition removed - Framer Motion handles all animations */
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .bar-name {
   color: white;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
@@ -82,20 +86,21 @@
 
 .bar-value {
   color: white;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
 }
 
-/* Hide value when bar is too narrow to fit both name and value */
-.bar-fill[data-narrow='true'] .bar-value {
-  display: none;
-}
-
-/* Adjust bar-name to take full width when value is hidden */
-.bar-fill[data-narrow='true'] .bar-name {
-  max-width: 100%;
+/* External points display (shown to the right when bar is too narrow) */
+.bar-value-external {
+  color: var(--western-tan);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  margin-left: 1.5rem;
+  flex-shrink: 0;
 }
 
 /* ========================================================================
