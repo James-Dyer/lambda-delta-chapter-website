@@ -17,7 +17,6 @@ import Archive from './components/Archive';
 import Philanthropy from './components/Philanthropy';
 import Alumni from './components/Alumni';
 import Recruitment from './components/Recruitment';
-import DerbyDays from './components/DerbyDays';
 import DerbyDaysLeaderboard from './components/DerbyDaysLeaderboard';
 import CallathonLeaderboard from './components/CallathonLeaderboard';
 import ScrollToTop from './components/ScrollToTop';
@@ -107,14 +106,6 @@ const AnimatedRoutes = () => {
         />
         <Route
           path="/derbyDays"
-          element={
-            <PageWrapper>
-              <DerbyDays />
-            </PageWrapper>
-          }
-        />
-        <Route
-          path="/derbyDaysLeaderboard"
           element={
             <PageWrapper>
               <DerbyDaysLeaderboard />

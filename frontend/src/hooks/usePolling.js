@@ -30,7 +30,9 @@ export function usePolling(url, interval = 3000) {
         const response = await fetch(url);
 
         if (!response.ok) {
-          throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+          throw new Error(
+            `HTTP error ${response.status}: ${response.statusText}`
+          );
         }
 
         const result = await response.json();

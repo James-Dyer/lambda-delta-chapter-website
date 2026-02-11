@@ -17,9 +17,11 @@ export async function fetchLeaderboardData(range) {
   if (!SHEET_ID || !API_KEY) {
     console.error('Missing Google Sheets configuration:', {
       hasSheetId: !!SHEET_ID,
-      hasApiKey: !!API_KEY
+      hasApiKey: !!API_KEY,
     });
-    throw new Error('Google Sheets configuration is missing. Please set REACT_APP_GOOGLE_SHEETS_ID and REACT_APP_GOOGLE_SHEETS_API_KEY');
+    throw new Error(
+      'Google Sheets configuration is missing. Please set REACT_APP_GOOGLE_SHEETS_ID and REACT_APP_GOOGLE_SHEETS_API_KEY'
+    );
   }
 
   // Construct API URL
@@ -30,7 +32,9 @@ export async function fetchLeaderboardData(range) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`Google Sheets API error (${response.status}): ${errorText}`);
+      throw new Error(
+        `Google Sheets API error (${response.status}): ${errorText}`
+      );
     }
 
     const data = await response.json();

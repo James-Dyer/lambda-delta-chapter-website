@@ -1,124 +1,107 @@
 /**
  * Call-a-thon Leaderboard Component
- * Displays leaderboard data as horizontal bar chart
+ * Optimized for big display - clean bar chart view
  */
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useGoogleSheetsPolling } from '../hooks/useGoogleSheetsPolling';
-import Footer from './Footer';
 import '../styles/callathonLeaderboard.css';
 
 const CallathonLeaderboard = () => {
-  const range = process.env.REACT_APP_SHEET_RANGE_CALLATHON || 'Callathon!A1:B100';
-  const { data, loading, error, lastUpdated } = useGoogleSheetsPolling(
+  const range =
+    process.env.REACT_APP_SHEET_RANGE_CALLATHON || 'Callathon!A1:B100';
+  const { data, loading, error } = useGoogleSheetsPolling(
     range,
     3000 // Poll every 3 seconds for Callathon (fast updates)
   );
 
-  // Format last updated timestamp
-  const formatTimestamp = (date) => {
-    if (!date) return 'Never';
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    });
+  // Calculate max score for bar width percentages
+  const maxScore =
+    data?.rows?.length > 0 ? Math.max(...data.rows.map((row) => row.score)) : 0;
+
+  // Animation variants for bar growth
+  const barVariants = {
+    hidden: { width: '0%' },
+    visible: (targetWidth) => ({
+      width: targetWidth,
+      transition: {
+        duration: 1.5,
+        ease: 'easeOut',
+      },
+    }),
   };
 
-  // Calculate max score for bar chart scaling
-  const maxScore = data?.rows?.length > 0
-    ? Math.max(...data.rows.map((row) => row.score))
-    : 0;
+  // Loading State
+  if (loading && !data) {
+    return (
+      <div className="callathon-display">
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading leaderboard...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error State
+  if (error && !data) {
+    return (
+      <div className="callathon-display">
+        <div className="error-container">
+          <p>❌ Unable to load leaderboard</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Empty State
+  if (!data?.rows || data.rows.length === 0) {
+    return (
+      <div className="callathon-display">
+        <div className="empty-container">
+          <p>No participants yet</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="callathon-wrapper">
-      <div className="callathon-page">
-        {/* Header Section */}
-        <header className="leaderboard-header">
-          <h1>Call-a-thon 2026 Leaderboard</h1>
-          <p className="leaderboard-subtitle">Live Fundraising Progress</p>
-        </header>
+    <div className="callathon-display">
+      <div className="bars-container">
+        {data.rows.map((row, index) => {
+          // Asymptotic scaling: bars grow continuously but never reach 100%
+          const MAX_WIDTH = 95; // Asymptotic limit (bars approach but never reach this)
+          const SCALE_FACTOR = maxScore * 1.2; // Controls growth rate
 
-        {/* Status Banner */}
-        {data?.status === 'degraded' && (
-          <div className="status-banner warning">
-            ⚠️ Data may be outdated - experiencing connectivity issues
-            {data.error && <div className="status-error">{data.error}</div>}
-          </div>
-        )}
+          const percentage =
+            maxScore > 0
+              ? MAX_WIDTH * (1 - Math.exp(-row.score / SCALE_FACTOR))
+              : 0;
 
-        {/* Error Banner */}
-        {error && !data && (
-          <div className="status-banner error">
-            ❌ Unable to load leaderboard: {error}
-          </div>
-        )}
-
-        {/* Loading State */}
-        {loading && !data && (
-          <div className="loading-container">
-            <div className="loading-spinner"></div>
-            <p>Loading leaderboard...</p>
-          </div>
-        )}
-
-        {/* Leaderboard Bar Chart */}
-        {data && (
-          <div className="leaderboard-content">
-            <div className="leaderboard-meta">
-              <span className="last-updated">
-                Last updated: {formatTimestamp(lastUpdated)}
-              </span>
-              <span className="row-count">
-                {data.rows.length}{' '}
-                {data.rows.length === 1 ? 'participant' : 'participants'}
-              </span>
+          return (
+            <div
+              key={`${row.rank}-${row.name}`}
+              className={`bar-row ${index < 3 ? `rank-${index + 1}` : ''}`}
+            >
+              <motion.div
+                className="bar-fill"
+                data-narrow={percentage < 30}
+                variants={barVariants}
+                initial="hidden"
+                animate="visible"
+                custom={`${percentage}%`}
+                style={{ width: `${percentage}%` }}
+              >
+                <span className="bar-name">{row.name}</span>
+                <span className="bar-value">
+                  ${row.score.toLocaleString()} 🐎
+                </span>
+              </motion.div>
             </div>
-
-            {data.rows.length > 0 ? (
-              <div className="bar-chart-container">
-                {data.rows.map((row, index) => {
-                  const percentage =
-                    maxScore > 0 ? (row.score / maxScore) * 100 : 0;
-
-                  return (
-                    <div
-                      key={`${row.rank}-${row.name}`}
-                      className={`bar-item ${index < 3 ? `rank-${index + 1}` : ''}`}
-                    >
-                      <div className="bar-label">
-                        <span className="bar-rank">
-                          {row.rank === 1 && '🥇'}
-                          {row.rank === 2 && '🥈'}
-                          {row.rank === 3 && '🥉'}
-                          {row.rank > 3 && `${row.rank}.`}
-                        </span>
-                        <span className="bar-name">{row.name}</span>
-                      </div>
-                      <div className="bar-visualization">
-                        <div
-                          className="bar-fill"
-                          style={{ width: `${percentage}%` }}
-                        >
-                          <span className="bar-score">${row.score.toLocaleString()}</span>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="empty-state">
-                <p>No participants have been added yet.</p>
-                <p className="empty-state-subtitle">
-                  Check back soon for live fundraising progress!
-                </p>
-              </div>
-            )}
-          </div>
-        )}
+          );
+        })}
       </div>
-      <Footer />
     </div>
   );
 };

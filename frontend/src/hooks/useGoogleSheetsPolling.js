@@ -36,7 +36,7 @@ export function useGoogleSheetsPolling(range, interval = 30000) {
           setData({
             rows,
             updatedAt: new Date(),
-            status: 'ok'
+            status: 'ok',
           });
           setError(null);
           setLoading(false);
@@ -56,7 +56,7 @@ export function useGoogleSheetsPolling(range, interval = 30000) {
             setData({
               ...data,
               status: 'degraded',
-              error: err.message
+              error: err.message,
             });
           }
         }
