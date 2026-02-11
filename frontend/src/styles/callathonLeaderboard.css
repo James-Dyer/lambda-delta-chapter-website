@@ -66,7 +66,7 @@
   justify-content: space-between;
   padding: 0 2rem;
   min-width: 15%;
-  transition: width 0.3s ease-out;
+  /* transition removed - Framer Motion handles all animations */
   position: relative;
 }
 
@@ -127,6 +127,12 @@
 /* Bronze - 3rd Place */
 .bar-row.rank-3 .bar-fill {
   background: linear-gradient(90deg, #cd7f32 0%, #b8692d 100%);
+}
+
+.bar-row.rank-3 .bar-name,
+.bar-row.rank-3 .bar-value {
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 /* ========================================================================
