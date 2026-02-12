@@ -81,15 +81,16 @@ function parseLeaderboardData(rows) {
 
   // Assign ranks
   let currentRank = 1;
+  let previousRank = 1;
   const rankedRows = parsedRows.map((row, index) => {
     // Handle ties - if score is same as previous, keep same rank
     if (index > 0 && row.score === parsedRows[index - 1].score) {
-      return { ...row, rank: rankedRows[index - 1].rank };
+      return { ...row, rank: previousRank };
     }
 
-    const rank = currentRank;
+    previousRank = currentRank;
     currentRank++;
-    return { ...row, rank };
+    return { ...row, rank: previousRank };
   });
 
   return rankedRows;

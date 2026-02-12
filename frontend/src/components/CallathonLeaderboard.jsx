@@ -227,7 +227,10 @@ const CallathonLeaderboard = () => {
                                   basePointsColor,
                                 ],
                               }
-                            : {}
+                            : {
+                                scale: 1,
+                                color: basePointsColor,
+                              }
                         }
                         transition={{ duration: 0.6 }}
                       >
@@ -248,7 +251,10 @@ const CallathonLeaderboard = () => {
                                 basePointsColor,
                               ],
                             }
-                          : {}
+                          : {
+                              scale: 1,
+                              color: basePointsColor,
+                            }
                       }
                       transition={{ duration: 0.6 }}
                     >
