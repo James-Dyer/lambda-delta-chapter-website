@@ -4,7 +4,7 @@ import '../../styles/home/awards.css';
 
 // Image imports
 import balfourImage from '../../assets/images/collinoneil.jpg';
-import BOTM from '../../assets/images/BOTM.png';
+
 const Awards = () => {
   const [showAll, setShowAll] = useState(false);
 
@@ -83,23 +83,6 @@ const Awards = () => {
             </div>
           </div>
 
-          {/* Brother of the Month*/}
-          <div className="award-item">
-            <h2 className="award-item-title">Brother of the Month</h2>
-            <p className="award-item-description">
-              Each month, one brother is recognized for his outstanding
-              contributions to the chapter and embodiment of Sigma Chi values.
-              This month, we are proud to present our Brother of the Month:
-            </p>
-            <div className="brother-of-the-month-name">
-              <h3>Mateo Inzunza</h3>
-              <img
-                src={BOTM}
-                alt="Brother of the Month - Mateo Inzunza"
-                className="BOTM"
-              />
-            </div>
-          </div>
           {/* Province Balfour Award Winner */}
           <div className="award-item">
             <h2 className="award-item-title">Province Balfour Award Winner</h2>
