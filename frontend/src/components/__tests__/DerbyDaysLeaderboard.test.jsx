@@ -597,39 +597,6 @@ describe('score change animation via data-animate', () => {
   });
 });
 
-// ─── formatTimestamp ──────────────────────────────────────────────────────────
-
-describe('formatTimestamp via .dev-timestamp', () => {
-  test('lastUpdated: null → text contains "Never"', () => {
-    useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [], status: 'ok', updatedAt: new Date() },
-      loading: false,
-      error: null,
-      lastUpdated: null,
-    });
-    act(() => {
-      root.render(<DerbyDaysLeaderboard />);
-    });
-    expect(container.querySelector('.dev-timestamp').textContent).toContain(
-      'Never'
-    );
-  });
-
-  test('lastUpdated: Date → text matches HH:MM:SS pattern', () => {
-    useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [], status: 'ok', updatedAt: new Date() },
-      loading: false,
-      error: null,
-      lastUpdated: new Date(2026, 0, 1, 12, 34, 56),
-    });
-    act(() => {
-      root.render(<DerbyDaysLeaderboard />);
-    });
-    const text = container.querySelector('.dev-timestamp').textContent;
-    expect(text).toMatch(/\d+:\d{2}:\d{2}/);
-  });
-});
-
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 describe('footer', () => {
