@@ -4,10 +4,10 @@ This repository contains the source for the **Lambda Delta Chapter of Sigma Chi*
 
 ## Project layout
 
-All code lives under `my-app/`:
+All code lives under `frontend/`:
 
 ```
-my-app/
+frontend/
 ├── public/          # static files (index.html, 404.html, robots.txt, CNAME)
 ├── src/
 │   ├── assets/      # images and videos
@@ -20,20 +20,11 @@ my-app/
 └── ...
 ```
 
-The root of the repository only includes this README and a lockfile. The React app itself is self contained inside `my-app/`.
-
-## Key features
-
-- **Home page** with an embedded recruitment video and an interactive awards section.
-- **Member Directory** that reads `brother-info.xlsx` at runtime using the `xlsx` library and groups members by committee.
-- **Donate page** with options to support the chapter directly or donate to the Huntsman Cancer Institute.
-- Fully responsive layout for desktop and mobile.
-
 ## Installing and running
 
-1. Install dependencies from the `my-app` directory:
+1. Install dependencies from the `frontend` directory:
    ```bash
-   cd my-app
+   cd frontend
    npm install
    ```
 2. Start the development server:
@@ -59,8 +50,6 @@ The root of the repository only includes this README and a lockfile. The React a
 
 ## Next steps
 
-- Review `src/App.js` to understand how each component is mapped to a route.
-- Explore `src/styles/` for examples of CSS Modules.
 - The site is designed to be easily extendable. New pages can be added by placing components in `src/components/` and registering them in the router.
 
 ## Contact
