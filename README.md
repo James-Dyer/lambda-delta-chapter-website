@@ -20,15 +20,6 @@ frontend/
 └── ...
 ```
 
-The root of the repository only includes this README and a lockfile. The React app itself is self contained inside `frontend/`.
-
-## Key features
-
-- **Home page** with an embedded recruitment video and an interactive awards section.
-- **Member Directory** that reads `brother-info.xlsx` at runtime using the `xlsx` library and groups members by committee.
-- **Donate page** with options to support the chapter directly or donate to the Huntsman Cancer Institute.
-- Fully responsive layout for desktop and mobile.
-
 ## Installing and running
 
 1. Install dependencies from the `frontend` directory:
@@ -59,8 +50,6 @@ The root of the repository only includes this README and a lockfile. The React a
 
 ## Next steps
 
-- Review `src/App.js` to understand how each component is mapped to a route.
-- Explore `src/styles/` for examples of CSS Modules.
 - The site is designed to be easily extendable. New pages can be added by placing components in `src/components/` and registering them in the router.
 
 ## Contact

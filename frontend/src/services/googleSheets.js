@@ -7,9 +7,11 @@
  * Fetches leaderboard data from Google Sheets API
  *
  * @param {string} range - Sheet range (e.g., "DerbyDays!A1:B100")
+ * @param {Object} [options] - Parsing options
+ * @param {number} [options.scoreColumnIndex=1] - Zero-based column index for the score value
  * @returns {Promise<Array>} Parsed leaderboard rows with rank, name, and score
  */
-export async function fetchLeaderboardData(range) {
+export async function fetchLeaderboardData(range, options = {}) {
   const SHEET_ID = process.env.REACT_APP_GOOGLE_SHEETS_ID;
   const API_KEY = process.env.REACT_APP_GOOGLE_SHEETS_API_KEY;
 
@@ -41,7 +43,7 @@ export async function fetchLeaderboardData(range) {
     const rows = data.values || [];
 
     // Parse the data
-    return parseLeaderboardData(rows);
+    return parseLeaderboardData(rows, options.scoreColumnIndex);
   } catch (error) {
     console.error('Error fetching Google Sheets data:', error);
     throw error;
@@ -52,9 +54,10 @@ export async function fetchLeaderboardData(range) {
  * Parses raw Google Sheets data into leaderboard format
  *
  * @param {Array<Array<string>>} rows - Raw 2D array from Google Sheets API
+ * @param {number} [scoreColumnIndex=1] - Zero-based column index for the score value
  * @returns {Array<{rank: number, name: string, score: number}>} Parsed and sorted leaderboard
  */
-function parseLeaderboardData(rows) {
+function parseLeaderboardData(rows, scoreColumnIndex = 1) {
   // Skip if no data
   if (!rows || rows.length === 0) {
     return [];
@@ -67,7 +70,9 @@ function parseLeaderboardData(rows) {
   const parsedRows = dataRows
     .map((row) => {
       const name = row[0] ? String(row[0]).trim() : '';
-      const scoreStr = row[1] ? String(row[1]).trim() : '0';
+      const scoreStr = row[scoreColumnIndex]
+        ? String(row[scoreColumnIndex]).trim()
+        : '0';
 
       // Convert score to number, removing any non-numeric characters except decimal point
       const score = parseFloat(scoreStr.replace(/[^0-9.-]/g, '')) || 0;

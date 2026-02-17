@@ -11,10 +11,11 @@ import '../styles/callathonLeaderboard.css';
 
 const CallathonLeaderboard = () => {
   const range =
-    process.env.REACT_APP_SHEET_RANGE_CALLATHON || 'Callathon!A1:B100';
+    process.env.REACT_APP_SHEET_RANGE_CALLATHON || 'Callathon!A1:C100';
   const { data, loading, error } = useGoogleSheetsPolling(
     range,
-    3000 // Poll every 3 seconds for Callathon (fast updates)
+    3000, // Poll every 3 seconds for Callathon (fast updates)
+    { scoreColumnIndex: 2 } // Points are in column 3 (index 2)
   );
 
   // Calculate max score for bar width percentages
@@ -81,6 +82,20 @@ const CallathonLeaderboard = () => {
     return changed;
   }, [previousData, data?.rows]);
 
+  // Calculate dynamic bar height so all orgs fit within the viewport (no scrolling)
+  const barHeight = useMemo(() => {
+    const count = data?.rows?.length || 0;
+    if (count === 0) return 96;
+
+    const MAX_BAR_HEIGHT = 96; // px - cap to avoid overly thick bars with few teams
+    const DISPLAY_PADDING = 48; // px (3rem on each side, vertical)
+    const GAP = 8; // px (0.5rem gap between bars)
+    const viewportH = window.innerHeight;
+    const available =
+      viewportH - DISPLAY_PADDING * 2 - GAP * Math.max(0, count - 1);
+    return Math.min(MAX_BAR_HEIGHT, Math.floor(available / count));
+  }, [data?.rows?.length]);
+
   // Calculate minimum bar width needed to fit the longest name
   const minWidthPercent = useMemo(() => {
     if (!data?.rows || data.rows.length === 0) return 15;
@@ -89,9 +104,9 @@ const CallathonLeaderboard = () => {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
 
-    // Match the font style from CSS (clamp range, use middle value for calculation)
-    context.font =
-      'bold 2rem -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    // Match the dynamic font size: clamp(0.75rem, barHeight * 0.38, 2rem)
+    const dynamicFontPx = Math.min(Math.max(barHeight * 0.38, 12), 32);
+    context.font = `bold ${dynamicFontPx}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
 
     // Find the longest name width
     let maxNameWidth = 0;
@@ -105,13 +120,12 @@ const CallathonLeaderboard = () => {
     const totalWidthNeeded = maxNameWidth + 128; // 64px padding + 64px safety margin
 
     // Convert to percentage of viewport width (approximate)
-    // Assume viewport is around 1920px wide for large displays
     const viewportWidth = window.innerWidth || 1920;
     const percentage = (totalWidthNeeded / viewportWidth) * 100;
 
     // Return at least 15%, but use calculated if larger
     return Math.max(15, Math.min(percentage, 40)); // Cap at 40% to avoid too-wide minimums
-  }, [data?.rows]);
+  }, [data?.rows, barHeight]);
 
   // Animation variants for bar growth
   const barVariants = {
@@ -161,7 +175,10 @@ const CallathonLeaderboard = () => {
 
   return (
     <div className="callathon-display">
-      <div className="bars-container">
+      <div
+        className="bars-container"
+        style={{ '--bar-height': `${barHeight}px` }}
+      >
         <LayoutGroup>
           <AnimatePresence mode="popLayout">
             {data.rows.map((row, index) => {

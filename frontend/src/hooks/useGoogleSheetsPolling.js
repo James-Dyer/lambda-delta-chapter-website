@@ -11,9 +11,11 @@ import { fetchLeaderboardData } from '../services/googleSheets';
  *
  * @param {string} range - The Google Sheets range to fetch (e.g., "DerbyDays!A1:B100")
  * @param {number} interval - Polling interval in milliseconds (default: 30000)
+ * @param {Object} [options] - Parsing options passed to fetchLeaderboardData
+ * @param {number} [options.scoreColumnIndex=1] - Zero-based column index for the score value
  * @returns {{ data: {rows: Array, updatedAt: Date} | null, loading: boolean, error: string | null, lastUpdated: Date | null }}
  */
-export function useGoogleSheetsPolling(range, interval = 30000) {
+export function useGoogleSheetsPolling(range, interval = 30000, options = {}) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -28,7 +30,7 @@ export function useGoogleSheetsPolling(range, interval = 30000) {
     // Fetch function
     const fetchData = async () => {
       try {
-        const rows = await fetchLeaderboardData(range);
+        const rows = await fetchLeaderboardData(range, options);
 
         // Only update state if component is still mounted
         if (isMounted.current) {
