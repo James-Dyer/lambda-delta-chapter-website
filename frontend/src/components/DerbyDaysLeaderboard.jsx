@@ -13,23 +13,13 @@ import '../styles/derbyDaysLeaderboard.css';
 const DerbyDaysLeaderboard = () => {
   const range =
     process.env.REACT_APP_SHEET_RANGE_DERBY_DAYS || 'DerbyDays!A1:B100';
-  const { data, loading, error, lastUpdated } = useGoogleSheetsPolling(
+  const { data, loading, error } = useGoogleSheetsPolling(
     range,
     30000 // Poll every 30 seconds for Derby Days
   );
 
   // Track previous data for change detection
   const previousData = usePrevious(data?.rows);
-
-  // Format last updated timestamp
-  const formatTimestamp = (date) => {
-    if (!date) return 'Never';
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    });
-  };
 
   // Detect score changes for animation triggers
   const changedScores = useMemo(() => {
@@ -99,11 +89,6 @@ const DerbyDaysLeaderboard = () => {
                 >
                   <h1>Derby Days 2026 Leaderboard</h1>
                 </motion.div>
-
-                {/* Dev-only timestamp */}
-                <div className="dev-timestamp">
-                  Updated: {formatTimestamp(lastUpdated)}
-                </div>
 
                 {data.rows.length > 0 ? (
                   <div className="leaderboard-cards">
