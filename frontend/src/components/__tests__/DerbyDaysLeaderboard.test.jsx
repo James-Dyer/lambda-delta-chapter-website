@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
@@ -13,22 +14,8 @@ jest.mock('../../hooks/useGoogleSheetsPolling', () => ({
 jest.mock('framer-motion', () => {
   const React = require('react');
   const makeMotion = (tag) =>
-    function MotionComponent({
-      children,
-      animate,
-      initial,
-      exit,
-      variants,
-      custom,
-      layout,
-      layoutId,
-      transition,
-      whileHover,
-      whileTap,
-      className,
-      style,
-      ...rest
-    }) {
+    function MotionComponent(props) {
+      const { children, animate, className, style } = props;
       return React.createElement(
         tag,
         {
@@ -36,7 +23,6 @@ jest.mock('framer-motion', () => {
             animate !== undefined ? JSON.stringify(animate) : undefined,
           className,
           style,
-          ...rest,
         },
         children
       );
@@ -50,7 +36,13 @@ jest.mock('framer-motion', () => {
   };
 });
 
-jest.mock('../Footer', () => () => <footer data-testid="footer" />);
+jest.mock(
+  '../Footer',
+  () =>
+    function Footer() {
+      return <footer data-testid="footer" />;
+    }
+);
 
 let container;
 let root;
@@ -327,7 +319,11 @@ describe('rank CSS classes', () => {
 describe('medal display', () => {
   test('rank: 1 → medal text is 🥇', () => {
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [{ name: 'A', score: 100, rank: 1 }], status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: [{ name: 'A', score: 100, rank: 1 }],
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
       lastUpdated: new Date(),
@@ -465,12 +461,22 @@ describe('score-changed class', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data1, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data1,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data2, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data2,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
@@ -496,19 +502,31 @@ describe('score-changed class', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data1, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data1,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data2, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data2,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
 
     const changedRows = container.querySelectorAll('.score-changed');
     expect(changedRows).toHaveLength(1);
-    expect(changedRows[0].querySelector('.team-name').textContent).toBe('Alpha');
+    expect(changedRows[0].querySelector('.team-name').textContent).toBe(
+      'Alpha'
+    );
   });
 });
 
@@ -522,7 +540,12 @@ describe('score change animation via data-animate', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: sameData, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: sameData,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
@@ -547,12 +570,22 @@ describe('score change animation via data-animate', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data1, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data1,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data2, loading: false, error: null, lastUpdated: new Date() });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data2,
+      loading: false,
+      error: null,
+      lastUpdated: new Date(),
+    });
     act(() => {
       root.render(<DerbyDaysLeaderboard />);
     });
@@ -609,7 +642,11 @@ describe('footer', () => {
 
   test('footer is rendered when data is present', () => {
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [{ name: 'A', score: 100, rank: 1 }], status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: [{ name: 'A', score: 100, rank: 1 }],
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
       lastUpdated: new Date(),

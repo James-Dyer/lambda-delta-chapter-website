@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
@@ -110,7 +111,11 @@ test('passes options.scoreColumnIndex through to fetchLeaderboardData', async ()
 
   act(() => {
     root.render(
-      <Harness range="Sheet1!A1:C100" interval={3000} options={{ scoreColumnIndex: 2 }} />
+      <Harness
+        range="Sheet1!A1:C100"
+        interval={3000}
+        options={{ scoreColumnIndex: 2 }}
+      />
     );
   });
   await act(async () => {});

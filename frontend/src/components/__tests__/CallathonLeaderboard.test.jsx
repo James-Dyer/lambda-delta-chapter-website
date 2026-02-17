@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
@@ -13,22 +14,8 @@ jest.mock('../../hooks/useGoogleSheetsPolling', () => ({
 jest.mock('framer-motion', () => {
   const React = require('react');
   const makeMotion = (tag) =>
-    function MotionComponent({
-      children,
-      animate,
-      initial,
-      exit,
-      variants,
-      custom,
-      layout,
-      layoutId,
-      transition,
-      whileHover,
-      whileTap,
-      className,
-      style,
-      ...rest
-    }) {
+    function MotionComponent(props) {
+      const { children, animate, className, style } = props;
       return React.createElement(
         tag,
         {
@@ -36,15 +23,16 @@ jest.mock('framer-motion', () => {
             animate !== undefined ? JSON.stringify(animate) : undefined,
           className,
           style,
-          ...rest,
         },
         children
       );
     };
   return {
     motion: { div: makeMotion('div'), span: makeMotion('span') },
-    AnimatePresence: ({ children }) => React.createElement(React.Fragment, null, children),
-    LayoutGroup: ({ children }) => React.createElement(React.Fragment, null, children),
+    AnimatePresence: ({ children }) =>
+      React.createElement(React.Fragment, null, children),
+    LayoutGroup: ({ children }) =>
+      React.createElement(React.Fragment, null, children),
   };
 });
 
@@ -195,7 +183,11 @@ describe('data rendering', () => {
 
   test('.bars-container present when data has rows', () => {
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: makeRows([['Alpha', 100]]), status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: makeRows([['Alpha', 100]]),
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
     });
@@ -208,7 +200,11 @@ describe('data rendering', () => {
   test('renders one .bar-row per entry', () => {
     useGoogleSheetsPolling.mockReturnValue({
       data: {
-        rows: makeRows([['Alpha', 100], ['Beta', 80], ['Gamma', 60]]),
+        rows: makeRows([
+          ['Alpha', 100],
+          ['Beta', 80],
+          ['Gamma', 60],
+        ]),
         status: 'ok',
         updatedAt: new Date(),
       },
@@ -224,7 +220,10 @@ describe('data rendering', () => {
   test('each .bar-name contains the org name', () => {
     useGoogleSheetsPolling.mockReturnValue({
       data: {
-        rows: makeRows([['Alpha Chi', 100], ['Beta Sig', 80]]),
+        rows: makeRows([
+          ['Alpha Chi', 100],
+          ['Beta Sig', 80],
+        ]),
         status: 'ok',
         updatedAt: new Date(),
       },
@@ -243,7 +242,11 @@ describe('data rendering', () => {
 
   test('score displays with $ prefix and 🐎 emoji (score 500)', () => {
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [{ name: 'Alpha', score: 500, rank: 1 }], status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: [{ name: 'Alpha', score: 500, rank: 1 }],
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
     });
@@ -337,7 +340,9 @@ describe('--bar-height CSS variable', () => {
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
-    expect(getBarsContainerStyle().getPropertyValue('--bar-height')).toBe('96px');
+    expect(getBarsContainerStyle().getPropertyValue('--bar-height')).toBe(
+      '96px'
+    );
   });
 
   test('10 teams at innerHeight=1080 → 91px (min(96, floor(912/10)))', () => {
@@ -349,7 +354,9 @@ describe('--bar-height CSS variable', () => {
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
-    expect(getBarsContainerStyle().getPropertyValue('--bar-height')).toBe('91px');
+    expect(getBarsContainerStyle().getPropertyValue('--bar-height')).toBe(
+      '91px'
+    );
   });
 
   test('5 teams at innerHeight=1080 → 96px (min(96, floor(952/5)))', () => {
@@ -361,7 +368,9 @@ describe('--bar-height CSS variable', () => {
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
-    expect(getBarsContainerStyle().getPropertyValue('--bar-height')).toBe('96px');
+    expect(getBarsContainerStyle().getPropertyValue('--bar-height')).toBe(
+      '96px'
+    );
   });
 });
 
@@ -377,7 +386,11 @@ describe('score change animation', () => {
 
   test('first render: changedScores is empty → static animate', () => {
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [{ name: 'Alpha', score: 100, rank: 1 }], status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: [{ name: 'Alpha', score: 100, rank: 1 }],
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
     });
@@ -402,12 +415,20 @@ describe('score change animation', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data1, loading: false, error: null });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data1,
+      loading: false,
+      error: null,
+    });
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data2, loading: false, error: null });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data2,
+      loading: false,
+      error: null,
+    });
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
@@ -425,7 +446,11 @@ describe('score change animation', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: sameData, loading: false, error: null });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: sameData,
+      loading: false,
+      error: null,
+    });
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
@@ -456,17 +481,27 @@ describe('score change animation', () => {
       updatedAt: new Date(),
     };
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data1, loading: false, error: null });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data1,
+      loading: false,
+      error: null,
+    });
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
 
-    useGoogleSheetsPolling.mockReturnValue({ data: data2, loading: false, error: null });
+    useGoogleSheetsPolling.mockReturnValue({
+      data: data2,
+      loading: false,
+      error: null,
+    });
     act(() => {
       root.render(<CallathonLeaderboard />);
     });
 
-    const scoreEls = container.querySelectorAll('.bar-value, .bar-value-external');
+    const scoreEls = container.querySelectorAll(
+      '.bar-value, .bar-value-external'
+    );
     const animates = Array.from(scoreEls).map((el) =>
       JSON.parse(el.getAttribute('data-animate'))
     );
@@ -483,7 +518,11 @@ describe('score change animation', () => {
 describe('external vs internal score display', () => {
   test('score 0 → rawPercentage=0 → showPointsExternal=true → .bar-value-external present', () => {
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [{ name: 'Alpha', score: 0, rank: 1 }], status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: [{ name: 'Alpha', score: 0, rank: 1 }],
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
     });
@@ -497,7 +536,11 @@ describe('external vs internal score display', () => {
   test('high-score leader → bar is wide → .bar-fill .bar-value present', () => {
     // With k=1 (fake timers prevent rAF), tanh(500/1) ≈ 1, percentage ≈ 95 > minWidthPercent*1.3
     useGoogleSheetsPolling.mockReturnValue({
-      data: { rows: [{ name: 'Alpha', score: 500, rank: 1 }], status: 'ok', updatedAt: new Date() },
+      data: {
+        rows: [{ name: 'Alpha', score: 500, rank: 1 }],
+        status: 'ok',
+        updatedAt: new Date(),
+      },
       loading: false,
       error: null,
     });
