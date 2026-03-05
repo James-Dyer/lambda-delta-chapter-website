@@ -11,6 +11,16 @@ import { usePrevious } from '../hooks/usePrevious';
 import Footer from './Footer';
 import '../styles/DerbyDays.css';
 
+const SKELETON_ROW_COUNT = 5;
+
+const SkeletonRow = () => (
+  <div className="leaderboard-row skeleton-row" aria-hidden="true">
+    <div className="skeleton skeleton-rank" />
+    <div className="skeleton skeleton-name" />
+    <div className="skeleton skeleton-score" />
+  </div>
+);
+
 const rowVariants = {
   hidden: { opacity: 0, x: -50 },
   visible: (i) => ({
@@ -39,9 +49,10 @@ const LeaderboardPanel = ({ title, data, loading, error, changedScores }) => (
     )}
 
     {loading && !data && (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-        <p>Loading leaderboard...</p>
+      <div className="skeleton-cards" aria-label="Loading leaderboard">
+        {Array.from({ length: SKELETON_ROW_COUNT }, (_, i) => (
+          <SkeletonRow key={i} />
+        ))}
       </div>
     )}
 

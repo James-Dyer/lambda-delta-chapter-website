@@ -123,22 +123,31 @@ afterEach(() => {
 // ─── Loading state ─────────────────────────────────────────────────────────────
 
 describe('loading state', () => {
-  test('both panels show .loading-container and .loading-spinner', () => {
+  test('both panels show skeleton rows', () => {
     act(() => {
       root.render(<DerbyDays />);
     });
-    expect(container.querySelectorAll('.loading-container')).toHaveLength(2);
-    expect(container.querySelectorAll('.loading-spinner')).toHaveLength(2);
+    expect(container.querySelectorAll('.skeleton-row')).toHaveLength(10); // 5 per panel
   });
 
-  test('shows "Loading leaderboard..." text in both panels', () => {
+  test('each panel shows 5 skeleton rows', () => {
     act(() => {
       root.render(<DerbyDays />);
     });
     const panels = container.querySelectorAll('.leaderboard-panel');
     panels.forEach((panel) => {
-      expect(panel.textContent).toContain('Loading leaderboard...');
+      expect(panel.querySelectorAll('.skeleton-row')).toHaveLength(5);
     });
+  });
+
+  test('skeleton rows contain rank, name, and score placeholders', () => {
+    act(() => {
+      root.render(<DerbyDays />);
+    });
+    const firstSkeleton = container.querySelector('.skeleton-row');
+    expect(firstSkeleton.querySelector('.skeleton-rank')).not.toBeNull();
+    expect(firstSkeleton.querySelector('.skeleton-name')).not.toBeNull();
+    expect(firstSkeleton.querySelector('.skeleton-score')).not.toBeNull();
   });
 
   test('does not show .leaderboard-cards when loading', () => {
@@ -161,9 +170,9 @@ describe('loading state', () => {
     const socialPanel = findPanel(container, 'Social');
     const proPanel = findPanel(container, 'Professional');
 
-    expect(socialPanel.querySelector('.loading-container')).not.toBeNull();
+    expect(socialPanel.querySelector('.skeleton-row')).not.toBeNull();
     expect(proPanel.querySelector('.leaderboard-cards')).not.toBeNull();
-    expect(proPanel.querySelector('.loading-container')).toBeNull();
+    expect(proPanel.querySelector('.skeleton-row')).toBeNull();
   });
 
   test('professional loading does not block social panel', () => {
@@ -180,8 +189,8 @@ describe('loading state', () => {
     const proPanel = findPanel(container, 'Professional');
 
     expect(socialPanel.querySelector('.leaderboard-cards')).not.toBeNull();
-    expect(socialPanel.querySelector('.loading-container')).toBeNull();
-    expect(proPanel.querySelector('.loading-container')).not.toBeNull();
+    expect(socialPanel.querySelector('.skeleton-row')).toBeNull();
+    expect(proPanel.querySelector('.skeleton-row')).not.toBeNull();
   });
 });
 
