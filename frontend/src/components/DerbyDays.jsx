@@ -190,15 +190,6 @@ const DerbyDays = () => {
         {/* Leaderboard Section */}
         <div className="leaderboard-hero">
           <div className="leaderboard-hero-overlay">
-            <motion.div
-              className="leaderboard-hero-title"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1>Derby Days 2026 Leaderboard</h1>
-            </motion.div>
-
             <div className="leaderboard-section">
               <LeaderboardPanel
                 title="Social Organizations"
