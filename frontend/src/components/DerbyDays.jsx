@@ -214,7 +214,7 @@ const DerbyDays = () => {
           className="instagram-strip"
           aria-label="Follow us on Instagram"
         >
-          <p className="instagram-strip-label">Follow Along</p>
+          <p className="instagram-strip-label">Stay Updated</p>
           <div className="instagram-cards">
             <a
               href="https://instagram.com/ucmsigmachi"
@@ -252,7 +252,7 @@ const DerbyDays = () => {
               </div>
               <div className="instagram-card-text">
                 <span className="instagram-handle">@ucmsigmachi</span>
-                <span className="instagram-cta">Sigma Chi UCM</span>
+                <span className="instagram-cta">UCM Chapter Instagram</span>
               </div>
               <span className="instagram-card-arrow" aria-hidden="true">
                 ↗
@@ -295,7 +295,7 @@ const DerbyDays = () => {
               </div>
               <div className="instagram-card-text">
                 <span className="instagram-handle">@ucmsigmachi.derbydays</span>
-                <span className="instagram-cta">Derby Days Official</span>
+                <span className="instagram-cta">Derby Days Instagram</span>
               </div>
               <span className="instagram-card-arrow" aria-hidden="true">
                 ↗
