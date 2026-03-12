@@ -772,9 +772,7 @@ describe('content sections', () => {
     act(() => {
       root.render(<DerbyDays />);
     });
-    expect(
-      container.querySelector('[data-testid="video-section"]')
-    ).toBeNull();
+    expect(container.querySelector('[data-testid="video-section"]')).toBeNull();
     expect(
       container.querySelector('[data-testid="event-overview-section"]')
     ).toBeNull();
