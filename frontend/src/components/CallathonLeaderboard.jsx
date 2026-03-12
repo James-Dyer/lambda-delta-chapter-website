@@ -251,7 +251,7 @@ const CallathonLeaderboard = () => {
                         }
                         transition={{ duration: 0.6 }}
                       >
-                        ${row.score.toLocaleString()} 🐎
+                        ${row.score.toLocaleString()}
                       </motion.span>
                     )}
                   </motion.div>
@@ -275,7 +275,7 @@ const CallathonLeaderboard = () => {
                       }
                       transition={{ duration: 0.6 }}
                     >
-                      ${row.score.toLocaleString()} 🐎
+                      ${row.score.toLocaleString()}
                     </motion.span>
                   )}
                 </motion.div>

@@ -209,78 +209,115 @@ const DerbyDays = () => {
           </div>
         </div>
 
-        {/* Event Overview Section */}
-        <motion.div
-          className="event-info-section"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          data-testid="event-overview-section"
-        >
-          <div className="event-description">
-            <h2>About Derby Days</h2>
-            <p>
-              Derby Days is our annual week-long philanthropy event bringing
-              together fraternities and sororities in friendly competition while
-              raising funds for our partnered charities. Teams compete in
-              various athletic and social events, earning points for their
-              performance and fundraising efforts.
-            </p>
-          </div>
-
-          <div className="event-details">
-            <div className="detail-card">
-              <h3>📅 When</h3>
-              <p>Spring 2026</p>
-              <p className="detail-subtitle">
-                Week-long event with daily competitions
-              </p>
-            </div>
-            <div className="detail-card">
-              <h3>📍 Where</h3>
-              <p>Campus Quad &amp; Recreation Center</p>
-              <p className="detail-subtitle">Various locations across campus</p>
-            </div>
-            <div className="detail-card">
-              <h3>🎯 Events</h3>
-              <p>
-                Athletic competitions, trivia, fundraising challenges, and more
-              </p>
-              <p className="detail-subtitle">Points awarded for each event</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Images Section */}
+        {/* Instagram Section */}
         <section
-          className="content-section images-section"
-          data-testid="images-section"
+          className="instagram-strip"
+          aria-label="Follow us on Instagram"
         >
-          <h2>Event Photos</h2>
-          <div className="placeholder-block">
-            <p>Photos coming soon</p>
+          <p className="instagram-strip-label">Follow Along</p>
+          <div className="instagram-cards">
+            <a
+              href="https://instagram.com/ucmsigmachi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="instagram-card instagram-card--chapter"
+              aria-label="Follow @ucmsigmachi on Instagram"
+            >
+              <div className="instagram-card-icon-wrap">
+                <svg
+                  className="instagram-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                    ry="5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                </svg>
+              </div>
+              <div className="instagram-card-text">
+                <span className="instagram-handle">@ucmsigmachi</span>
+                <span className="instagram-cta">Sigma Chi UCM</span>
+              </div>
+              <span className="instagram-card-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+
+            <a
+              href="https://instagram.com/ucmsigmachi.derbydays"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="instagram-card instagram-card--derby"
+              aria-label="Follow @ucmsigmachi.derbydays on Instagram"
+            >
+              <div className="instagram-card-icon-wrap">
+                <svg
+                  className="instagram-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="20"
+                    rx="5"
+                    ry="5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                </svg>
+              </div>
+              <div className="instagram-card-text">
+                <span className="instagram-handle">@ucmsigmachi.derbydays</span>
+                <span className="instagram-cta">Derby Days Official</span>
+              </div>
+              <span className="instagram-card-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
           </div>
         </section>
 
-        {/* YouTube Embed Section */}
-        <section
-          className="content-section video-section"
-          data-testid="video-section"
-        >
-          <h2>Highlights</h2>
-          <div className="placeholder-block">
-            <p>Video highlights coming soon</p>
-          </div>
-        </section>
-
-        {/* Schedule of Events Section */}
+        {/* Philo Slides Section */}
         <section
           className="content-section schedule-section"
           data-testid="schedule-section"
         >
-          <h2>Schedule of Events</h2>
-          <div className="placeholder-block">
-            <p>Schedule coming soon</p>
+          <h2>Philo Slides</h2>
+          <div className="canva-embed-container">
+            <iframe
+              loading="lazy"
+              src="https://www.canva.com/design/DAHDtGLlisw/HvWi_b51LZlLCVPrKp70Ig/view?embed"
+              allowFullScreen
+              allow="fullscreen"
+              title="Derby Days 2026 Schedule"
+            />
           </div>
         </section>
       </div>
