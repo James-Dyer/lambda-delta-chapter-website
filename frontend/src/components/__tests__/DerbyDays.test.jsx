@@ -741,43 +741,6 @@ describe('content sections', () => {
     useGoogleSheetsPolling.mockReturnValue(LOADING);
   });
 
-  test('event overview section renders', () => {
-    act(() => {
-      root.render(<DerbyDays />);
-    });
-    expect(
-      container.querySelector('[data-testid="event-overview-section"]')
-    ).not.toBeNull();
-  });
-
-  test('event overview section contains "About Derby Days" heading', () => {
-    act(() => {
-      root.render(<DerbyDays />);
-    });
-    const section = container.querySelector(
-      '[data-testid="event-overview-section"]'
-    );
-    expect(section.textContent).toContain('About Derby Days');
-  });
-
-  test('images section renders', () => {
-    act(() => {
-      root.render(<DerbyDays />);
-    });
-    expect(
-      container.querySelector('[data-testid="images-section"]')
-    ).not.toBeNull();
-  });
-
-  test('video section renders', () => {
-    act(() => {
-      root.render(<DerbyDays />);
-    });
-    expect(
-      container.querySelector('[data-testid="video-section"]')
-    ).not.toBeNull();
-  });
-
   test('schedule section renders', () => {
     act(() => {
       root.render(<DerbyDays />);
@@ -787,22 +750,34 @@ describe('content sections', () => {
     ).not.toBeNull();
   });
 
-  test('all four content sections render together', () => {
+  test('schedule section contains "Philo Slides" heading', () => {
+    act(() => {
+      root.render(<DerbyDays />);
+    });
+    const section = container.querySelector('[data-testid="schedule-section"]');
+    expect(section.textContent).toContain('Philo Slides');
+  });
+
+  test('instagram strip renders with both handles', () => {
+    act(() => {
+      root.render(<DerbyDays />);
+    });
+    const strip = container.querySelector('.instagram-strip');
+    expect(strip).not.toBeNull();
+    expect(strip.textContent).toContain('@ucmsigmachi');
+    expect(strip.textContent).toContain('@ucmsigmachi.derbydays');
+  });
+
+  test('video and about sections are not rendered', () => {
     act(() => {
       root.render(<DerbyDays />);
     });
     expect(
-      container.querySelector('[data-testid="event-overview-section"]')
-    ).not.toBeNull();
-    expect(
-      container.querySelector('[data-testid="images-section"]')
-    ).not.toBeNull();
-    expect(
       container.querySelector('[data-testid="video-section"]')
-    ).not.toBeNull();
+    ).toBeNull();
     expect(
-      container.querySelector('[data-testid="schedule-section"]')
-    ).not.toBeNull();
+      container.querySelector('[data-testid="event-overview-section"]')
+    ).toBeNull();
   });
 });
 

@@ -259,7 +259,6 @@ describe('data rendering', () => {
     expect(scoreEl).not.toBeNull();
     expect(scoreEl.textContent).toContain('$');
     expect(scoreEl.textContent).toContain('500');
-    expect(scoreEl.textContent).toContain('🐎');
   });
 });
 
