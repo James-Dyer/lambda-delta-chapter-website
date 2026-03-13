@@ -2,13 +2,14 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
+import { vi } from 'vitest';
 import { useGoogleSheetsPolling } from '../useGoogleSheetsPolling';
 import { fetchLeaderboardData } from '../../services/googleSheets';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
-jest.mock('../../services/googleSheets', () => ({
-  fetchLeaderboardData: jest.fn(),
+vi.mock('../../services/googleSheets', () => ({
+  fetchLeaderboardData: vi.fn(),
 }));
 
 let container;
@@ -21,12 +22,12 @@ function Harness({ range, interval, options }) {
 }
 
 beforeEach(() => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
   container = document.createElement('div');
   document.body.appendChild(container);
   root = createRoot(container);
   hookResult = null;
-  jest.spyOn(console, 'error').mockImplementation(() => {});
+  vi.spyOn(console, 'error').mockImplementation(() => {});
 });
 
 afterEach(() => {
@@ -39,10 +40,10 @@ afterEach(() => {
   container = null;
   root = null;
   hookResult = null;
-  jest.clearAllTimers();
-  jest.useRealTimers();
-  jest.restoreAllMocks();
-  jest.clearAllMocks();
+  vi.clearAllTimers();
+  vi.useRealTimers();
+  vi.restoreAllMocks();
+  vi.clearAllMocks();
 });
 
 // ─── Initial state ────────────────────────────────────────────────────────────
@@ -98,7 +99,7 @@ test('clears error after a successful fetch following an error', async () => {
   expect(hookResult.error).not.toBeNull();
 
   await act(async () => {
-    jest.advanceTimersByTime(3000);
+    vi.advanceTimersByTime(3000);
   });
   await act(async () => {});
 
@@ -166,7 +167,7 @@ test('stale closure: interval error does not degrade data', async () => {
   expect(hookResult.data.status).toBe('ok');
 
   await act(async () => {
-    jest.advanceTimersByTime(3000);
+    vi.advanceTimersByTime(3000);
   });
   await act(async () => {});
 
@@ -198,7 +199,7 @@ test('calls fetchLeaderboardData again after interval elapses', async () => {
   await act(async () => {});
 
   await act(async () => {
-    jest.advanceTimersByTime(3000);
+    vi.advanceTimersByTime(3000);
   });
   await act(async () => {});
 
@@ -214,7 +215,7 @@ test('calls fetchLeaderboardData 4 times after interval * 3 (1 + 3 polls)', asyn
   await act(async () => {});
 
   await act(async () => {
-    jest.advanceTimersByTime(3000 * 3);
+    vi.advanceTimersByTime(3000 * 3);
   });
   await act(async () => {});
 
@@ -232,13 +233,13 @@ test('uses the provided interval value precisely', async () => {
 
   // Advance by just under the interval — should not trigger another call
   await act(async () => {
-    jest.advanceTimersByTime(INTERVAL - 1);
+    vi.advanceTimersByTime(INTERVAL - 1);
   });
   expect(fetchLeaderboardData).toHaveBeenCalledTimes(1);
 
   // Advance by 1 more ms — now the interval fires
   await act(async () => {
-    jest.advanceTimersByTime(1);
+    vi.advanceTimersByTime(1);
   });
   await act(async () => {});
   expect(fetchLeaderboardData).toHaveBeenCalledTimes(2);
@@ -261,7 +262,7 @@ test('stops polling after unmount', async () => {
 
   // Advance well past the interval — no new fetches should occur
   await act(async () => {
-    jest.advanceTimersByTime(3000 * 5);
+    vi.advanceTimersByTime(3000 * 5);
   });
 
   expect(fetchLeaderboardData).toHaveBeenCalledTimes(1);

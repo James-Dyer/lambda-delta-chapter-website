@@ -11,30 +11,22 @@
     "endOfLine": "lf"
   },
   "dependencies": {
-    "cra-template": "1.2.0",
+    "exceljs": "^4.4.0",
     "framer-motion": "^12.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4",
-    "xlsx": "^0.18.5"
+    "react-router-dom": "^7.12.0",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "predeploy": "branch=$(git rev-parse --abbrev-ref HEAD) && [ \"$branch\" = \"main\" ] || { echo \"Deploy blocked: current branch is '$branch'. Switch to 'main' to deploy.\"; exit 1; }; npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint src/ --ext .js,.jsx && prettier --check \"src/**/*.{js,jsx,css,json}\"",
     "format": "eslint src/ --ext .js,.jsx --fix && prettier --write \"src/**/*.{js,jsx,css,json}\""
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -50,13 +42,17 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
+    "@vitejs/plugin-react": "^4.5.2",
+    "@vitest/coverage-v8": "^3.2.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-react": "^7.37.5",
     "gh-pages": "^6.3.0",
     "globals": "^16.1.0",
+    "jsdom": "^26.1.0",
     "prettier": "^3.5.3",
-    "@babel/plugin-proposal-private-property-in-object": "7.21.0-placeholder-for-preset-env.2"
+    "vite": "^6.3.5",
+    "vitest": "^3.2.0"
   }
 }

@@ -11,7 +11,7 @@ import '../styles/callathonLeaderboard.css';
 
 const CallathonLeaderboard = () => {
   const range =
-    process.env.REACT_APP_SHEET_RANGE_CALLATHON || 'Callathon!A1:C100';
+    import.meta.env.VITE_SHEET_RANGE_CALLATHON || 'Callathon!A1:C100';
   const { data, loading, error } = useGoogleSheetsPolling(
     range,
     3000, // Poll every 3 seconds for Callathon (fast updates)

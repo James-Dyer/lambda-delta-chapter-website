@@ -1,6 +1,6 @@
 /**
  * Use the Node test environment so fetch can access external resources.
- * @jest-environment node
+ * @vitest-environment node
  */
 import fs from 'fs';
 import path from 'path';

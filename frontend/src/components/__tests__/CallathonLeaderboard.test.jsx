@@ -2,16 +2,17 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
+import { vi } from 'vitest';
 import CallathonLeaderboard from '../CallathonLeaderboard';
 import { useGoogleSheetsPolling } from '../../hooks/useGoogleSheetsPolling';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
-jest.mock('../../hooks/useGoogleSheetsPolling', () => ({
-  useGoogleSheetsPolling: jest.fn(),
+vi.mock('../../hooks/useGoogleSheetsPolling', () => ({
+  useGoogleSheetsPolling: vi.fn(),
 }));
 
-jest.mock('framer-motion', () => {
+vi.mock('framer-motion', () => {
   const React = require('react');
   const makeMotion = (tag) =>
     function MotionComponent(props) {
@@ -44,7 +45,7 @@ let container;
 let root;
 
 beforeEach(() => {
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   // Stub canvas for minWidthPercent — use plain function so clearAllMocks doesn't reset it
   HTMLCanvasElement.prototype.getContext = () => ({
@@ -83,9 +84,9 @@ afterEach(() => {
   }
   container = null;
   root = null;
-  jest.clearAllTimers();
-  jest.useRealTimers();
-  jest.clearAllMocks();
+  vi.clearAllTimers();
+  vi.useRealTimers();
+  vi.clearAllMocks();
 });
 
 // ─── Loading state ────────────────────────────────────────────────────────────
