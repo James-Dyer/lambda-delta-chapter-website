@@ -1,57 +1,79 @@
 # Lambda Delta Chapter Website
 
-This repository contains the source for the **Lambda Delta Chapter of Sigma Chi** website hosted at [ucmsigmachi.org](https://ucmsigmachi.org). The site is a single page React application served on GitHub Pages and styled using CSS Modules.
+The official website for the **Lambda Delta Chapter of Sigma Chi** at UC Merced, hosted at [ucmsigmachi.org](https://ucmsigmachi.org).
 
-## Project layout
+For questions or to get involved, reach us on [Instagram](https://instagram.com/ucmsigmachi) or email **sigmachi@ucmerced.edu**.
 
-All code lives under `frontend/`:
+---
+
+## Getting Started
+
+### What you'll need
+
+- **Node.js** (version 20 or higher) — download at [nodejs.org](https://nodejs.org)
+- **GitHub (CLI or Desktop)** 
+
+### First-time setup
+
+Once you've cloned the repo, open a terminal in the `frontend` folder and run:
+
+```bash
+npm install
+```
+
+This downloads all the packages the project depends on. You only need to do this once.
+
+> **Tip:** In GitHub Desktop, go to **Repository → Open in Terminal** to open a terminal already pointed at the right folder. Then type `cd frontend` and press Enter.
+
+---
+
+## Running the Site Locally
+
+```bash
+npm run dev
+```
+
+Then open **http://localhost:5173** in your browser. The page will automatically refresh as you save files. Press `Ctrl+C` to stop.
+
+---
+
+## Project Structure
+
+All code lives under `frontend/src/`:
 
 ```
 frontend/
-├── public/          # static files (index.html, 404.html, robots.txt, CNAME)
+├── index.html           # HTML entry point
 ├── src/
-│   ├── assets/      # images and videos
-│   ├── components/  # React components for each page
-│   ├── styles/      # CSS Modules grouped by feature
-│   ├── Data/        # example JSON data
-│   ├── App.js       # router setup
-│   └── ...
-├── package.json     # dependencies and npm scripts
-└── ...
+│   ├── components/      # one file per page or UI section
+│   ├── styles/          # CSS files, one per component
+│   ├── hooks/           # shared React hooks
+│   ├── services/        # Google Sheets API logic
+│   └── App.js           # page routing
+├── public/              # static files (images, data, favicons)
+└── package.json         # dependencies and scripts
 ```
 
-## Installing and running
+Adding a new page means creating a component in `src/components/` and adding a route in `App.js`.
 
-1. Install dependencies from the `frontend` directory:
-   ```bash
-   cd frontend
-   npm install
-   ```
-2. Start the development server:
-   ```bash
-   npm start
-   ```
-3. Linting and formatting:
-   ```bash
-   npm run lint   # check lint rules
-   npm run format # format source files
-   ```
-4. Unit tests:
-   ```bash
-   npm run test            # run all unit tests
-   npm run test:coverage   # run tests and display a coverage report
-   ```
-5. Build or deploy:
-   ```bash
-   npm run build   # produce a production build
-   npm run deploy  # deploy to GitHub Pages
-   ```
-   The deploy script uses the `gh-pages` package and the `CNAME` file to publish to `ucmsigmachi.org`.
+---
 
-## Next steps
+## Other Useful Commands
 
-- The site is designed to be easily extendable. New pages can be added by placing components in `src/components/` and registering them in the router.
+All commands run from the `frontend/` folder.
 
-## Contact
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the local dev server |
+| `npm test` | Run the automated tests |
+| `npm run format` | Auto-fix code formatting |
+| `npm run build` | Build the site for production |
+| `npm run deploy` | Build and publish to ucmsigmachi.org |
 
-For questions or to get involved, connect with us on [Instagram](https://instagram.com/ucmsigmachi) or email **sigmachi@ucmerced.edu**.
+> `npm run deploy` only works from the `main` branch — it will block you if you're on anything else.
+
+---
+
+## Making Changes
+
+New to Git? See **[DEV_GUIDE.md](./DEV_GUIDE.md)** for a full step-by-step walkthrough: how to create a branch, commit, open a pull request, and deploy.
