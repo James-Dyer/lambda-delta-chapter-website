@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # OS
 .DS_Store
+
+# generated build artifacts
+/public/data/brother-info.json
