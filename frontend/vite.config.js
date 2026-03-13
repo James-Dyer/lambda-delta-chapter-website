@@ -14,6 +14,11 @@ export default defineConfig({
     react(),
   ],
   base: '/',
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: { '.js': 'jsx' },
+    },
+  },
   test: {
     environment: 'jsdom',
     globals: true,

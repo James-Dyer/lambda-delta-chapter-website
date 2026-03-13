@@ -11,7 +11,6 @@
     "endOfLine": "lf"
   },
   "dependencies": {
-    "exceljs": "^4.4.0",
     "framer-motion": "^12.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -19,9 +18,10 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
+    "start": "node scripts/convert-members.js && vite",
+    "dev": "node scripts/convert-members.js && vite",
+    "convert-members": "node scripts/convert-members.js",
+    "build": "node scripts/convert-members.js && vite build",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "predeploy": "branch=$(git rev-parse --abbrev-ref HEAD) && [ \"$branch\" = \"main\" ] || { echo \"Deploy blocked: current branch is '$branch'. Switch to 'main' to deploy.\"; exit 1; }; npm run build",
@@ -49,6 +49,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-react": "^7.37.5",
+    "exceljs": "^4.4.0",
     "gh-pages": "^6.3.0",
     "globals": "^16.1.0",
     "jsdom": "^26.1.0",
