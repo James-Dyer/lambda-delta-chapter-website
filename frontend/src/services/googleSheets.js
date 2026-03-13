@@ -12,8 +12,8 @@
  * @returns {Promise<Array>} Parsed leaderboard rows with rank, name, and score
  */
 export async function fetchLeaderboardData(range, options = {}) {
-  const SHEET_ID = process.env.REACT_APP_GOOGLE_SHEETS_ID;
-  const API_KEY = process.env.REACT_APP_GOOGLE_SHEETS_API_KEY;
+  const SHEET_ID = import.meta.env.VITE_GOOGLE_SHEETS_ID;
+  const API_KEY = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY;
 
   // Validate environment variables
   if (!SHEET_ID || !API_KEY) {
@@ -22,7 +22,7 @@ export async function fetchLeaderboardData(range, options = {}) {
       hasApiKey: !!API_KEY,
     });
     throw new Error(
-      'Google Sheets configuration is missing. Please set REACT_APP_GOOGLE_SHEETS_ID and REACT_APP_GOOGLE_SHEETS_API_KEY'
+      'Google Sheets configuration is missing. Please set VITE_GOOGLE_SHEETS_ID and VITE_GOOGLE_SHEETS_API_KEY'
     );
   }
 
@@ -108,7 +108,7 @@ function parseLeaderboardData(rows, scoreColumnIndex = 1) {
  */
 export function hasValidConfiguration() {
   return !!(
-    process.env.REACT_APP_GOOGLE_SHEETS_ID &&
-    process.env.REACT_APP_GOOGLE_SHEETS_API_KEY
+    import.meta.env.VITE_GOOGLE_SHEETS_ID &&
+    import.meta.env.VITE_GOOGLE_SHEETS_API_KEY
   );
 }

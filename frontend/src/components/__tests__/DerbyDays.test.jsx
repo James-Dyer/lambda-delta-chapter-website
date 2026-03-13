@@ -2,16 +2,17 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
+import { vi } from 'vitest';
 import DerbyDays from '../DerbyDays';
 import { useGoogleSheetsPolling } from '../../hooks/useGoogleSheetsPolling';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
-jest.mock('../../hooks/useGoogleSheetsPolling', () => ({
-  useGoogleSheetsPolling: jest.fn(),
+vi.mock('../../hooks/useGoogleSheetsPolling', () => ({
+  useGoogleSheetsPolling: vi.fn(),
 }));
 
-jest.mock('framer-motion', () => {
+vi.mock('framer-motion', () => {
   const React = require('react');
   const FRAMER_ONLY_PROPS = new Set([
     'initial',
@@ -49,13 +50,11 @@ jest.mock('framer-motion', () => {
   };
 });
 
-jest.mock(
-  '../Footer',
-  () =>
-    function Footer() {
-      return <footer data-testid="footer" />;
-    }
-);
+vi.mock('../Footer', () => ({
+  default: function Footer() {
+    return <footer data-testid="footer" />;
+  },
+}));
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -117,7 +116,7 @@ afterEach(() => {
   }
   container = null;
   root = null;
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 // ─── Loading state ─────────────────────────────────────────────────────────────

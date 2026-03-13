@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { act } from 'react';
+import { vi } from 'vitest';
 import DonationButton from '../DonationButton';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
@@ -38,7 +39,7 @@ test('renders anchor with icon when href provided', () => {
 });
 
 test('calls onClick when button is clicked', () => {
-  const onClick = jest.fn();
+  const onClick = vi.fn();
   act(() => {
     root.render(<DonationButton onClick={onClick}>Press</DonationButton>);
   });

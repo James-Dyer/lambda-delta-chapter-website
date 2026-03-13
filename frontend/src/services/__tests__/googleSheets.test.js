@@ -1,27 +1,26 @@
+import { vi } from 'vitest';
 import { fetchLeaderboardData, hasValidConfiguration } from '../googleSheets';
 
 beforeEach(() => {
-  delete process.env.REACT_APP_GOOGLE_SHEETS_ID;
-  delete process.env.REACT_APP_GOOGLE_SHEETS_API_KEY;
-  global.fetch = jest.fn();
-  jest.spyOn(console, 'error').mockImplementation(() => {});
+  vi.unstubAllEnvs();
+  global.fetch = vi.fn();
+  vi.spyOn(console, 'error').mockImplementation(() => {});
 });
 
 afterEach(() => {
-  jest.restoreAllMocks();
-  delete process.env.REACT_APP_GOOGLE_SHEETS_ID;
-  delete process.env.REACT_APP_GOOGLE_SHEETS_API_KEY;
+  vi.restoreAllMocks();
+  vi.unstubAllEnvs();
 });
 
 // Helper to set valid config
 function setValidConfig() {
-  process.env.REACT_APP_GOOGLE_SHEETS_ID = 'test-sheet-id';
-  process.env.REACT_APP_GOOGLE_SHEETS_API_KEY = 'test-api-key';
+  vi.stubEnv('VITE_GOOGLE_SHEETS_ID', 'test-sheet-id');
+  vi.stubEnv('VITE_GOOGLE_SHEETS_API_KEY', 'test-api-key');
 }
 
 // Helper to mock a successful fetch with given values
 function mockFetch(values) {
-  global.fetch = jest.fn().mockResolvedValue({
+  global.fetch = vi.fn().mockResolvedValue({
     ok: true,
     json: () => Promise.resolve(values !== undefined ? { values } : {}),
   });
@@ -35,18 +34,18 @@ describe('hasValidConfiguration', () => {
   });
 
   test('returns false when only SHEET_ID is set', () => {
-    process.env.REACT_APP_GOOGLE_SHEETS_ID = 'some-id';
+    vi.stubEnv('VITE_GOOGLE_SHEETS_ID', 'some-id');
     expect(hasValidConfiguration()).toBe(false);
   });
 
   test('returns false when only API_KEY is set', () => {
-    process.env.REACT_APP_GOOGLE_SHEETS_API_KEY = 'some-key';
+    vi.stubEnv('VITE_GOOGLE_SHEETS_API_KEY', 'some-key');
     expect(hasValidConfiguration()).toBe(false);
   });
 
   test('returns false when both are empty strings', () => {
-    process.env.REACT_APP_GOOGLE_SHEETS_ID = '';
-    process.env.REACT_APP_GOOGLE_SHEETS_API_KEY = '';
+    vi.stubEnv('VITE_GOOGLE_SHEETS_ID', '');
+    vi.stubEnv('VITE_GOOGLE_SHEETS_API_KEY', '');
     expect(hasValidConfiguration()).toBe(false);
   });
 
@@ -60,14 +59,14 @@ describe('hasValidConfiguration', () => {
 
 describe('fetchLeaderboardData — config validation', () => {
   test('throws when SHEET_ID missing', async () => {
-    process.env.REACT_APP_GOOGLE_SHEETS_API_KEY = 'some-key';
+    vi.stubEnv('VITE_GOOGLE_SHEETS_API_KEY', 'some-key');
     await expect(fetchLeaderboardData('Sheet1!A1:B100')).rejects.toThrow(
       'Google Sheets configuration is missing'
     );
   });
 
   test('throws when API_KEY missing', async () => {
-    process.env.REACT_APP_GOOGLE_SHEETS_ID = 'some-id';
+    vi.stubEnv('VITE_GOOGLE_SHEETS_ID', 'some-id');
     await expect(fetchLeaderboardData('Sheet1!A1:B100')).rejects.toThrow(
       'Google Sheets configuration is missing'
     );
@@ -85,7 +84,7 @@ describe('fetchLeaderboardData — HTTP errors', () => {
   beforeEach(setValidConfig);
 
   test('throws on 403 response', async () => {
-    global.fetch = jest.fn().mockResolvedValue({
+    global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 403,
       text: () => Promise.resolve('Forbidden'),
@@ -96,7 +95,7 @@ describe('fetchLeaderboardData — HTTP errors', () => {
   });
 
   test('throws on 500 response', async () => {
-    global.fetch = jest.fn().mockResolvedValue({
+    global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 500,
       text: () => Promise.resolve('Internal Server Error'),
@@ -107,15 +106,15 @@ describe('fetchLeaderboardData — HTTP errors', () => {
   });
 
   test('re-throws network errors from fetch', async () => {
-    global.fetch = jest.fn().mockRejectedValue(new Error('Network failure'));
+    global.fetch = vi.fn().mockRejectedValue(new Error('Network failure'));
     await expect(fetchLeaderboardData('Sheet1!A1:B100')).rejects.toThrow(
       'Network failure'
     );
   });
 
   test('constructs correct URL', async () => {
-    process.env.REACT_APP_GOOGLE_SHEETS_ID = 'my-sheet-id';
-    process.env.REACT_APP_GOOGLE_SHEETS_API_KEY = 'my-api-key';
+    vi.stubEnv('VITE_GOOGLE_SHEETS_ID', 'my-sheet-id');
+    vi.stubEnv('VITE_GOOGLE_SHEETS_API_KEY', 'my-api-key');
     mockFetch([['Name', 'Score']]);
 
     await fetchLeaderboardData('Total Points!A1:B100');
@@ -145,7 +144,7 @@ describe('fetchLeaderboardData — header skipping', () => {
 
   test('returns empty array when values key is absent', async () => {
     // mockFetch with undefined uses the "no values" branch
-    global.fetch = jest.fn().mockResolvedValue({
+    global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve({}),
     });

@@ -143,10 +143,10 @@ LeaderboardPanel.propTypes = {
 
 const DerbyDays = () => {
   const socialRange =
-    process.env.REACT_APP_SHEET_RANGE_DERBY_DAYS_SOCIAL ||
+    import.meta.env.VITE_SHEET_RANGE_DERBY_DAYS_SOCIAL ||
     'Total Points!A1:B100';
   const proRange =
-    process.env.REACT_APP_SHEET_RANGE_DERBY_DAYS_PROFESSIONAL ||
+    import.meta.env.VITE_SHEET_RANGE_DERBY_DAYS_PROFESSIONAL ||
     'Total Points!D1:E100';
 
   const {
