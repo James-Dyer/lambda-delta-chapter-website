@@ -15,12 +15,12 @@ jobs:
         working-directory: frontend
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'        # or whatever version you target
+          node-version: '20'
           cache: 'npm'              # caches ~/.npm for faster installs
           cache-dependency-path: frontend/package-lock.json
 
