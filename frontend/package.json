@@ -27,7 +27,8 @@
     "predeploy": "branch=$(git rev-parse --abbrev-ref HEAD) && [ \"$branch\" = \"main\" ] || { echo \"Deploy blocked: current branch is '$branch'. Switch to 'main' to deploy.\"; exit 1; }; npm run build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint src/ --ext .js,.jsx && prettier --check \"src/**/*.{js,jsx,css,json}\"",
-    "format": "eslint src/ --ext .js,.jsx --fix && prettier --write \"src/**/*.{js,jsx,css,json}\""
+    "format": "eslint src/ --ext .js,.jsx --fix && prettier --write \"src/**/*.{js,jsx,css,json}\"",
+    "check-links": "node scripts/check-links.js"
   },
   "browserslist": {
     "production": [

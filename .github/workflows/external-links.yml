@@ -1,10 +1,12 @@
-name: External Links Test
+name: External Links Check
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 1'  # Weekly Monday 9am UTC
 
 jobs:
-  test-external-links:
+  check-external-links:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,5 +25,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run external links test
-        run: npm test -- src/__tests__/ExternalLinks.test.js
+      - name: Check external links
+        run: npm run check-links
