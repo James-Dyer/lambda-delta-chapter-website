@@ -15,7 +15,7 @@ const CallathonLeaderboard = () => {
   const { data, loading, error } = useGoogleSheetsPolling(
     range,
     3000, // Poll every 3 seconds for Callathon (fast updates)
-    { scoreColumnIndex: 2 } // Points are in column 3 (index 2)
+    { scoreColumnIndex: 1 } // Money raised is in column B (index 1)
   );
 
   // Calculate max score for bar width percentages
