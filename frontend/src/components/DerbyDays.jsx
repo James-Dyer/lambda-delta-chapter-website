@@ -32,49 +32,7 @@ const rowVariants = {
 };
 
 // Set to true to hide point totals near the end of competition
-const SCORES_HIDDEN = true;
-
-const SIDE_COMPETITIONS = [
-  'Most T-Shirts Bought',
-  'Most Plushes Bought',
-  'Most Talks Done',
-  'Most Spent on Bingo Cards',
-  'Most Western Games Winners',
-  'Most Wax Strips Bought',
-  'Most Money Raised During Call-A-Thon',
-  'Most Donated at Shave-A-Sig',
-];
-
-const SideCompetitionsBanner = () => (
-  <motion.div
-    className="side-competitions-banner"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.45, ease: 'easeOut' },
-    }}
-    aria-label="Side competitions announcement"
-  >
-    <h2 className="side-competitions-title">
-      Side Competitions — Bonus 75,000 Points Each
-    </h2>
-    <p className="side-competitions-subtitle">
-      Win any of the 8 side competitions to earn bonus points for your
-      organization.
-    </p>
-    <ul className="side-competitions-grid" role="list">
-      {SIDE_COMPETITIONS.map((name) => (
-        <li key={name} className="side-competition-item">
-          <span className="side-competition-bullet" aria-hidden="true">
-            ★
-          </span>
-          {name}
-        </li>
-      ))}
-    </ul>
-  </motion.div>
-);
+const SCORES_HIDDEN = false;
 
 const HiddenScoresBanner = () => (
   <div className="hidden-scores-banner" role="status">
@@ -254,7 +212,6 @@ const DerbyDays = () => {
         {/* Leaderboard Section */}
         <div className="leaderboard-hero">
           <div className="leaderboard-hero-overlay">
-            <SideCompetitionsBanner />
             {SCORES_HIDDEN && <HiddenScoresBanner />}
             <div className="leaderboard-section">
               <LeaderboardPanel
