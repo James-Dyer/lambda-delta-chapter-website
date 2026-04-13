@@ -31,7 +31,24 @@ const rowVariants = {
   exit: { opacity: 0, x: 50, transition: { duration: 0.3 } },
 };
 
-const LeaderboardPanel = ({ title, data, loading, error, changedScores }) => (
+// Set to true to hide point totals near the end of competition
+const SCORES_HIDDEN = false;
+
+const HiddenScoresBanner = () => (
+  <div className="hidden-scores-banner" role="status">
+    Point totals are hidden. Find out who won at the Black &amp; White Formal at
+    Joystiq on Saturday!
+  </div>
+);
+
+const LeaderboardPanel = ({
+  title,
+  data,
+  loading,
+  error,
+  changedScores,
+  scoresHidden,
+}) => (
   <div className="leaderboard-panel">
     <h2 className="panel-title">{title}</h2>
 
@@ -88,25 +105,29 @@ const LeaderboardPanel = ({ title, data, loading, error, changedScores }) => (
                       <span className="rank-number">{row.rank}</span>
                     )}
                   </div>
-                  <div className="team-name">{row.name}</div>
-                  <motion.div
-                    className="team-score"
-                    animate={
-                      changedScores.has(row.name)
-                        ? {
-                            scale: [1, 1.2, 1],
-                            backgroundColor: [
-                              'transparent',
-                              'rgba(97, 185, 239, 0.2)',
-                              'transparent',
-                            ],
-                          }
-                        : {}
-                    }
-                    transition={{ duration: 0.6 }}
-                  >
-                    {row.score}
-                  </motion.div>
+                  <div className="team-name">
+                    {scoresHidden ? '???' : row.name}
+                  </div>
+                  {!scoresHidden && (
+                    <motion.div
+                      className="team-score"
+                      animate={
+                        changedScores.has(row.name)
+                          ? {
+                              scale: [1, 1.2, 1],
+                              backgroundColor: [
+                                'transparent',
+                                'rgba(97, 185, 239, 0.2)',
+                                'transparent',
+                              ],
+                            }
+                          : {}
+                      }
+                      transition={{ duration: 0.6 }}
+                    >
+                      {row.score}
+                    </motion.div>
+                  )}
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -139,6 +160,7 @@ LeaderboardPanel.propTypes = {
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
   changedScores: PropTypes.instanceOf(Set).isRequired,
+  scoresHidden: PropTypes.bool,
 };
 
 const DerbyDays = () => {
@@ -190,6 +212,7 @@ const DerbyDays = () => {
         {/* Leaderboard Section */}
         <div className="leaderboard-hero">
           <div className="leaderboard-hero-overlay">
+            {SCORES_HIDDEN && <HiddenScoresBanner />}
             <div className="leaderboard-section">
               <LeaderboardPanel
                 title="Social Organizations"
@@ -197,6 +220,7 @@ const DerbyDays = () => {
                 loading={socialLoading}
                 error={socialError}
                 changedScores={socialChangedScores}
+                scoresHidden={SCORES_HIDDEN}
               />
               <LeaderboardPanel
                 title="Professional Organizations"
@@ -204,6 +228,7 @@ const DerbyDays = () => {
                 loading={proLoading}
                 error={proError}
                 changedScores={proChangedScores}
+                scoresHidden={SCORES_HIDDEN}
               />
             </div>
           </div>

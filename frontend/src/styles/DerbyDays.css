@@ -174,6 +174,126 @@
 }
 
 /* ========================================================================
+   SIDE COMPETITIONS ANNOUNCEMENT BANNER
+   ======================================================================== */
+
+.side-competitions-banner {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 3px solid var(--color-accent-gold);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  color: var(--color-white);
+}
+
+.side-competitions-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  color: var(--color-white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.side-competitions-subtitle {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 var(--spacing-lg);
+  font-style: italic;
+}
+
+.side-competitions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm) var(--spacing-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-competition-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+}
+
+.side-competition-bullet {
+  color: var(--color-accent-gold);
+  font-size: 0.65rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+  opacity: 0.4;
+  animation: star-chase 2.4s ease-in-out infinite;
+}
+
+@keyframes star-chase {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  18% {
+    opacity: 0.85;
+    transform: scale(1.25);
+  }
+  35% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+.side-competition-item:nth-child(1) .side-competition-bullet {
+  animation-delay: 0s;
+}
+.side-competition-item:nth-child(2) .side-competition-bullet {
+  animation-delay: 0.3s;
+}
+.side-competition-item:nth-child(3) .side-competition-bullet {
+  animation-delay: 0.6s;
+}
+.side-competition-item:nth-child(4) .side-competition-bullet {
+  animation-delay: 0.9s;
+}
+.side-competition-item:nth-child(5) .side-competition-bullet {
+  animation-delay: 1.2s;
+}
+.side-competition-item:nth-child(6) .side-competition-bullet {
+  animation-delay: 1.5s;
+}
+.side-competition-item:nth-child(7) .side-competition-bullet {
+  animation-delay: 1.8s;
+}
+.side-competition-item:nth-child(8) .side-competition-bullet {
+  animation-delay: 2.1s;
+}
+
+/* ========================================================================
+   HIDDEN SCORES BANNER
+   ======================================================================== */
+
+.hidden-scores-banner {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-white);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ========================================================================
    DUAL LEADERBOARD SECTION
    ======================================================================== */
 
@@ -748,6 +868,16 @@
     margin-bottom: var(--spacing-lg);
   }
 
+  .side-competitions-banner {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .side-competitions-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+  }
+
   .leaderboard-section {
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
@@ -819,8 +949,11 @@
   .leaderboard-row,
   .detail-card,
   .team-score,
-  .skeleton {
+  .skeleton,
+  .side-competitions-banner,
+  .side-competition-bullet {
     transition: none;
     animation: none;
+    opacity: 1;
   }
 }

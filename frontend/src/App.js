@@ -21,7 +21,7 @@ import DerbyDays from './components/DerbyDays';
 import CallathonLeaderboard from './components/CallathonLeaderboard';
 import ScrollToTop from './components/ScrollToTop';
 import Challenge from './components/Secret/Challenge.jsx';
-import SecretPage from './components/Secret/SecretPage.jsx';
+// import SecretPage from './components/Secret/SecretPage.jsx';
 
 const PageWrapper = ({ children }) => {
   const reduceMotion = useReducedMotion();
@@ -128,14 +128,14 @@ const AnimatedRoutes = () => {
             </PageWrapper>
           }
         />
-        <Route
+        {/* <Route
           path="/secret"
           element={
             <PageWrapper>
               <SecretPage />
             </PageWrapper>
           }
-        />
+        /> */}
       </Routes>
     </AnimatePresence>
   );
