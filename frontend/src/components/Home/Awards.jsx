@@ -94,8 +94,8 @@ const Awards = () => {
               />
               <div className="award-text">
                 <p className="balfour-blurb">
-                  We are excited to announce our 2025 Balfour Province Award
-                  winner and international nominee: Collin O'Neil.
+                  We are excited to announce our 2026 Balfour Province Award
+                  winner and international nominee: Raul Nunes.
                   <br />
                   <br />
                 </p>
