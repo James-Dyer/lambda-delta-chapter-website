@@ -24,7 +24,7 @@ function Recruitment() {
         <h1 style={{ color: 'white', fontSize: '70px' }}>
           Sigma Chi – Lambda Delta Chapter
         </h1>
-        <h2 style={{ color: 'white' }}>Fall 2025 Recruitment Week</h2>
+        <h2 style={{ color: 'white' }}>Spring 2026 Recruitment Week</h2>
       </header>
 
       <section className="schedule">
@@ -59,16 +59,16 @@ function Recruitment() {
 
         <div className="event">
           <div className="event-info">
-            <h3>Day 1: Monday, September 15 — Poolside with Sigma Chi</h3>
+            <h3>Day 1: Monday, February 16th — Horses to Horsepower</h3>
             <p>
-              <strong>Time:</strong> 7:00 – 8:00 PM
+              <strong>Time:</strong> 7:30 – 9:00 PM
             </p>
             <p>
-              <strong>Location:</strong> Aquatics Center
+              <strong>Location:</strong> Bellevue Lot
             </p>
             <p>
-              Social kickoff event to open recruitment in a casual, welcoming
-              setting.
+              Our signature car meet event showcasing brother passions outside
+              of the classroom.
             </p>
           </div>
           <img
@@ -81,16 +81,16 @@ function Recruitment() {
 
         <div className="event">
           <div className="event-info">
-            <h3>Day 2: Tuesday, September 16 — SigCylinder</h3>
+            <h3>Day 2: Tuesday, February 17th — Trial By Fire</h3>
             <p>
-              <strong>Time:</strong> 7:00 – 9:00 PM
+              <strong>Time:</strong> 7:30 – 9:30 PM
             </p>
             <p>
-              <strong>Location:</strong> Bellevue Lot
+              <strong>Location:</strong> SSB 130
             </p>
             <p>
-              Our signature car meet event showcasing brother passions outside
-              of the classroom.
+              Get to know the brothers under the heat of fiery hot and spicy
+              wings.
             </p>
           </div>
           <img
@@ -103,14 +103,17 @@ function Recruitment() {
 
         <div className="event">
           <div className="event-info">
-            <h3>Day 3: Wednesday, September 17 — Siglympics</h3>
+            <h3>Day 3: Wednesday, February 18th — The Grand Joust</h3>
             <p>
-              <strong>Time:</strong> 6:00 – 8:00 PM
+              <strong>Time:</strong> 7:20 – 9:30 PM
             </p>
             <p>
-              <strong>Location:</strong> Pavilion Lawn
+              <strong>Location:</strong> SSB 130
             </p>
-            <p>Interactive outdoor games and team-building competitions.</p>
+            <p>
+              A jousting competition between brothers and new members with
+              inflatable Zorb Balls.
+            </p>
           </div>
           <img
             className="event-image"
@@ -122,9 +125,9 @@ function Recruitment() {
 
         <div className="event">
           <div className="event-info">
-            <h3>Day 4: Thursday, September 18 — Canes & SigTrivia</h3>
+            <h3>Day 4: Thursday, February 19th — Court of Knowledge</h3>
             <p>
-              <strong>Time:</strong> 7:30 – 10:00 PM
+              <strong>Time:</strong> 7:30 – 9:30 PM
             </p>
             <p>
               <strong>Location:</strong> SSB 130
@@ -143,9 +146,9 @@ function Recruitment() {
 
         <div className="event">
           <div className="event-info">
-            <h3>Day 5: Friday, September 19 — Stories with Sigs</h3>
+            <h3>Day 5: Friday, February 20th — Tales from the Brotherhood</h3>
             <p>
-              <strong>Time:</strong> 7:30 – 10:00 PM
+              <strong>Time:</strong> 7:30 – 9:30 PM
             </p>
             <p>
               <strong>Location:</strong> SSB 130
@@ -166,7 +169,7 @@ function Recruitment() {
         <div className="event">
           <div className="event-info">
             <h3>
-              Day 6: Saturday, September 20 — Steaks with Sigs (Invite Only)
+              Day 6: Saturday, February 21st — Feast of Kings (Invite Only)
             </h3>
             <p>
               <strong>Time:</strong> 10:00 AM – 12:00 PM
@@ -193,10 +196,13 @@ function Recruitment() {
         <p>
           For questions about recruitment or to express interest in joining:
         </p>
-        <p>Contact: Raul Nunes, Recruitment Chairman</p>
+        <p>Contact: Israel Bracamonte, Recruitment Chairman</p>
         <p>
-          Email: <a href="mailto:rnunes@ucmerced.edu">rnunes@ucmerced.edu</a> or
-          phone: <a href="tel:8088241375">808-824-1375</a>
+          Email:{' '}
+          <a href="mailto:israelbracamonte@ucmerced.edu">
+            israelbracamonte@ucmerced.edu
+          </a>{' '}
+          or phone: <a href="tel:8088241375">951-235-8940</a>
         </p>
         <p>
           Instagram:{' '}
