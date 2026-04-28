@@ -68,7 +68,7 @@ function Recruitment() {
             </p>
             <p>
               Our signature car meet event showcasing brother passions outside
-                            of the classroom.
+              of the classroom.
             </p>
           </div>
           <img
@@ -89,7 +89,8 @@ function Recruitment() {
               <strong>Location:</strong> SSB 130
             </p>
             <p>
-              Get to know the brothers under the heat of fiery hot and spicy wings.
+              Get to know the brothers under the heat of fiery hot and spicy
+              wings.
             </p>
           </div>
           <img
@@ -109,7 +110,10 @@ function Recruitment() {
             <p>
               <strong>Location:</strong> SSB 130
             </p>
-            <p>A jousting competition between brothers and new members with inflatable Zorb Balls.</p>
+            <p>
+              A jousting competition between brothers and new members with
+              inflatable Zorb Balls.
+            </p>
           </div>
           <img
             className="event-image"
@@ -194,8 +198,11 @@ function Recruitment() {
         </p>
         <p>Contact: Israel Bracamonte, Recruitment Chairman</p>
         <p>
-          Email: <a href="mailto:israelbracamonte@ucmerced.edu">israelbracamonte@ucmerced.edu</a> or
-          phone: <a href="tel:8088241375">951-235-8940</a>
+          Email:{' '}
+          <a href="mailto:israelbracamonte@ucmerced.edu">
+            israelbracamonte@ucmerced.edu
+          </a>{' '}
+          or phone: <a href="tel:8088241375">951-235-8940</a>
         </p>
         <p>
           Instagram:{' '}
