@@ -89,26 +89,22 @@ const Awards = () => {
             <div className="award-item-content">
               <img
                 src={balfourImage}
-                alt="Collin O'Neil - Balfour Award Nominee"
+                alt="Raul Nunes, 2026 Province Balfour Award winner"
                 className="award-image"
               />
               <div className="award-text">
                 <p className="balfour-blurb">
                   We are excited to announce our 2026 Balfour Province Award
                   winner and international nominee: Raul Nunes.
-                  <br />
-                  <br />
                 </p>
                 <blockquote className="award-quote">
-                  "We are excited to announce our 2026 Balfour Chapter and
-                  Province Award winner, and international nominee: Raul Nunes.
-                  "I joined Sigma Chi when I was a freshman, and I could not
+                  “I joined Sigma Chi when I was a freshman, and I could not
                   have imagined the role this fraternity would play in my life.
                   Sigma Chi developed me into the person I have become today,
                   and I will forever be in its debt. I am so glad I met this
-                  group of guys, and am proud to say I have best friends for
-                  life. As Isaac M Jordan said, 'Sigma Chi was my first love,
-                  and it shall be my last'. IHSV"
+                  group of guys and am proud to say I have best friends for
+                  life. As Isaac M. Jordan said, ‘Sigma Chi was my first love,
+                  and it shall be my last.’ IHSV”
                   <cite>– Brother Raul Nunes</cite>
                 </blockquote>
               </div>
