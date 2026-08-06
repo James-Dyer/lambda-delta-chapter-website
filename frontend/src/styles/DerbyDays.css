@@ -157,6 +157,12 @@
   color: var(--color-white);
 }
 
+.leaderboard-snapshot-label {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+}
+
 .leaderboard-hero-title {
   text-align: center;
   margin-bottom: var(--spacing-2xl);
@@ -636,13 +642,15 @@
   box-shadow: var(--shadow-md);
 }
 
-.canva-embed-container iframe {
+.canva-embed-container iframe,
+.canva-embed-container img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
 }
 
 /* ========================================================================

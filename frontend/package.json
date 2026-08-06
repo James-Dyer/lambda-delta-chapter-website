@@ -1,8 +1,8 @@
 {
-  "name": "my-app",
+  "name": "lambda-delta-chapter-website-archive",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ucmsigmachi.org",
+  "homepage": "https://james-dyer.github.io/lambda-delta-chapter-website/",
   "prettier": {
     "bracketSpacing": true,
     "printWidth": 80,
@@ -18,14 +18,11 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "node scripts/convert-members.js && vite",
-    "dev": "node scripts/convert-members.js && vite",
-    "convert-members": "node scripts/convert-members.js",
-    "build": "node scripts/convert-members.js && vite build",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "predeploy": "branch=$(git rev-parse --abbrev-ref HEAD) && [ \"$branch\" = \"main\" ] || { echo \"Deploy blocked: current branch is '$branch'. Switch to 'main' to deploy.\"; exit 1; }; npm run build",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint src/ --ext .js,.jsx && prettier --check \"src/**/*.{js,jsx,css,json}\"",
     "format": "eslint src/ --ext .js,.jsx --fix && prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "check-links": "node scripts/check-links.js"
@@ -50,8 +47,6 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
-    "exceljs": "^4.4.0",
-    "gh-pages": "^6.3.0",
     "globals": "^17.4.0",
     "jsdom": "^26.1.0",
     "prettier": "^3.5.3",

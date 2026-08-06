@@ -13,7 +13,7 @@ export default defineConfig({
     },
     react(),
   ],
-  base: '/',
+  base: '/lambda-delta-chapter-website/',
   optimizeDeps: {
     esbuildOptions: {
       loader: { '.js': 'jsx' },

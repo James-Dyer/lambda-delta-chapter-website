@@ -10,26 +10,27 @@ const ChapterDonate = () => {
       <div className="donation-content">
         <h1>Support the Lambda Delta Chapter</h1>
         <p>
-          Support our chapter today! Your contribution helps us create
-          meaningful experiences for our members and invests in the future of
-          our chapter.
+          This page documented the ways visitors could support the chapter when
+          the site was active. Contributions helped create meaningful member
+          experiences and invest in the chapter&apos;s future.
           <br />
           <br />
-          If you'd like, check out our Amazon Wishlist!
+          The original donation and wishlist destinations are not active in this
+          preserved copy.
         </p>
         <div className="button-group">
           <DonationButton
-            href="https://www.zeffy.com/donation-form/b0a9d5ff-e93c-47af-802b-9253c1dfc3b4"
+            disabled
             style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
           >
-            Donate Now
+            Donation Page · Archived
           </DonationButton>
 
           <DonationButton
-            href="https://www.amazon.com/hz/wishlist/ls/1Y4C3VN99C84U"
+            disabled
             style={{ '--bg': '#ff9900', '--hover-bg': '#cc7a00' }}
           >
-            Amazon Wishlist
+            Amazon Wishlist · Archived
           </DonationButton>
         </div>
       </div>

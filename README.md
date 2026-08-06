@@ -1,79 +1,73 @@
-# Lambda Delta Chapter Website
+# Lambda Delta Chapter Website Archive
 
-The official website for the **Lambda Delta Chapter of Sigma Chi** at UC Merced, hosted at [ucmsigmachi.org](https://ucmsigmachi.org).
+This repository preserves the **May 2026 version** of the Lambda Delta Chapter
+of Sigma Chi website at UC Merced. It is an independent historical archive and
+is **not the chapter's current official website**. Information, schedules, and
+external links may be outdated.
 
-For questions or to get involved, reach us on [Instagram](https://instagram.com/ucmsigmachi) or email **sigmachi@ucmerced.edu**.
+The archived site is published at
+[james-dyer.github.io/lambda-delta-chapter-website](https://james-dyer.github.io/lambda-delta-chapter-website/).
 
----
+## About the project
 
-## Getting Started
+James Dyer was the primary developer and maintainer of this React website from
+its initial release in December 2024 through May 2026. Other Lambda Delta
+chapter members also contributed features and content; their work remains
+credited in the Git history.
 
-### What you'll need
+The site includes:
 
-- **Node.js** (version 20 or higher) — download at [nodejs.org](https://nodejs.org)
-- **GitHub (CLI or Desktop)** 
+- A responsive multi-page chapter website with animated route transitions
+- Recruitment, philanthropy, awards, donation, and event experiences
+- Responsive Derby Days leaderboards and a full-screen Call-o-thon display
+- Custom design tokens, reusable components, reduced-motion support, and tests
+- Photography and video documenting the chapter during the archived period
 
-### First-time setup
+Live integrations were frozen for long-term preservation. The Derby Days and
+Call-o-thon displays now read checked-in May 2026 snapshot data, and the Canva
+embed was replaced by a local event image. The Google Calendar was intentionally
+removed. Donation destinations and personal recruitment contacts are inactive.
 
-Once you've cloned the repo, open a terminal in the `frontend` folder and run:
+## Technology
+
+- React 19 and React Router
+- Vite
+- Framer Motion
+- Vitest and Testing Library-style DOM tests
+- GitHub Actions and GitHub Pages
+
+## Run locally
+
+Requirements: Node.js 20 or newer.
 
 ```bash
+cd frontend
 npm install
-```
-
-This downloads all the packages the project depends on. You only need to do this once.
-
-> **Tip:** In GitHub Desktop, go to **Repository → Open in Terminal** to open a terminal already pointed at the right folder. Then type `cd frontend` and press Enter.
-
----
-
-## Running the Site Locally
-
-```bash
 npm run dev
 ```
 
-Then open **http://localhost:5173** in your browser. The page will automatically refresh as you save files. Press `Ctrl+C` to stop.
+The development server prints the local URL. Other useful commands:
 
----
-
-## Project Structure
-
-All code lives under `frontend/src/`:
-
-```
-frontend/
-├── index.html           # HTML entry point
-├── src/
-│   ├── components/      # one file per page or UI section
-│   ├── styles/          # CSS files, one per component
-│   ├── hooks/           # shared React hooks
-│   ├── services/        # Google Sheets API logic
-│   └── App.js           # page routing
-├── public/              # static files (images, data, favicons)
-└── package.json         # dependencies and scripts
-```
-
-Adding a new page means creating a component in `src/components/` and adding a route in `App.js`.
-
----
-
-## Other Useful Commands
-
-All commands run from the `frontend/` folder.
-
-| Command | What it does |
+| Command | Purpose |
 |---|---|
-| `npm run dev` | Start the local dev server |
 | `npm test` | Run the automated tests |
-| `npm run format` | Auto-fix code formatting |
-| `npm run build` | Build the site for production |
-| `npm run deploy` | Build and publish to ucmsigmachi.org |
+| `npm run lint` | Check JavaScript and formatting |
+| `npm run check-links` | Check retained external links |
+| `npm run build` | Create the GitHub Pages production build |
 
-> `npm run deploy` only works from the `main` branch — it will block you if you're on anything else.
+## Archive data
 
----
+Public leaderboard snapshot values are isolated in
+`frontend/src/Data/archiveSnapshot.js`. They were transcribed from the public
+display columns of the 2026 Derby Days spreadsheets. Auxiliary working tables,
+member records, credentials, and private chapter material are not part of the
+archive.
 
-## Making Changes
+## Status and attribution
 
-New to Git? See **[DEV_GUIDE.md](./DEV_GUIDE.md)** for a full step-by-step walkthrough: how to create a branch, commit, open a pull request, and deploy.
+This repository is preserved for demonstration and historical reference. It is
+not intended to receive current chapter updates, donations, recruitment
+inquiries, or operational data.
+
+Copyright for chapter marks and contributed media remains with their respective
+owners. No license is granted for reuse merely by making this source available.

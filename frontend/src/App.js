@@ -12,7 +12,6 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Header from './components/Header';
 import Home from './components/Home/Home';
 import Donate from './components/Donate/Donate';
-import Members from './components/Members';
 import Archive from './components/Archive';
 import Philanthropy from './components/Philanthropy';
 import Alumni from './components/Alumni';
@@ -20,8 +19,7 @@ import Recruitment from './components/Recruitment';
 import DerbyDays from './components/DerbyDays';
 import CallathonLeaderboard from './components/CallathonLeaderboard';
 import ScrollToTop from './components/ScrollToTop';
-import Challenge from './components/Secret/Challenge.jsx';
-// import SecretPage from './components/Secret/SecretPage.jsx';
+import ArchiveBanner from './components/ArchiveBanner';
 
 const PageWrapper = ({ children }) => {
   const reduceMotion = useReducedMotion();
@@ -61,14 +59,6 @@ const AnimatedRoutes = () => {
           element={
             <PageWrapper>
               <Donate />
-            </PageWrapper>
-          }
-        />
-        <Route
-          path="/members"
-          element={
-            <PageWrapper>
-              <Members />
             </PageWrapper>
           }
         />
@@ -120,22 +110,6 @@ const AnimatedRoutes = () => {
             </PageWrapper>
           }
         />
-        <Route
-          path="/challenge"
-          element={
-            <PageWrapper>
-              <Challenge />
-            </PageWrapper>
-          }
-        />
-        {/* <Route
-          path="/secret"
-          element={
-            <PageWrapper>
-              <SecretPage />
-            </PageWrapper>
-          }
-        /> */}
       </Routes>
     </AnimatePresence>
   );
@@ -146,6 +120,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Header />
+      <ArchiveBanner />
       <AnimatedRoutes />
     </Router>
   );

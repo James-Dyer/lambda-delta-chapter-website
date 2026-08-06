@@ -5,18 +5,11 @@
 
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { useGoogleSheetsPolling } from '../hooks/useGoogleSheetsPolling';
-import { usePrevious } from '../hooks/usePrevious';
+import { callathon, SNAPSHOT_LABEL } from '../Data/archiveSnapshot';
 import '../styles/callathonLeaderboard.css';
 
 const CallathonLeaderboard = () => {
-  const range =
-    import.meta.env.VITE_SHEET_RANGE_CALLATHON || 'Callathon!A1:C100';
-  const { data, loading, error } = useGoogleSheetsPolling(
-    range,
-    3000, // Poll every 3 seconds for Callathon (fast updates)
-    { scoreColumnIndex: 1 } // Money raised is in column B (index 1)
-  );
+  const data = { rows: callathon };
 
   // Calculate max score for bar width percentages
   const maxScore =
@@ -65,22 +58,7 @@ const CallathonLeaderboard = () => {
     };
   }, [maxScore]);
 
-  // Track previous data for score change detection
-  const previousData = usePrevious(data?.rows);
-
-  // Detect which organizations had score changes
-  const changedScores = useMemo(() => {
-    if (!previousData || !data?.rows) return new Set();
-
-    const changed = new Set();
-    data.rows.forEach((row) => {
-      const prevRow = previousData.find((p) => p.name === row.name);
-      if (prevRow && prevRow.score !== row.score) {
-        changed.add(row.name);
-      }
-    });
-    return changed;
-  }, [previousData, data?.rows]);
+  const changedScores = new Set();
 
   // Calculate dynamic bar height so all orgs fit within the viewport (no scrolling)
   const barHeight = useMemo(() => {
@@ -139,42 +117,11 @@ const CallathonLeaderboard = () => {
     }),
   };
 
-  // Loading State
-  if (loading && !data) {
-    return (
-      <div className="callathon-display">
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <p>Loading leaderboard...</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Error State
-  if (error && !data) {
-    return (
-      <div className="callathon-display">
-        <div className="error-container">
-          <p>❌ Unable to load leaderboard</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Empty State
-  if (!data?.rows || data.rows.length === 0) {
-    return (
-      <div className="callathon-display">
-        <div className="empty-container">
-          <p>No participants yet</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="callathon-display">
+      <span className="snapshot-label callathon-snapshot-label">
+        {SNAPSHOT_LABEL}
+      </span>
       <div
         className="bars-container"
         style={{ '--bar-height': `${barHeight}px` }}

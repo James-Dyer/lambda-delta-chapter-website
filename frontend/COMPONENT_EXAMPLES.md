@@ -874,44 +874,6 @@ video {
 }
 ```
 
-### Embedded Calendar
-
-```jsx
-<section id="schedule">
-  <h2>Schedule</h2>
-  <div className="calendar-wrapper">
-    <iframe
-      src="https://calendar.google.com/calendar/embed?..."
-      style={{ border: 'solid 1px #777' }}
-      width="800"
-      height="600"
-      frameBorder="0"
-      scrolling="no"
-      title="Chapter Calendar"
-    ></iframe>
-  </div>
-</section>
-```
-
-```css
-#schedule {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-  border-bottom: 50px solid #f9f9f9;
-}
-
-#schedule .calendar-wrapper iframe {
-  display: block;
-  max-width: 100%;
-  border: 1px solid #777;
-}
-```
-
----
-
 ## Quick Tips
 
 ### Accessibility

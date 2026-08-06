@@ -10,17 +10,16 @@ const HuntsmanDonate = () => {
       <div className="donation-content">
         <h1>Huntsman Cancer Institute</h1>
         <p>
-          We are proud to partner with the Huntsman Cancer Institute in the
-          fight against cancer. 100% of your donation through this link goes
-          directly to the Huntsman Cancer Foundation. Please join us in
-          supporting their work by donating today.
+          The chapter partnered with the Huntsman Cancer Institute in the fight
+          against cancer. This section originally linked visitors to the
+          Huntsman Cancer Foundation donation campaign.
         </p>
         <div className="button-group">
           <DonationButton
-            href="https://hope.huntsmancancer.org/gentoend/lambda-delta-chapter#"
+            disabled
             style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
           >
-            Donate Now
+            Campaign · Archived
           </DonationButton>
         </div>
       </div>

@@ -226,3 +226,12 @@
     animation: none;
   }
 }
+.callathon-snapshot-label {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(0, 51, 102, 0.85);
+  color: #fff;
+}

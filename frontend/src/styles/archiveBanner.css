@@ -1,0 +1,32 @@
+.archive-banner {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.65rem 1rem;
+  background: #f4df9c;
+  border-bottom: 1px solid #d0ad42;
+  color: #332600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.archive-banner strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .archive-banner {
+    align-items: center;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .archive-banner > span[aria-hidden='true'] {
+    display: none;
+  }
+}

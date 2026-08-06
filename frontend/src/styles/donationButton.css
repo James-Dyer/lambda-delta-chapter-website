@@ -28,3 +28,13 @@
   /* hover color—overridable via --hover-bg */
   background-color: var(--hover-bg, #0056b3);
 }
+
+.btn:disabled {
+  cursor: default;
+  filter: saturate(0.65);
+  opacity: 0.82;
+}
+
+.btn:disabled:hover {
+  background-color: var(--bg, #007bff);
+}

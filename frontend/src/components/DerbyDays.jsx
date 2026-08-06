@@ -3,23 +3,17 @@
  * Dual leaderboard (social + professional orgs) with event content sections
  */
 
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { useGoogleSheetsPolling } from '../hooks/useGoogleSheetsPolling';
-import { usePrevious } from '../hooks/usePrevious';
+import {
+  derbyDaysProfessional,
+  derbyDaysSocial,
+  SNAPSHOT_LABEL,
+} from '../Data/archiveSnapshot';
 import Footer from './Footer';
 import '../styles/DerbyDays.css';
-
-const SKELETON_ROW_COUNT = 5;
-
-const SkeletonRow = () => (
-  <div className="leaderboard-row skeleton-row" aria-hidden="true">
-    <div className="skeleton skeleton-rank" />
-    <div className="skeleton skeleton-name" />
-    <div className="skeleton skeleton-score" />
-  </div>
-);
+import derbyDaysSchedule from '../assets/images/philanthropy/Derby-Days-2026.jpg';
 
 const rowVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -41,171 +35,64 @@ const HiddenScoresBanner = () => (
   </div>
 );
 
-const LeaderboardPanel = ({
-  title,
-  data,
-  loading,
-  error,
-  changedScores,
-  scoresHidden,
-}) => (
+const LeaderboardPanel = ({ title, rows, scoresHidden }) => (
   <div className="leaderboard-panel">
     <h2 className="panel-title">{title}</h2>
-
-    {data?.status === 'degraded' && (
-      <div className="status-banner warning">
-        ⚠️ Data may be outdated - experiencing connectivity issues
-        {data.error && <div className="status-error">{data.error}</div>}
-      </div>
-    )}
-
-    {error && !data && (
-      <div className="status-banner error">
-        ❌ Unable to load leaderboard: {error}
-      </div>
-    )}
-
-    {loading && !data && (
-      <div className="skeleton-cards" aria-label="Loading leaderboard">
-        {Array.from({ length: SKELETON_ROW_COUNT }, (_, i) => (
-          <SkeletonRow key={i} />
-        ))}
-      </div>
-    )}
-
-    {data &&
-      (data.rows.length > 0 ? (
-        <div className="leaderboard-cards">
-          <LayoutGroup>
-            <AnimatePresence mode="popLayout">
-              {data.rows.map((row, index) => (
-                <motion.div
-                  key={row.name}
-                  layoutId={`${title}-${row.name}`}
-                  variants={rowVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  custom={index}
-                  className={`leaderboard-row ${
-                    index === 0
-                      ? 'rank-1'
-                      : index === 1
-                        ? 'rank-2'
-                        : index === 2
-                          ? 'rank-3'
-                          : ''
-                  } ${changedScores.has(row.name) ? 'score-changed' : ''}`}
-                >
-                  <div className="rank-display">
-                    {row.rank === 1 && <span className="medal">🥇</span>}
-                    {row.rank === 2 && <span className="medal">🥈</span>}
-                    {row.rank === 3 && <span className="medal">🥉</span>}
-                    {row.rank > 3 && (
-                      <span className="rank-number">{row.rank}</span>
-                    )}
-                  </div>
-                  <div className="team-name">
-                    {scoresHidden ? '???' : row.name}
-                  </div>
-                  {!scoresHidden && (
-                    <motion.div
-                      className="team-score"
-                      animate={
-                        changedScores.has(row.name)
-                          ? {
-                              scale: [1, 1.2, 1],
-                              backgroundColor: [
-                                'transparent',
-                                'rgba(97, 185, 239, 0.2)',
-                                'transparent',
-                              ],
-                            }
-                          : {}
-                      }
-                      transition={{ duration: 0.6 }}
-                    >
-                      {row.score}
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </LayoutGroup>
-        </div>
-      ) : (
-        <div className="empty-state">
-          <p>No teams have been added yet.</p>
-          <p className="empty-state-subtitle">
-            Check back soon for live standings!
-          </p>
-        </div>
-      ))}
+    <div className="leaderboard-cards">
+      <LayoutGroup>
+        <AnimatePresence mode="popLayout">
+          {rows.map((row, index) => (
+            <motion.div
+              key={row.name}
+              layoutId={`${title}-${row.name}`}
+              variants={rowVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              custom={index}
+              className={`leaderboard-row ${
+                index === 0
+                  ? 'rank-1'
+                  : index === 1
+                    ? 'rank-2'
+                    : index === 2
+                      ? 'rank-3'
+                      : ''
+              }`}
+            >
+              <div className="rank-display">
+                {row.rank === 1 && <span className="medal">🥇</span>}
+                {row.rank === 2 && <span className="medal">🥈</span>}
+                {row.rank === 3 && <span className="medal">🥉</span>}
+                {row.rank > 3 && (
+                  <span className="rank-number">{row.rank}</span>
+                )}
+              </div>
+              <div className="team-name">{scoresHidden ? '???' : row.name}</div>
+              {!scoresHidden && (
+                <motion.div className="team-score">{row.score}</motion.div>
+              )}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </LayoutGroup>
+    </div>
   </div>
 );
 
 LeaderboardPanel.propTypes = {
   title: PropTypes.string.isRequired,
-  data: PropTypes.shape({
-    rows: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        score: PropTypes.number.isRequired,
-        rank: PropTypes.number.isRequired,
-      })
-    ).isRequired,
-    status: PropTypes.string,
-    error: PropTypes.string,
-  }),
-  loading: PropTypes.bool.isRequired,
-  error: PropTypes.string,
-  changedScores: PropTypes.instanceOf(Set).isRequired,
+  rows: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+      rank: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   scoresHidden: PropTypes.bool,
 };
 
 const DerbyDays = () => {
-  const socialRange =
-    import.meta.env.VITE_SHEET_RANGE_DERBY_DAYS_SOCIAL ||
-    'Total Points!A1:B100';
-  const proRange =
-    import.meta.env.VITE_SHEET_RANGE_DERBY_DAYS_PROFESSIONAL ||
-    'Total Points!D1:E100';
-
-  const {
-    data: socialData,
-    loading: socialLoading,
-    error: socialError,
-  } = useGoogleSheetsPolling(socialRange, 30000);
-
-  const {
-    data: proData,
-    loading: proLoading,
-    error: proError,
-  } = useGoogleSheetsPolling(proRange, 30000, { scoreColumnIndex: 1 });
-
-  const previousSocialData = usePrevious(socialData?.rows);
-  const previousProData = usePrevious(proData?.rows);
-
-  const socialChangedScores = useMemo(() => {
-    if (!previousSocialData || !socialData?.rows) return new Set();
-    const changed = new Set();
-    socialData.rows.forEach((row) => {
-      const prev = previousSocialData.find((p) => p.name === row.name);
-      if (prev && prev.score !== row.score) changed.add(row.name);
-    });
-    return changed;
-  }, [previousSocialData, socialData?.rows]);
-
-  const proChangedScores = useMemo(() => {
-    if (!previousProData || !proData?.rows) return new Set();
-    const changed = new Set();
-    proData.rows.forEach((row) => {
-      const prev = previousProData.find((p) => p.name === row.name);
-      if (prev && prev.score !== row.score) changed.add(row.name);
-    });
-    return changed;
-  }, [previousProData, proData?.rows]);
-
   return (
     <div className="derby-days-wrapper">
       <div className="derby-days-page">
@@ -213,21 +100,18 @@ const DerbyDays = () => {
         <div className="leaderboard-hero">
           <div className="leaderboard-hero-overlay">
             {SCORES_HIDDEN && <HiddenScoresBanner />}
+            <div className="leaderboard-snapshot-label">
+              <span className="snapshot-label">{SNAPSHOT_LABEL}</span>
+            </div>
             <div className="leaderboard-section">
               <LeaderboardPanel
                 title="Social Organizations"
-                data={socialData}
-                loading={socialLoading}
-                error={socialError}
-                changedScores={socialChangedScores}
+                rows={derbyDaysSocial}
                 scoresHidden={SCORES_HIDDEN}
               />
               <LeaderboardPanel
                 title="Professional Organizations"
-                data={proData}
-                loading={proLoading}
-                error={proError}
-                changedScores={proChangedScores}
+                rows={derbyDaysProfessional}
                 scoresHidden={SCORES_HIDDEN}
               />
             </div>
@@ -336,12 +220,10 @@ const DerbyDays = () => {
         >
           <h2>Philo Slides</h2>
           <div className="canva-embed-container">
-            <iframe
+            <img
               loading="lazy"
-              src="https://www.canva.com/design/DAHDtGLlisw/HvWi_b51LZlLCVPrKp70Ig/view?embed"
-              allowFullScreen
-              allow="fullscreen"
-              title="Derby Days 2026 Schedule"
+              src={derbyDaysSchedule}
+              alt="Sigma Chi Derby Days 2026, March 30 through April 4"
             />
           </div>
         </section>

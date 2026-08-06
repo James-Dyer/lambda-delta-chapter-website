@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        &copy; {new Date().getFullYear()} Lambda Delta Chapter of the Sigma Chi
-        Fraternity. All rights reserved.
+        &copy; 2026 Lambda Delta Chapter of the Sigma Chi Fraternity. Preserved
+        as an independent archival snapshot.
       </p>
     </footer>
   );

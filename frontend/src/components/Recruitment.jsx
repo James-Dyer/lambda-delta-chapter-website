@@ -192,21 +192,23 @@ function Recruitment() {
       </section>
 
       <section className="questions">
-        <h2>Questions?</h2>
+        <h2>Recruitment Contact</h2>
         <p>
-          For questions about recruitment or to express interest in joining:
+          This section originally provided direct contact information for the
+          Spring 2026 Recruitment Chairman.
         </p>
-        <p>Contact: Israel Bracamonte, Recruitment Chairman</p>
         <p>
-          Email:{' '}
-          <a href="mailto:israelbracamonte@ucmerced.edu">
-            israelbracamonte@ucmerced.edu
-          </a>{' '}
-          or phone: <a href="tel:8088241375">951-235-8940</a>
+          Direct email and phone details have been removed from this archive.
         </p>
         <p>
           Instagram:{' '}
-          <a href="https://instagram.com/ucmsigmachi">@ucmsigmachi</a>
+          <a
+            href="https://instagram.com/ucmsigmachi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @ucmsigmachi
+          </a>
         </p>
       </section>
       <Footer />

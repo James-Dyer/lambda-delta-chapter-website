@@ -45,10 +45,10 @@ function Philanthropy() {
             </p>
 
             <DonationButton
-              href="https://hope.huntsmancancer.org/gentoend/california---merced---fall-2025-fall-pledge-class"
+              disabled
               style={{ '--bg': '#007bff', '--hover-bg': '#0056b3' }}
             >
-              Donate Now
+              2025 Campaign · Archived
             </DonationButton>
           </div>
         </div>
