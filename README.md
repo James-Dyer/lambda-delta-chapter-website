@@ -18,7 +18,7 @@ credited in the Git history.
 The site includes:
 
 - A responsive multi-page chapter website with animated route transitions
-- Recruitment, philanthropy, awards, donation, and event experiences
+- Philanthropy, awards, donation, and event experiences
 - Responsive Derby Days leaderboards and a full-screen Call-o-thon display
 - Custom design tokens, reusable components, reduced-motion support, and tests
 - Photography and video documenting the chapter during the archived period
@@ -26,7 +26,8 @@ The site includes:
 Live integrations were frozen for long-term preservation. The Derby Days and
 Call-o-thon displays now read checked-in May 2026 snapshot data, and the Canva
 embed was replaced by a local event image. The Google Calendar was intentionally
-removed. Donation destinations and personal recruitment contacts are inactive.
+removed. Donation destinations are inactive, and the time-sensitive recruitment
+page is not included in the archive.
 
 ## Technology
 

@@ -17,6 +17,7 @@
 
 /* Main Display Container - Full Viewport */
 .callathon-display {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-image: url('../assets/images/derby-track-bg.png');
@@ -227,7 +228,7 @@
   }
 }
 .callathon-snapshot-label {
-  position: fixed;
+  position: absolute;
   top: 1rem;
   right: 1rem;
   z-index: 10;
