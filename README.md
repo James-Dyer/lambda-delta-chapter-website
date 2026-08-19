@@ -8,9 +8,14 @@ external links may be outdated.
 The archived site is published at
 [james-dyer.github.io/lambda-delta-chapter-website](https://james-dyer.github.io/lambda-delta-chapter-website/).
 
+Originally launched as the chapter's public website, the application supported
+recruitment, philanthropy, donations, alumni information, and live event
+experiences. Its real-time fundraising leaderboard was used by more than 150
+participants during a chapter-wide philanthropy event.
+
 ## About the project
 
-James Dyer was the primary developer and maintainer of this React website from
+James Dyer built and maintained the React website as its primary developer from
 its initial release in December 2024 through May 2026. Other Lambda Delta
 chapter members also contributed features and content; their work remains
 credited in the Git history.
